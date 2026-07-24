@@ -85,7 +85,7 @@ ${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a> · <a href="
  </div>
  <button class="fabmain" aria-label="Contact us" onclick="this.parentElement.classList.toggle('open')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a8 8 0 0 1-8 8H4l2.2-2.6A8 8 0 1 1 21 12z"/></svg></button>
 </div>
-<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.card,.rev,.soc,.ptable,.answer,.faq details').forEach(el=>{el.classList.add('rv');io.observe(el)})}</script></body></html>`;
+<script>document.querySelectorAll('.rvid').forEach(w=>{const v=w.querySelector('video');w.addEventListener('click',()=>{if(v.paused){document.querySelectorAll('.rvid video').forEach(o=>{if(o!==v){o.pause();o.parentElement.classList.remove('playing')}});v.muted=false;v.play();w.classList.add('playing');}else{v.pause();w.classList.remove('playing');}});});</script><script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.card,.rev,.soc,.ptable,.answer,.faq details').forEach(el=>{el.classList.add('rv');io.observe(el)})}</script></body></html>`;
 
 const stars=`<span class="stars">★★★★★</span>`;
 const reviewCards=(n=6)=>`<div class="revrow">${REVIEWS.slice(0,n).map(r=>`
@@ -162,7 +162,18 @@ section{padding:52px 0}
 .rev blockquote{margin:10px 0;font-size:15.5px}.rev figcaption{font-size:15px}
 .rsvc{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700}
 .revmore{margin-top:18px;color:var(--ink2)}
-.reelgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:24px}\n.reel{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(90,60,30,.08)}\n.reel iframe{width:100%;height:560px;border:0;display:block;background:#fff}\n.reel figcaption{padding:12px 16px;font-size:14px;font-weight:600;color:var(--ink2)}\n.socrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:24px}
+.reelgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(206px,1fr));gap:16px;margin-top:26px}
+.reel{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(90,60,30,.08)}
+.rvid{position:relative;aspect-ratio:9/16;background:#1c130b;cursor:pointer;overflow:hidden}
+.rvid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.rplay::before{content:"";width:54px;height:54px;border-radius:50%;background-color:rgba(253,251,245,.9);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 6.5v11l9-5.5z' fill='%237A4A2B'/></svg>");background-position:center;background-size:26px;background-repeat:no-repeat;box-shadow:0 8px 24px rgba(30,18,8,.35);transition:transform .2s ease}
+.rvid:hover .rplay::before{transform:scale(1.08)}
+.rvid.playing .rplay{display:none}
+.rtag{position:absolute;top:12px;left:12px;z-index:2;background:linear-gradient(135deg,#CBA35A,#A9812F);color:#2A1F0C;border-radius:999px;padding:6px 13px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.reel figcaption{padding:12px 15px;font-size:13px;font-weight:600;color:var(--ink2)}
+.reel figcaption a{white-space:nowrap}
+.socrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:24px}
 .soc{position:relative;border-radius:20px;overflow:hidden;display:block;color:#fff;text-decoration:none;min-height:190px;background:#333}
 .soc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
 .soc .st{position:relative;padding:16px;display:flex;flex-direction:column;justify-content:flex-end;height:190px;background:linear-gradient(180deg,transparent 20%,rgba(30,18,8,.82))}
@@ -273,9 +284,9 @@ const homeHtml=head(
 <section class="gallerysec"><div class="wrap"><p class="tag">The salon</p><h2>Step inside Reborn</h2>
 <div class="gal">${['salon','arch','interior','refined','chand','tray'].map((g,i)=>`<img src="${BASE}/assets/${g}.jpg" alt="${BIZ.name} salon Da Nang — ${['reception','foot therapy lounge','interior','refined touch room','cherry blossom chandelier','spa ingredients'][i]}" loading="lazy">`).join('')}</div></div></section>
 <section id="reviews"><div class="wrap"><p class="tag">Guest love</p><h2>★ ${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews</h2>${reviewCards(9)}</div></section>
-<section><div class="wrap"><p class="tag">As seen on social</p><h2>Watch the experience — reels from the salon</h2>
-<p class="sub" style="margin-left:0;text-align:left">Real sets, real guests — including the 270K-view viral and creators filming their visit. Tap any reel to play.</p>
-<div class="reelgrid">${REELS.map(r=>`<figure class="reel"><iframe loading="lazy" src="https://www.instagram.com/p/${r.c}/embed/" title="${r.t}" allowfullscreen scrolling="no" allow="encrypted-media"></iframe><figcaption>${r.t}</figcaption></figure>`).join('')}</div>
+<section><div class="wrap"><p class="tag">As seen on social</p><h2>Watch the experience</h2>
+<p class="secsub">Straight from the salon floor — tap a reel for sound, or open it on Instagram.</p>
+<div class="reelgrid">${REELS.map(r=>`<figure class="reel"><div class="rvid"><video muted loop playsinline preload="none" poster="${BASE}/assets/${r.v}.jpg" src="${BASE}/assets/${r.v}.mp4"></video><span class="rplay"></span>${r.inf?`<span class="rtag">Creator visit</span>`:''}</div><figcaption>${r.t} · <a href="https://www.instagram.com/p/${r.c}/" rel="noopener" target="_blank">Instagram ↗</a></figcaption></figure>`).join('')}</div>
 <div class="socrow" style="margin-top:26px">${socCards}</div></div></section>
 ${mapBlock()}
 <section><div class="wrap"><p class="tag">Good to know</p><h2>Frequently asked questions</h2>

@@ -77,12 +77,11 @@ const REVIEWS=[
 
 /* Social proof — real reels from @reborn_nailsnretreat (she reposts her TikToks here) */
 const REELS=[
- {c:"DWJRUtqkQak",t:"The viral one — 270K+ views 🐱💅"},
- {c:"DZUUoGBxN4b",t:"“Walked 10k steps… ended up here” — guest vlog"},
- {c:"DZdA62kG8Eo",t:"Carter got her nails done in Vietnam — creator visit"},
- {c:"DbAgyOPxxGK",t:"The pedicure you deserve"},
- {c:"Da0YmoLBTwh",t:"A single butterfly in the ocean — summer nails"},
- {c:"DZ1tZPBxP0y",t:"Chrome nails never go out of style"}
+ {v:"reel_pedi",c:"DbAgyOPxxGK",t:"The pedicure you deserve"},
+ {v:"reel_inf",c:"DZUUoGBxN4b",t:"“This felt medically necessary” — guest vlog",inf:1},
+ {v:"reel_butterfly",c:"Da0YmoLBTwh",t:"A single butterfly in the ocean"},
+ {v:"reel_chrome",c:"DZ1tZPBxP0y",t:"Chrome nails never go out of style"},
+ {v:"reel_brand",c:"DbLliwRBplP",t:"Reborn. The Original."}
 ];
 const SOCIAL=[
  {type:"instagram",label:"@reborn_nailsnretreat",url:"https://www.instagram.com/reborn_nailsnretreat/",t:"Instagram — latest sets, reels & booking by DM",img:"flatlay.jpg"},

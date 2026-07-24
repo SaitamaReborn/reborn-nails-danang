@@ -60,9 +60,11 @@ const nav=(active='')=>`<header class="nav"><div class="wrap navin">
 <a href="${BASE}/#reviews">Reviews</a>
 <a href="${BASE}/#find-us">Find us</a>
 </nav>
+<details class="langdd"><summary>EN</summary><nav>
+<a href="${BASE}/">English</a><a href="${BASE}/ko/">한국어</a><a href="${BASE}/ja/">日本語</a><a href="${BASE}/zh/">中文</a><a href="${BASE}/ru/">Русский</a><a href="${BASE}/vi/">Tiếng Việt</a>
+</nav></details>
 <a class="cta small" href="${BIZ.directions}" rel="noopener">Directions</a>
 </div>
-<div class="langbar wrap"><a href="${BASE}/">English</a><i>·</i><a href="${BASE}/ko/">한국어</a><i>·</i><a href="${BASE}/ja/">日本語</a><i>·</i><a href="${BASE}/zh/">中文</a><i>·</i><a href="${BASE}/ru/">Русский</a><i>·</i><a href="${BASE}/vi/">Tiếng Việt</a><span class="langnote">seven languages spoken in salon</span></div>
 </header>`;
 
 const footer=()=>`<footer class="foot"><div class="wrap">
@@ -121,7 +123,14 @@ h1{font-size:clamp(34px,6vw,58px);margin:.2em 0}h2{font-size:clamp(27px,4vw,40px
 .navin{display:flex;align-items:center;gap:18px;padding:10px 22px}
 .navlinks{display:flex;gap:20px;flex:1;flex-wrap:wrap;font-weight:600;font-size:15px}
 .navlinks a{text-decoration:none}.navlinks a.on{color:var(--accent)}
-.langbar{font-size:12px;letter-spacing:.12em;color:var(--ink2);padding:0 22px 10px;text-transform:uppercase}.langbar a{text-decoration:none;font-weight:600;color:var(--brand)}.langbar i{margin:0 8px;color:var(--gold);font-style:normal}.langnote{float:right;opacity:.6;letter-spacing:.08em}
+.langdd{position:relative}
+.langdd summary{list-style:none;cursor:pointer;border:1px solid rgba(122,74,43,.4);border-radius:999px;padding:9px 16px;font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--brand);display:flex;align-items:center;gap:7px}
+.langdd summary::-webkit-details-marker{display:none}
+.langdd summary::after{content:"";width:7px;height:7px;border-right:1.5px solid var(--brand);border-bottom:1.5px solid var(--brand);transform:rotate(45deg) translateY(-2px)}
+.langdd[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.langdd nav{position:absolute;top:calc(100% + 10px);right:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 44px rgba(90,60,30,.18);padding:8px;min-width:170px;display:flex;flex-direction:column;z-index:60}
+.langdd nav a{padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px}
+.langdd nav a:hover{background:var(--paper)}
 .cta{display:inline-block;background:var(--brand);color:#FBF3E6;border-radius:999px;padding:15px 30px;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none}
 .cta.gold{background:linear-gradient(135deg,#CBA35A,#A9812F);color:#2A1F0C}.cta.small{padding:10px 18px;font-size:11.5px}
 .ghost{display:inline-block;border:1px solid rgba(122,74,43,.45);border-radius:999px;padding:14px 28px;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--brand);background:transparent}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saitamareborn.github.io/reborn-nails-danang/sitemap.xml

@@ -117,7 +117,7 @@ section .wrap>h2::after{content:"";position:absolute;left:50%;transform:translat
 @media(max-width:760px){.gal{grid-template-columns:repeat(2,1fr)}.gal img{height:180px}}
 .heromedia{border:1.5px solid var(--brand);padding:11px;background:var(--panel);border-radius:230px 230px 26px 26px;position:relative}
 .heromedia::after{content:"";position:absolute;inset:6px;border:1px solid var(--line);border-radius:222px 222px 20px 20px;pointer-events:none}
-.heromedia video,.heromedia img{border-radius:218px 218px 15px 15px}
+.heromedia video,.heromedia img{border-radius:218px 218px 15px 15px;width:100%;height:clamp(320px,52vw,520px);object-fit:cover}
 .rev blockquote::before{content:"“";font-family:var(--serif);font-size:44px;color:var(--gold);line-height:0;display:block;margin:16px 0 4px}
 .soc{transition:transform .25s ease}.soc:hover{transform:translateY(-4px)}
 .soc .st{transition:background .3s}.soc:hover .st{background:linear-gradient(180deg,transparent 6%,rgba(30,18,8,.9))}

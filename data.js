@@ -10,6 +10,7 @@ const BIZ={
  maps:"https://www.google.com/maps/place/Reborn+Nails+%26+Retreat/@16.0519643,108.2372274,17z/data=!3m1!4b1!4m6!3m5!1s0x314217622cbf2de1:0x5ef19c1ba20245e5!8m2!3d16.0519643!4d108.2398023!16s%2Fg%2F11srbjbcxk",
  mapsCid:"https://maps.google.com/?cid=6841420951448602085",
  review:"https://search.google.com/local/writereview?placeid=ChIJ4S2_LGIXQjER5UUCohuc8V4",
+ whatsapp:"https://wa.me/84788668588",
  directions:"https://www.google.com/maps/dir/?api=1&destination=Reborn+Nails+%26+Retreat+Da+Nang&destination_place_id=ChIJ4S2_LGIXQjER5UUCohuc8V4",
  instagram:"https://www.instagram.com/reborn_nailsnretreat/",
  tiktok:"https://www.tiktok.com/@reborn.nail.spa",
@@ -74,12 +75,17 @@ const REVIEWS=[
  {n:"Thảo",f:"🇻🇳",s:5,t:"Tiệm đẹp, sạch sẽ, chị em kỹ thuật viên tay nghề cao và rất dễ thương. Gội đầu dưỡng sinh cực kỳ thư giãn.",svc:"Gội đầu dưỡng sinh"}
 ];
 
-/* Social proof — real accounts & videos found */
+/* Social proof — real reels from @reborn_nailsnretreat (she reposts her TikToks here) */
+const REELS=[
+ {c:"DWJRUtqkQak",t:"The viral one — 270K+ views 🐱💅"},
+ {c:"DZUUoGBxN4b",t:"“Walked 10k steps… ended up here” — guest vlog"},
+ {c:"DZdA62kG8Eo",t:"Carter got her nails done in Vietnam — creator visit"},
+ {c:"DbAgyOPxxGK",t:"The pedicure you deserve"},
+ {c:"Da0YmoLBTwh",t:"A single butterfly in the ocean — summer nails"},
+ {c:"DZ1tZPBxP0y",t:"Chrome nails never go out of style"}
+];
 const SOCIAL=[
- {type:"tiktok",label:"@reborn.nail.spa",url:"https://www.tiktok.com/@reborn.nail.spa",t:"Official TikTok — nail art, head spa & salon life",img:"nails.jpg"},
- {type:"tiktok",label:"@marwaandstuff",url:"https://www.tiktok.com/@marwaandstuff/video/7477994653581626646",t:"“Self-care day in Da Nang 💅” — creator review",img:"tray.jpg"},
- {type:"instagram",label:"@reborn_nailsnretreat",url:"https://www.instagram.com/reborn_nailsnretreat/",t:"Instagram — latest sets, offers & booking by DM",img:"flatlay.jpg"},
- {type:"instagram",label:"Featured reel",url:"https://www.instagram.com/p/DYg-if_kQw5/",t:"Nails · head spa · pedicure — see the experience",img:"chand.jpg"},
+ {type:"instagram",label:"@reborn_nailsnretreat",url:"https://www.instagram.com/reborn_nailsnretreat/",t:"Instagram — latest sets, reels & booking by DM",img:"flatlay.jpg"},
  {type:"facebook",label:"Reborn Nails & Retreat",url:"https://www.facebook.com/people/Reborn-Nails-Retreat/61589196314835/",t:"Facebook page — news & guest photos",img:"salon.jpg"},
  {type:"tripadvisor",label:"TripAdvisor",url:"https://www.tripadvisor.com/Attraction_Review-g298085-d34389993-Reviews-Reborn_Nails_Retreat-Da_Nang.html",t:"Reviewed by international travellers",img:"interior.jpg"}
 ];
@@ -192,4 +198,4 @@ const HUBS=[
        ["Tiệm ở đâu?","56 Châu Thị Vĩnh Tế, phường Ngũ Hành Sơn — ngay khu An Thượng, 5 phút đi bộ ra biển Mỹ Khê."]]}
 ];
 
-module.exports={BIZ,SERVICES,REVIEWS,SOCIAL,LOCATIONS,HUBS};
+module.exports={BIZ,SERVICES,REVIEWS,SOCIAL,REELS,LOCATIONS,HUBS};

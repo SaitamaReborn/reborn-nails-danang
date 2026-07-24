@@ -3,7 +3,7 @@
    Drip publishing: core pages at launch, then DRIP_PER_DAY location pages/day,
    deterministic order (md5 salt), sitemap lists ONLY published pages. */
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
-const {BIZ,SERVICES,REVIEWS,SOCIAL,LOCATIONS,HUBS}=require('./data.js');
+const {BIZ,SERVICES,REVIEWS,SOCIAL,REELS,LOCATIONS,HUBS}=require('./data.js');
 
 const SITE="https://saitamareborn.github.io/reborn-nails-danang";
 const BASE="/reborn-nails-danang";
@@ -60,19 +60,30 @@ const nav=(active='')=>`<header class="nav"><div class="wrap navin">
 <a href="${BASE}/#reviews">Reviews</a>
 <a href="${BASE}/#find-us">Find us</a>
 </nav>
-<a class="cta small" href="${BIZ.directions}" rel="noopener">📍 Directions</a>
+<a class="cta small" href="${BIZ.directions}" rel="noopener">Directions</a>
 </div>
-<div class="langbar wrap">🌍 <a href="${BASE}/">EN</a>${HUBS.map(h=>` · <a href="${BASE}/${h.dir}/">${h.flag} ${h.code.toUpperCase()}</a>`).join('')}<span class="langnote"> — ${BIZ.langs} spoken in salon</span></div>
+<div class="langbar wrap"><a href="${BASE}/">English</a><i>·</i><a href="${BASE}/ko/">한국어</a><i>·</i><a href="${BASE}/ja/">日本語</a><i>·</i><a href="${BASE}/zh/">中文</a><i>·</i><a href="${BASE}/ru/">Русский</a><i>·</i><a href="${BASE}/vi/">Tiếng Việt</a><span class="langnote">seven languages spoken in salon</span></div>
 </header>`;
 
 const footer=()=>`<footer class="foot"><div class="wrap">
-<img src="${BASE}/assets/logo.webp" alt="" width="120" height="92" class="flogo" loading="lazy">
+<img src="${BASE}/assets/logo_light.webp" alt="" width="150" height="115" class="flogo" loading="lazy">
 <p class="fnap"><strong>${BIZ.name}</strong> · ${BIZ.street}, ${BIZ.ward}, ${BIZ.city} ${BIZ.zip}, Vietnam<br>
-${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a> · ★ ${BIZ.rating} on <a href="${BIZ.maps}" rel="noopener">Google Maps</a></p>
+${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a> · <a href="${BIZ.whatsapp}" rel="noopener">WhatsApp</a> · ★ ${BIZ.rating} on <a href="${BIZ.maps}" rel="noopener">Google Maps</a></p>
 <p class="fsoc"><a href="${BIZ.instagram}" rel="noopener">Instagram</a> · <a href="${BIZ.tiktok}" rel="noopener">TikTok</a> · <a href="${BIZ.facebook}" rel="noopener">Facebook</a> · <a href="${BIZ.tripadvisor}" rel="noopener">TripAdvisor</a> · <a href="${BIZ.review}" rel="noopener">Leave a review</a></p>
 <nav class="fnav"><a href="${BASE}/">Home</a>${SERVICES.map(s=>` · <a href="${BASE}/services/${s.slug}/">${s.short}</a>`).join('')} · <a href="${BASE}/da-nang/">Da Nang areas</a></nav>
 <p class="fcopy">© ${NOW.getUTCFullYear()} ${BIZ.name} — premium nail salon, spa pedicure, head spa & waxing in Da Nang.</p>
-</div></footer></body></html>`;
+</div></footer>
+<div class="fab" id="fab">
+ <div class="fabmenu">
+  <a class="fabbtn wa" href="${BIZ.whatsapp}" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.2 2.2-.2 3.9 1.1 1.9 2.6 3.4 4.6 4.4 1.6.8 2.4.8 3.2.7.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg></a>
+  <a class="fabbtn ph" href="tel:${BIZ.phoneRaw}" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+  <a class="fabbtn ig" href="${BIZ.instagram}" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none"/></svg></a>
+  <a class="fabbtn za" href="https://zalo.me/84788668588" rel="noopener" aria-label="Zalo"><span>Zalo</span></a>
+  <a class="fabbtn ms" href="https://m.me/61589196314835" rel="noopener" aria-label="Messenger"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2zm1.1 12.4-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.4 5.8z"/></svg></a>
+ </div>
+ <button class="fabmain" aria-label="Contact us" onclick="this.parentElement.classList.toggle('open')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a8 8 0 0 1-8 8H4l2.2-2.6A8 8 0 1 1 21 12z"/></svg></button>
+</div>
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.card,.rev,.soc,.ptable,.answer,.faq details').forEach(el=>{el.classList.add('rv');io.observe(el)})}</script></body></html>`;
 
 const stars=`<span class="stars">★★★★★</span>`;
 const reviewCards=(n=6)=>`<div class="revrow">${REVIEWS.slice(0,n).map(r=>`
@@ -80,11 +91,11 @@ const reviewCards=(n=6)=>`<div class="revrow">${REVIEWS.slice(0,n).map(r=>`
 <p class="revmore">Read all <strong>${BIZ.ratingCount}+ reviews (★ ${BIZ.rating})</strong> on <a href="${BIZ.maps}" rel="noopener">Google Maps</a> or <a href="${BIZ.tripadvisor}" rel="noopener">TripAdvisor</a>.</p>`;
 
 const mapBlock=(from='')=>`<section class="mapsec" id="find-us"><div class="wrap">
-<h2>Find us — 5 minutes from My Khe Beach</h2>
+<p class="tag">Visit us</p><h2>Five minutes from My Khe Beach</h2>
 <p class="addr"><strong>${BIZ.street}, ${BIZ.ward}, ${BIZ.city}</strong> · ${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a></p>
 <div class="mapframe"><iframe src="https://www.google.com/maps?q=Reborn+Nails+%26+Retreat,+56+Ch%C3%A2u+Th%E1%BB%8B+V%C4%A9nh+T%E1%BA%BF,+%C4%90%C3%A0+N%E1%BA%B5ng&output=embed" width="100%" height="380" style="border:0" loading="lazy" title="Map to Reborn Nails & Retreat Da Nang" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
 <p class="mapbtns"><a class="cta" href="${from||BIZ.directions}" rel="noopener">Get directions on Google Maps</a>
-<a class="ghost" href="${BIZ.instagram}" rel="noopener">Book by Instagram DM</a>
+<a class="ghost" href="${BIZ.whatsapp}" rel="noopener">Book on WhatsApp</a>\n<a class="ghost" href="${BIZ.instagram}" rel="noopener">Instagram DM</a>
 <a class="ghost" href="tel:${BIZ.phoneRaw}">Call ${BIZ.phone}</a></p>
 </div></section>`;
 
@@ -110,10 +121,10 @@ h1{font-size:clamp(34px,6vw,58px);margin:.2em 0}h2{font-size:clamp(27px,4vw,40px
 .navin{display:flex;align-items:center;gap:18px;padding:10px 22px}
 .navlinks{display:flex;gap:20px;flex:1;flex-wrap:wrap;font-weight:600;font-size:15px}
 .navlinks a{text-decoration:none}.navlinks a.on{color:var(--accent)}
-.langbar{font-size:13px;color:var(--ink2);padding:0 22px 8px}.langbar a{text-decoration:none;font-weight:700}.langnote{opacity:.75}
-.cta{display:inline-block;background:var(--brand);color:#FBF3E6;border-radius:14px;padding:13px 22px;font-weight:700;text-decoration:none}
-.cta.gold{background:linear-gradient(135deg,#CBA35A,#A9812F);color:#2A1F0C}.cta.small{padding:9px 14px;font-size:14px}
-.ghost{display:inline-block;border:1.5px solid rgba(122,74,43,.35);border-radius:14px;padding:12px 20px;font-weight:700;text-decoration:none;color:var(--brand);background:var(--panel)}
+.langbar{font-size:12px;letter-spacing:.12em;color:var(--ink2);padding:0 22px 10px;text-transform:uppercase}.langbar a{text-decoration:none;font-weight:600;color:var(--brand)}.langbar i{margin:0 8px;color:var(--gold);font-style:normal}.langnote{float:right;opacity:.6;letter-spacing:.08em}
+.cta{display:inline-block;background:var(--brand);color:#FBF3E6;border-radius:999px;padding:15px 30px;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none}
+.cta.gold{background:linear-gradient(135deg,#CBA35A,#A9812F);color:#2A1F0C}.cta.small{padding:10px 18px;font-size:11.5px}
+.ghost{display:inline-block;border:1px solid rgba(122,74,43,.45);border-radius:999px;padding:14px 28px;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--brand);background:transparent}
 .hero{position:relative;overflow:hidden;text-align:center;padding:46px 22px 40px}
 .hero .flor{position:absolute;pointer-events:none;width:min(300px,32vw)}.flor.tl{top:-6px;left:-6px}.flor.tr{top:-6px;right:-6px}
 .hero .hwrap{position:relative;max-width:900px;margin:0 auto}
@@ -123,7 +134,7 @@ h1{font-size:clamp(34px,6vw,58px);margin:.2em 0}h2{font-size:clamp(27px,4vw,40px
 .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0;font-size:14.5px;font-weight:600;color:var(--brand)}
 .badges span{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 16px}
 .stars{color:var(--gold);letter-spacing:2px}
-.heromedia{border-radius:26px;overflow:hidden;box-shadow:0 18px 50px rgba(90,60,30,.16);margin-top:26px}
+.heromedia{overflow:hidden;box-shadow:0 18px 50px rgba(90,60,30,.16);margin-top:30px}
 .heromedia video,.heromedia img{width:100%;display:block}
 .btnrow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
 section{padding:52px 0}
@@ -142,7 +153,7 @@ section{padding:52px 0}
 .rev blockquote{margin:10px 0;font-size:15.5px}.rev figcaption{font-size:15px}
 .rsvc{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700}
 .revmore{margin-top:18px;color:var(--ink2)}
-.socrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:24px}
+.reelgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:24px}\n.reel{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(90,60,30,.08)}\n.reel iframe{width:100%;height:560px;border:0;display:block;background:#fff}\n.reel figcaption{padding:12px 16px;font-size:14px;font-weight:600;color:var(--ink2)}\n.socrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:24px}
 .soc{position:relative;border-radius:20px;overflow:hidden;display:block;color:#fff;text-decoration:none;min-height:190px;background:#333}
 .soc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
 .soc .st{position:relative;padding:16px;display:flex;flex-direction:column;justify-content:flex-end;height:190px;background:linear-gradient(180deg,transparent 20%,rgba(30,18,8,.82))}
@@ -157,13 +168,71 @@ section{padding:52px 0}
 .crumb{font-size:13.5px;color:var(--ink2);padding-top:18px}.crumb a{text-decoration:none}
 .locmeta{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0;font-weight:700;font-size:15px}
 .locmeta span{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:9px 16px}
-.foot{background:#3B2C1E;color:#E8DCC8;padding:44px 0;text-align:center}
-.foot a{color:#E4C98C}.flogo{filter:brightness(2.4) sepia(.3);opacity:.9}
+.foot{background:#3B2C1E;color:#E8DCC8;padding:50px 0 40px;text-align:center;border-top:1px solid rgba(212,175,115,.35)}
+.foot a{color:#E4C98C}.flogo{opacity:.95}
 .fnap{margin:14px 0}.fnav{font-size:14px;margin:12px 0}.fcopy{font-size:12.5px;opacity:.7}
 .hublist{columns:3;column-gap:26px;margin-top:20px}
 .hublist a{display:block;padding:7px 0;text-decoration:none;font-weight:600;border-bottom:1px dashed var(--line)}
 @media(max-width:760px){.hublist{columns:1}.navlinks{display:none}}
 .answer{background:var(--panel);border-inline-start:4px solid var(--gold);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:17px}
+
+/* elegance pass */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.3,1)}
+.rv.vis{opacity:1;transform:none}
+.card{transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 54px rgba(90,60,30,.17)}
+.card img{transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.card:hover img{transform:scale(1.045)}
+.cta,.ghost{transition:transform .15s ease,filter .2s ease}
+.cta:hover{filter:brightness(1.07)}.cta:active,.ghost:active{transform:scale(.97)}
+.ghost:hover{background:#F8F3E7}
+.navlinks a{position:relative}
+.navlinks a::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1.5px;background:var(--gold);transition:right .25s ease}
+.navlinks a:hover::after{right:0}
+section .wrap>.tag{display:block;text-align:center}
+section .wrap>h2{text-align:center;position:relative;padding-bottom:18px;margin-top:6px}
+section .wrap>h2::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:70px;height:1px;background:var(--gold);box-shadow:0 4px 0 rgba(176,138,62,.45)}
+.secsub{text-align:center;color:var(--ink2);max-width:560px;margin:14px auto 0}
+.hero h1+.sub{font-size:19px}
+.badgeline{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin:22px 0 4px}
+.badgeline i{color:var(--gold);font-style:normal;margin:0 10px;font-size:10px;vertical-align:2px}
+.menuCard{border:1.5px solid var(--brand);border-radius:24px;background:var(--panel);padding:30px 34px;position:relative;box-shadow:0 14px 40px rgba(90,60,30,.08);max-width:760px}
+.menuCard::after{content:"";position:absolute;inset:7px;border:1px solid var(--line);border-radius:18px;pointer-events:none}
+.prow{display:flex;align-items:baseline;gap:12px;padding:9px 0;font-weight:600;font-size:16.5px}
+.prow i{flex:1;border-bottom:1.5px dotted rgba(122,74,43,.35);transform:translateY(-4px)}
+.prow b{font-family:var(--serif);font-size:20px;color:var(--brand);white-space:nowrap;font-weight:400}
+.menuScroll{display:flex;gap:20px;overflow-x:auto;padding:22px 4px 12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.menuPage{flex:0 0 min(340px,78vw);scroll-snap-align:center;border:1.5px solid var(--brand);border-radius:18px;overflow:hidden;background:var(--panel);padding:8px;box-shadow:0 14px 40px rgba(90,60,30,.12);transition:transform .3s ease}
+.menuPage:hover{transform:translateY(-6px)}
+.menuPage img{display:block;border-radius:12px}
+.gallerysec{padding-top:10px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.gal img{width:100%;height:280px;object-fit:cover;border-radius:18px;box-shadow:0 10px 30px rgba(90,60,30,.1);transition:transform .5s ease}
+.gal img:hover{transform:scale(1.025)}
+@media(max-width:760px){.gal{grid-template-columns:repeat(2,1fr)}.gal img{height:180px}}
+.heromedia{border:1.5px solid var(--brand);padding:11px;background:var(--panel);border-radius:230px 230px 26px 26px;position:relative}
+.heromedia::after{content:"";position:absolute;inset:6px;border:1px solid var(--line);border-radius:222px 222px 20px 20px;pointer-events:none}
+.heromedia video,.heromedia img{border-radius:218px 218px 15px 15px}
+.rev blockquote::before{content:"“";font-family:var(--serif);font-size:44px;color:var(--gold);line-height:0;display:block;margin:16px 0 4px}
+.soc{transition:transform .25s ease}.soc:hover{transform:translateY(-4px)}
+.soc .st{transition:background .3s}.soc:hover .st{background:linear-gradient(180deg,transparent 6%,rgba(30,18,8,.9))}
+.answer strong{color:var(--brand2)}
+::selection{background:#E4D2A8}
+/* floating contact widget */
+.fab{position:fixed;right:20px;bottom:20px;z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.fabmain{width:60px;height:60px;border-radius:50%;background:var(--brand);color:#FBF3E6;border:none;cursor:pointer;box-shadow:0 12px 34px rgba(60,38,18,.35);display:flex;align-items:center;justify-content:center;transition:transform .2s ease}
+.fabmain:hover{transform:scale(1.06)}.fabmain svg{width:26px;height:26px}
+.fabmenu{display:flex;flex-direction:column;gap:10px;opacity:0;pointer-events:none;transform:translateY(14px);transition:opacity .25s ease,transform .25s cubic-bezier(.2,.8,.3,1.2)}
+.fab.open .fabmenu{opacity:1;pointer-events:auto;transform:none}
+.fabbtn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 22px rgba(40,25,10,.28);text-decoration:none;transition:transform .18s ease}
+.fabbtn:hover{transform:scale(1.08)}
+.fabbtn svg{width:24px;height:24px}
+.fabbtn.wa{background:#25D366}.fabbtn.ph{background:var(--brand2)}
+.fabbtn.ig{background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+.fabbtn.za{background:#0068FF;font-weight:800;font-size:13.5px;letter-spacing:.02em}
+.fabbtn.ms{background:linear-gradient(45deg,#0698FA,#A10EEB,#FF5297)}
+@media(max-width:760px){.fab{right:14px;bottom:14px}}
+
 `);
 
 /* ---------- home ---------- */
@@ -182,17 +251,23 @@ const homeHtml=head(
 <p class="tag">Nails · Spa Pedicure · Head Spa · Waxing</p>
 <h1>The nail salon Da Nang travellers fall in love with</h1>
 <p class="sub">5 minutes from My Khe Beach. ${stars} <strong>${BIZ.rating} on Google</strong> · ${BIZ.ratingCount}+ reviews · sterilised single-use tools · ${BIZ.langs}.</p>
-<div class="btnrow"><a class="cta gold" href="${BIZ.directions}" rel="noopener">📍 Get directions</a><a class="cta" href="#services">See services & prices</a><a class="ghost" href="${BIZ.instagram}" rel="noopener">Book on Instagram</a></div>
-<div class="badges"><span>💅 Gel from 200K</span><span>🌿 Head spa from 120K</span><span>🦶 Pedicure rituals 250–590K</span><span>🧖 Open daily 9:00–20:00</span></div>
+<div class="btnrow"><a class="cta gold" href="${BIZ.directions}" rel="noopener">Get directions</a><a class="cta" href="#services">See services & prices</a><a class="ghost" href="${BIZ.instagram}" rel="noopener">Book on Instagram</a></div>
+<p class="badgeline">Gel from 200K <i>✦</i> Head spa from 120K <i>✦</i> Pedicure rituals 250–590K <i>✦</i> Open daily 9:00–20:00</p>
 <div class="heromedia"><video autoplay muted loop playsinline poster="${BASE}/assets/nails.jpg" src="${BASE}/assets/vid_hero.mp4" title="Fresh gel nails at Reborn Da Nang"></video></div>
 </div></div>
 <section id="services"><div class="wrap"><p class="tag">Menu & prices</p><h2>Services at Reborn — full price list</h2>
 <p class="sub" style="margin-left:0;text-align:left">Prices in thousand Vietnamese đồng: 100K = 100,000 ₫ ≈ $4. No hidden fees — the menu below is exactly what you pay in the salon.</p>
 <div class="grid">${svcCards}</div></div></section>
+<section id="menu"><div class="wrap"><p class="tag">The menu</p><h2>Our menu, exactly as in the salon</h2>
+<p class="secsub">Swipe through the printed pages — what you see is what you pay.</p>
+<div class="menuScroll">${[1,2,3,4,5].map(i=>`<a href="${BASE}/assets/menu-${i}.jpg" target="_blank" rel="noopener" class="menuPage"><img src="${BASE}/assets/menu-${i}.jpg" alt="Reborn Nails & Retreat menu — page ${i}" loading="lazy"></a>`).join('')}</div></div></section>
+<section class="gallerysec"><div class="wrap"><p class="tag">The salon</p><h2>Step inside Reborn</h2>
+<div class="gal">${['salon','arch','interior','refined','chand','tray'].map((g,i)=>`<img src="${BASE}/assets/${g}.jpg" alt="${BIZ.name} salon Da Nang — ${['reception','foot therapy lounge','interior','refined touch room','cherry blossom chandelier','spa ingredients'][i]}" loading="lazy">`).join('')}</div></div></section>
 <section id="reviews"><div class="wrap"><p class="tag">Guest love</p><h2>★ ${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews</h2>${reviewCards(9)}</div></section>
-<section><div class="wrap"><p class="tag">As seen on social</p><h2>TikTok & Instagram love Reborn</h2>
-<p class="sub" style="margin-left:0;text-align:left">Follow the salon or watch creators' visits — real sets, real rituals, zero filters needed.</p>
-<div class="socrow">${socCards}</div></div></section>
+<section><div class="wrap"><p class="tag">As seen on social</p><h2>Watch the experience — reels from the salon</h2>
+<p class="sub" style="margin-left:0;text-align:left">Real sets, real guests — including the 270K-view viral and creators filming their visit. Tap any reel to play.</p>
+<div class="reelgrid">${REELS.map(r=>`<figure class="reel"><iframe loading="lazy" src="https://www.instagram.com/p/${r.c}/embed/" title="${r.t}" allowfullscreen scrolling="no" allow="encrypted-media"></iframe><figcaption>${r.t}</figcaption></figure>`).join('')}</div>
+<div class="socrow" style="margin-top:26px">${socCards}</div></div></section>
 ${mapBlock()}
 <section><div class="wrap"><p class="tag">Good to know</p><h2>Frequently asked questions</h2>
 <div class="answer"><strong>${BIZ.name}</strong> is a premium nail salon and head spa at ${BIZ.street}, Da Nang — a 5-minute walk from My Khe Beach in the An Thuong quarter. It is rated ${BIZ.rating}★ from ${BIZ.ratingCount}+ Google reviews, open every day 9:00–20:00, and welcomes walk-ins.</div>
@@ -228,7 +303,7 @@ for(const s of SERVICES){
 </div></div>
 <section><div class="wrap"><h2>${s.short} price list</h2>
 <div class="answer">${s.name} at ${BIZ.name} costs <strong>${s.prices[0][1]}</strong> for ${s.prices[0][0].toLowerCase()} (thousand VND — 100K ≈ $4). ${BIZ.hoursHuman}, walk-ins welcome.</div>
-<table class="ptable">${s.prices.map(p=>`<tr><td>${p[0]}</td><td>${p[1]}</td></tr>`).join('')}</table></div></section>
+<div class="menuCard">${s.prices.map(p=>`<div class="prow"><span>${p[0]}</span><i></i><b>${p[1]}</b></div>`).join('')}</div></div></section>
 <section><div class="wrap"><h2>Why guests choose Reborn for ${s.short.toLowerCase()}</h2>${reviewCards(3)}</div></section>
 <section><div class="wrap"><h2>${s.short} — FAQ</h2>${faqHtml(s.faq)}</div></section>
 ${mapBlock()}
@@ -268,8 +343,8 @@ for(const l of publishedLocs){
 <p class="tag">Nail salon near ${l.name}</p>
 <h1>Nail salon near ${l.name}, Da Nang</h1>
 <p class="sub">${intro}</p>
-<div class="locmeta"><span>📍 ${km(d)} from ${l.name}</span><span>${near?`🚶 ${w} min walk`:`🚗 ${g} min by Grab`}</span><span>★ ${BIZ.rating} · ${BIZ.ratingCount}+ reviews</span><span>🕘 Daily 9:00–20:00</span></div>
-<div class="btnrow"><a class="cta gold" href="${dirUrl}" rel="noopener">📍 Directions from ${l.name}</a><a class="ghost" href="${BIZ.instagram}" rel="noopener">Book on Instagram</a></div>
+<p class="badgeline">${km(d)} from ${l.name} <i>✦</i> ${near?`${w} min walk`:`${g} min by Grab`} <i>✦</i> ★ ${BIZ.rating} · ${BIZ.ratingCount}+ reviews <i>✦</i> Daily 9:00–20:00</p>
+<div class="btnrow"><a class="cta gold" href="${dirUrl}" rel="noopener">Directions from ${l.name}</a><a class="ghost" href="${BIZ.instagram}" rel="noopener">Book on Instagram</a></div>
 <div class="heromedia"><img src="${BASE}/assets/${['salon','arch','interior','refined'][hashN(l.slug+'i',4)]}.jpg" alt="${BIZ.name} — nail salon near ${l.name} Da Nang" loading="lazy"></div>
 </div></div>
 <section><div class="wrap">
@@ -317,7 +392,7 @@ for(const h of HUBS){
  +`<div class="hero"><img class="flor tl" src="${BASE}/assets/flor_tl.webp" alt=""><img class="flor tr" src="${BASE}/assets/flor_tr.webp" alt="">
 <div class="hwrap"><img class="hlogo" src="${BASE}/assets/logo.webp" alt="${BIZ.name}" width="170">
 <h1>${h.h1}</h1><p class="sub">${h.intro}</p>
-<div class="btnrow"><a class="cta gold" href="${BIZ.directions}" rel="noopener">📍 ${h.cta}</a><a class="ghost" href="${BIZ.instagram}" rel="noopener">Instagram DM</a></div>
+<div class="btnrow"><a class="cta gold" href="${BIZ.directions}" rel="noopener">${h.cta}</a><a class="ghost" href="${BIZ.instagram}" rel="noopener">Instagram DM</a></div>
 <div class="heromedia"><video autoplay muted loop playsinline poster="${BASE}/assets/nails.jpg" src="${BASE}/assets/vid_hero.mp4"></video></div>
 </div></div>
 <section><div class="wrap"><ul style="font-size:18px;line-height:2">${h.points.map(p=>`<li>${p}</li>`).join('')}</ul>

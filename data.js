@@ -20,12 +20,12 @@ const BIZ={
 promo:{code:"SuongReborn",pct:5,
   line:"Found us online? Your first visit gets 5% off.",
   terms:"Show the code at reception on your first visit to Reborn. One use per guest, on the full service menu, not combinable with other offers."},
- langs:"English (fluent), Vietnamese, Korean, Japanese, Russian and Chinese greetings",
+ langs:"English and Vietnamese spoken · printed menu in 20 languages",
  owner:"Sương",
  story:{
   title:"Paris taught us the standard. Da Nang gave us the soul.",
   p1:"Sương learned nails at home in Vietnam, then went travelling through France and the rest of Europe. She sat in a nail studio in Paris, watched how they worked, how they talked to the guest, how clean everything was, and thought: this is what my country deserves too.",
-  p2:"Reborn is that idea, opened on Châu Thị Vĩnh Tế: Paris-level standards, Korean and Japanese techniques, Vietnamese herbal rituals, at Vietnamese prices. Sương speaks fluent English and runs the floor herself, so nothing gets lost in translation.",
+  p2:"Reborn is that idea, opened on Châu Thị Vĩnh Tế: Paris-level standards, Korean and Japanese techniques, Vietnamese herbal rituals, at Vietnamese prices. Sương speaks fluent English and runs the floor herself, and the printed menu is translated into 20 languages, so nothing gets lost in translation.",
   p3:"The team you meet at the door is the team in these photos, in the brown wrap uniforms, on opening day.",
   quote:"A beautiful space for people to pause and feel reborn."
  }

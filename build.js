@@ -511,7 +511,7 @@ const homeHtml=head(
   <img class="clogo" src="${BASE}/assets/logo_light.webp" alt="${BIZ.name}" width="150">
   <p class="ceyebrow">Nails · Spa Pedicure · Head Spa · Massage</p>
   <h1 class="ctitle"><span>The nail salon &amp; head spa</span><span>of Da Nang,</span><em>five minutes from the beach</em></h1>
-  <p class="csub">56 Châu Thị Vĩnh Tế, An Thuong · 5 minutes from My Khe Beach.<br>${stars} <b>${BIZ.rating}</b> from ${BIZ.ratingCount}+ Google reviews · sterilised single-use tools · fluent English.</p>
+  <p class="csub">56 Châu Thị Vĩnh Tế, An Thuong · 5 minutes from My Khe Beach.<br>${stars} <b>${BIZ.rating}</b> from ${BIZ.ratingCount}+ Google reviews · sterilised single-use tools · English spoken.</p>
   <div class="cbtns"><a class="cta gold" href="${BIZ.directions}" rel="noopener">Get directions</a><a class="ghost light" href="#services">Menu &amp; prices</a></div>
  </div>
  <div class="cfacts"><span>Gel from 200K</span><i></i><span>Head spa 120–850K</span><i></i><span>Pedicure rituals 250–590K</span><i></i><span>Open daily 9–20</span></div>
@@ -519,8 +519,8 @@ const homeHtml=head(
 <section class="trustbar"><div class="wrap"><div class="tbrow">
  <div class="tbit"><b>★ ${BIZ.rating}</b><span>${BIZ.ratingCount}+ Google reviews</span></div>
  <div class="tbit"><b>19 steps</b><span>in our signature ritual</span></div>
- <div class="tbit"><b>7 languages</b><span>spoken in the salon</span></div>
- <div class="tbit"><b>Single-use</b><span>files &amp; buffers, sterilised tools</span></div>
+ <div class="tbit"><b>20 languages</b><span>on the printed menu</span></div>
+ <div class="tbit"><b>European</b><span>hygiene standard, single-use files</span></div>
 </div></div></section>
 <section id="services"><div class="wrap"><p class="tag">Menu & prices</p><h2>Services at Reborn · full price list</h2>
 <p class="sub" style="margin-left:0;text-align:left">Prices in thousand Vietnamese đồng: 100K = 100,000 ₫ ≈ $4. No hidden fees · the menu below is exactly what you pay in the salon.</p>
@@ -582,8 +582,8 @@ ${mapBlock()}
 ${faqHtml([
  ["Do I need to book?","No · walk-ins are welcome every day from 9 AM to 8 PM. To reserve a specific time, message us on Instagram @reborn_nailsnretreat or call "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn: classic manicure 70K, gel polish 200K, BIAB 300K, GelX extensions 280K. A full cat-eye or chrome nail-art set is 180K. That is roughly a third of typical prices in Korea, Japan, Australia or Europe."],
- ["Do the staff speak English or Korean?","Yes · the team welcomes guests in English, Korean, Japanese, Russian, French, Spanish and Chinese, and the salon menu is multilingual."],
- ["Is it hygienic?","Every metal tool is sterilised in a medical steriliser before it touches you; files and buffers are single-use. You can see the steriliser working in the salon."],
+ ["Do the staff speak English?","Yes. Sương and the team look after you in English and Vietnamese, and the printed menu is translated into 20 languages (Korean, Japanese, Chinese, Russian, French, Spanish and more), so you can point at exactly what you want."],
+ ["Is it hygienic?","We hold ourselves to European salon standards, which is not the norm everywhere in Da Nang. Every metal tool goes through a medical steriliser before it touches you, files and buffers are single-use and thrown away in front of you, and the steriliser sits in the open so you can watch it work."],
  ["Where exactly is the salon?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn · in the An Thuong tourist quarter, 400 m from My Khe Beach. Open the map above or tap Get Directions."],
  ["Is there a discount if I come from this website?","Yes. Show the code "+BIZ.promo.code+" at reception on your first visit and you get "+BIZ.promo.pct+"% off the service menu. One use per guest, not combinable with other offers."],
  ["Can I pay by card?","Yes · cards and cash (VND) are both accepted."]])}

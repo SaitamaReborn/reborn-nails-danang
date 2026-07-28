@@ -509,9 +509,9 @@ const homeHtml=head(
  <img class="flor tl" src="${BASE}/assets/flor_tl.webp" alt=""><img class="flor tr" src="${BASE}/assets/flor_tr.webp" alt="">
  <div class="cin">
   <img class="clogo" src="${BASE}/assets/logo_light.webp" alt="${BIZ.name}" width="150">
-  <p class="ceyebrow">Nails · Spa Pedicure · Head Spa · Da Nang</p>
-  <h1 class="ctitle"><span>Five minutes from</span><span>My Khe Beach,</span><em>a whole afternoon away</em></h1>
-  <p class="csub">${stars} <b>${BIZ.rating}</b> from ${BIZ.ratingCount}+ Google reviews · sterilised single-use tools · seven languages spoken.</p>
+  <p class="ceyebrow">Nails · Spa Pedicure · Head Spa · Massage</p>
+  <h1 class="ctitle"><span>The nail salon &amp; head spa</span><span>of Da Nang,</span><em>five minutes from the beach</em></h1>
+  <p class="csub">56 Châu Thị Vĩnh Tế, An Thuong · 5 minutes from My Khe Beach.<br>${stars} <b>${BIZ.rating}</b> from ${BIZ.ratingCount}+ Google reviews · sterilised single-use tools · fluent English.</p>
   <div class="cbtns"><a class="cta gold" href="${BIZ.directions}" rel="noopener">Get directions</a><a class="ghost light" href="#services">Menu &amp; prices</a></div>
  </div>
  <div class="cfacts"><span>Gel from 200K</span><i></i><span>Head spa 120–850K</span><i></i><span>Pedicure rituals 250–590K</span><i></i><span>Open daily 9–20</span></div>

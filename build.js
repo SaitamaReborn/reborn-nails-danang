@@ -52,7 +52,19 @@ ${GA_ID?`<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}
 ${extra}
 </head><body>`;
 
-const nav=(active='')=>`<header class="nav"><div class="wrap navin">
+const promoBar=()=>`<div class="pbar"><div class="wrap pbin">
+<span class="pbtag">First visit</span>
+<span class="pbtxt">${BIZ.promo.line} Use code <button class="pbcode" data-code="${BIZ.promo.code}" title="Tap to copy">${BIZ.promo.code}</button></span>
+</div></div>`;
+const promoCard=()=>`<section class="promosec"><div class="wrap"><div class="promo">
+<div class="pleft"><p class="tag">Website exclusive</p>
+ <h2>${BIZ.promo.pct}% off your first visit</h2>
+ <p class="ptxt">${BIZ.promo.terms}</p></div>
+<div class="pright">
+ <button class="pcode" data-code="${BIZ.promo.code}"><span>Tap to copy</span><b>${BIZ.promo.code}</b></button>
+ <a class="cta" href="${BIZ.directions}" rel="noopener">Get directions</a>
+</div></div></div></section>`;
+const nav=(active='')=>`${promoBar()}<header class="nav"><div class="wrap navin">
 <a class="logo" href="${BASE}/"><img src="${BASE}/assets/logo.webp" alt="Reborn Nails & Retreat logo" width="96" height="73"></a>
 <nav class="navlinks">
 <a href="${BASE}/#services"${active=='s'?' class="on"':''}>Services & Prices</a>
@@ -75,6 +87,13 @@ ${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a> · <a href="
 <nav class="fnav"><a href="${BASE}/">Home</a>${SERVICES.map(s=>` · <a href="${BASE}/services/${s.slug}/">${s.short}</a>`).join('')} · <a href="${BASE}/da-nang/">Da Nang areas</a></nav>
 <p class="fcopy">© ${NOW.getUTCFullYear()} ${BIZ.name} — premium nail salon, spa pedicure, head spa & waxing in Da Nang.</p>
 </div></footer>
+<script>document.addEventListener('click',e=>{const b=e.target.closest('[data-code]');if(!b)return;
+ const c=b.dataset.code;const done=()=>{const o=b.textContent;b.classList.add('copied');
+  if(b.classList.contains('pcode')){b.querySelector('span').textContent='Copied ✓';setTimeout(()=>b.querySelector('span').textContent='Tap to copy',1800);}
+  else{b.textContent='Copied ✓';setTimeout(()=>{b.textContent=o;b.classList.remove('copied')},1800);}};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(c).then(done,done);}
+ else{const t=document.createElement('textarea');t.value=c;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(x){}t.remove();done();}
+});</script>
 <div class="fab" id="fab">
  <div class="fabmenu">
   <a class="fabbtn wa" href="${BIZ.whatsapp}" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.2 2.2-.2 3.9 1.1 1.9 2.6 3.4 4.6 4.4 1.6.8 2.4.8 3.2.7.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg></a>
@@ -395,6 +414,32 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .tbit b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;color:var(--brand);line-height:1.1}
 .tbit span{display:block;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);font-weight:600;margin-top:6px}
 @media(max-width:760px){.tbrow{grid-template-columns:repeat(2,1fr);gap:18px}}
+
+/* — promo — */
+.pbar{background:linear-gradient(90deg,#7A4A2B,#A9812F 45%,#7A4A2B);color:#FFF7E9;font-size:13.5px}
+.pbin{display:flex;align-items:center;justify-content:center;gap:10px;padding:9px 22px;flex-wrap:wrap;text-align:center}
+.pbtag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;background:rgba(255,247,233,.16);
+ padding:4px 10px;border-radius:999px}
+.pbtxt{font-weight:600}
+.pbcode{font:inherit;font-weight:800;letter-spacing:.06em;color:#2A1F0C;background:#F1DCA9;border:none;
+ padding:4px 11px;border-radius:999px;cursor:pointer}
+.pbcode:hover{background:#FBEFC9}
+.promosec{padding:38px 0}
+.promo{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;background:var(--panel);
+ border:1.5px solid var(--gold);border-radius:28px;padding:30px 34px;position:relative;overflow:hidden;
+ box-shadow:0 16px 46px rgba(90,60,30,.1)}
+.promo::before{content:"";position:absolute;inset:8px;border:1px solid rgba(176,138,62,.28);border-radius:20px;pointer-events:none}
+.promo h2{margin:6px 0 8px;text-align:left;padding-bottom:0}
+.promo h2::after{display:none}
+.ptxt{color:var(--ink2);font-size:14.5px;max-width:520px;margin:0}
+.pright{display:flex;flex-direction:column;gap:12px;align-items:stretch;min-width:230px}
+.pcode{font:inherit;cursor:pointer;background:linear-gradient(135deg,#FBF4E2,#F4E4BE);border:1.5px dashed var(--gold);
+ border-radius:18px;padding:14px 22px;text-align:center;color:var(--brand2)}
+.pcode span{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);font-weight:700}
+.pcode b{display:block;font-family:var(--serif);font-weight:400;font-size:27px;letter-spacing:.01em;margin-top:3px}
+.pcode.copied{border-style:solid;border-color:#5F6B3F}
+@media(max-width:760px){.promo{grid-template-columns:1fr;padding:24px}.promo h2{text-align:center}.ptxt{text-align:center}
+ .pbin{font-size:12.5px;gap:7px;padding:8px 14px}.pbtag{display:none}}
 /* — general polish — */
 h2{letter-spacing:-.01em}
 .card h3{font-family:var(--serif);font-weight:400;font-size:23px}
@@ -435,6 +480,7 @@ const homeHtml=head(
 <section id="services"><div class="wrap"><p class="tag">Menu & prices</p><h2>Services at Reborn — full price list</h2>
 <p class="sub" style="margin-left:0;text-align:left">Prices in thousand Vietnamese đồng: 100K = 100,000 ₫ ≈ $4. No hidden fees — the menu below is exactly what you pay in the salon.</p>
 <div class="grid">${svcCards}</div></div></section>
+${promoCard()}
 <section id="menu"><div class="wrap"><p class="tag">The menu</p><h2>Our menu, exactly as in the salon</h2>
 <p class="secsub">Swipe through the printed pages — what you see is what you pay.</p>
 <div class="menuScroll">${[1,2,3,4,5].map(i=>`<a href="${BASE}/assets/menu-${i}.jpg" target="_blank" rel="noopener" class="menuPage"><img src="${BASE}/assets/menu-${i}.jpg" alt="Reborn Nails & Retreat menu — page ${i}" loading="lazy"></a>`).join('')}</div></div></section>
@@ -479,6 +525,7 @@ ${faqHtml([
  ["Do the staff speak English or Korean?","Yes — the team welcomes guests in English, Korean, Japanese, Russian, French, Spanish and Chinese, and the salon menu is multilingual."],
  ["Is it hygienic?","Every metal tool is sterilised in a medical steriliser before it touches you; files and buffers are single-use. You can see the steriliser working in the salon."],
  ["Where exactly is the salon?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn — in the An Thuong tourist quarter, 400 m from My Khe Beach. Open the map above or tap Get Directions."],
+ ["Is there a discount if I come from this website?","Yes. Show the code "+BIZ.promo.code+" at reception on your first visit and you get "+BIZ.promo.pct+"% off the service menu. One use per guest, not combinable with other offers."],
  ["Can I pay by card?","Yes — cards and cash (VND) are both accepted."]])}
 </div></section>`
 +`<script>
@@ -511,7 +558,8 @@ const RB_POP=['My Khe Beach','An Thuong Tourist Area','Marble Mountains','Da Nan
 +ld({"@context":"https://schema.org",...faqLd([
  ["Do I need to book at Reborn Nails & Retreat?","No — walk-ins are welcome every day 9:00–20:00. Booking is possible via Instagram DM @reborn_nailsnretreat or by phone "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn Nails & Retreat: manicure 70K, gel polish 200K, BIAB 300K, GelX 280K, full nail-art sets from 180K (thousand VND)."],
- ["Where is Reborn Nails & Retreat located?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn, Da Nang — a 5-minute walk from My Khe Beach."]])})
+ ["Where is Reborn Nails & Retreat located?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn, Da Nang — a 5-minute walk from My Khe Beach."],
+ ["Is there a website discount at Reborn Nails & Retreat?","Yes — first-time guests who mention the code "+BIZ.promo.code+" at reception get "+BIZ.promo.pct+"% off the service menu."]])})
 +footer();
 fs.writeFileSync(OUT+'/index.html',homeHtml);
 
@@ -521,6 +569,7 @@ for(const s of SERVICES){
  const others=SERVICES.filter(x=>x.slug!==s.slug).slice(0,3);
  const TITLES={'head-spa-hair-wash':['Hair Wash & Head Spa in Da Nang — 120K–850K · '+BIZ.short+' ★4.9','Vietnamese hair wash & Korean head spa near My Khe Beach: 25 to 105 minutes, 120K–850K. Signature ritual 500K, 19 steps. ★4.9 Google, walk-ins daily 9–20.'],
  'foot-massage':['Foot Massage in Da Nang — from 100K · Foot Therapy at '+BIZ.short,'Foot & calf massage from 100K in our Foot Therapy lounge near My Khe Beach, or a full spa pedicure ritual from 250K. ★4.9 Google, walk-ins daily 9–20.'],
+ 'massage':['Massage in Da Nang — hot stone, foot & shoulder · '+BIZ.short,'Massage at a ★4.9 nail & head-spa retreat near My Khe Beach: foot & calf from 100K, hot stones 80K, neck and shoulder in every ritual. Walk-ins daily 9–20.'],
  'spa-pedicure':['Spa Pedicure in Da Nang — rituals 250K–590K · '+BIZ.short+' ★4.9','Herbal foot soak, heel therapy, hot stones and warm towels on cream leather armchairs. Deep Care 450K (65 min). ★4.9 Google, walk-ins daily 9–20.']};
  const T=TITLES[s.slug];
  const html=head(T?T[0]:`${s.name} in Da Nang — prices & menu · ${BIZ.short} ★4.9`,
@@ -537,6 +586,7 @@ for(const s of SERVICES){
 <div class="answer">${s.name} at ${BIZ.name} costs <strong>${s.prices[0][1]}</strong> for ${s.prices[0][0].toLowerCase()} (thousand VND — 100K ≈ $4). ${BIZ.hoursHuman}, walk-ins welcome.</div>
 <div class="menuCard">${s.prices.map(p=>`<div class="prow"><span>${p[0]}</span><i></i><b>${p[1]}</b></div>`).join('')}</div></div></section>
 ${marketBlock(s.slug)}
+${promoCard()}
 <section><div class="wrap"><h2>Why guests choose Reborn for ${s.short.toLowerCase()}</h2>${reviewCards(3)}</div></section>
 <section><div class="wrap"><h2>${s.short} — FAQ</h2>${faqHtml(s.faq)}</div></section>
 ${mapBlock()}
@@ -589,6 +639,7 @@ for(const l of publishedLocs){
 <p style="margin-top:14px"><a href="${BASE}/#services">See the full menu & price list →</a></p>
 </div></section>
 <section><div class="wrap"><h2>What travellers say</h2>${reviewCards(3)}</div></section>
+${promoCard()}
 <section><div class="wrap"><h2>FAQ — coming from ${l.name}</h2>${faqHtml(faq)}</div></section>
 ${mapBlock(dirUrl)}`
  +ld({"@context":"https://schema.org",...bizLd({"areaServed":{"@type":"Place","name":l.name+", Da Nang"}})})
@@ -650,6 +701,9 @@ Hours: daily 09:00–20:00 · Walk-ins welcome · Phone: ${BIZ.phone}
 Languages: ${BIZ.langs}
 Google Maps: ${BIZ.mapsCid}
 Instagram: ${BIZ.instagram}
+
+## Offer
+- First-time guests from the website: ${BIZ.promo.pct}% off with code ${BIZ.promo.code} (show it at reception)
 
 ## Prices (thousand VND, 100K ≈ $4)
 - Gel polish 200K · BIAB 300K · GelX 280K · Manicure 70K

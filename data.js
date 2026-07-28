@@ -17,6 +17,9 @@ const BIZ={
  facebook:"https://www.facebook.com/people/Reborn-Nails-Retreat/61589196314835/",
  tripadvisor:"https://www.tripadvisor.com/Attraction_Review-g298085-d34389993-Reviews-Reborn_Nails_Retreat-Da_Nang.html",
  igPost:"https://www.instagram.com/p/DYg-if_kQw5/",
+promo:{code:"SuongReborn",pct:5,
+  line:"Found us online? Your first visit gets 5% off.",
+  terms:"Show the code at reception on your first visit to Reborn. One use per guest, on the full service menu, not combinable with other offers."},
  langs:"English · 한국어 · 日本語 · Русский · Français · Español · 中文"
 };
 
@@ -61,6 +64,12 @@ const SERVICES=[
   faq:[["How much does a foot massage cost in Da Nang?","Around My Khe Beach, a foot massage usually runs 200K–500K for an hour, and beach-side spas charge 10–30% more than the suburbs. At Reborn a foot and calf massage is 100K for 15 minutes or 190K for 30 minutes, and it is already included in every spa pedicure ritual from 250K."],
       ["Can I have a foot massage without a pedicure?","Yes. Walk in and ask for the Foot Therapy lounge — 15 or 30 minutes, on the same cream leather armchairs, with a warm herbal soak first."],
       ["Do you do reflexology-style pressure?","Our technicians work the classic Vietnamese foot and calf sequence with firm, warm pressure, and you can ask for lighter or stronger at any moment."]]},
+ {slug:"massage",name:"Massage & Body Rituals",short:"Massage",img:"room.jpg",
+  desc:"Hot stones, neck and shoulder release, foot and calf work, hand and facial massage — as a treatment on its own or woven into a longer ritual.",
+  prices:[["Foot & calf massage · 15 min","100K"],["Foot & calf massage · 30 min","190K"],["Hot stone massage add-on","80K"],["Facial massage add-on · 15 min","90K"],["Hot stone therapy · face, neck & shoulders","120K"],["Neck & shoulder massage","included in every head-spa ritual"],["Full-body massage","ask at reception"]],
+  faq:[["Do you offer massage as well as nails?","Yes. Massage runs through everything we do — neck and shoulder release in every head-spa ritual, foot and calf massage in every pedicure, plus hot stones, facial and hand massage you can add to any treatment or book on their own."],
+      ["How much is a massage in Da Nang?","Beach-area spas usually charge 400K–600K for an hour. At Reborn a focused foot and calf massage is 100K for 15 minutes or 190K for 30, hot stones are 80K, and the full 80-minute Signature ritual — which is largely massage — is 500K."],
+      ["Can I combine a massage with nails?","That is exactly how most guests use us: a technician works on your nails while another gives the head, neck or foot massage. Ask at reception and we will sequence it for you."]]},
  {slug:"waxing",name:"Waxing",short:"Waxing",img:"wax.jpg",
   desc:"Gentle warm wax for silky-smooth skin — lips to full legs, done in a private treatment room.",
   prices:[["Upper lip","90K"],["Underarms","120K"],["Half arms","180K"],["Full arms","350K"],["Half legs","250K"],["Full legs","480K"]],

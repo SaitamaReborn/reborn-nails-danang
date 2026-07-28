@@ -86,16 +86,22 @@ const SERVICES=[
 ];
 
 /* Reviews carousel · themes drawn from real Google/TripAdvisor feedback */
+/* Real Google reviews, pulled from the Google Maps listing */
 const REVIEWS=[
- {n:"Sarah",f:"🇬🇧",s:5,t:"The best nail salon we found in Da Nang. My gel nails were done with so much precision and the head spa afterwards was heaven.",svc:"GelX + head spa"},
- {n:"지민",f:"🇰🇷",s:5,t:"다낭에서 최고의 네일샵! 직원분들이 한국어를 하셔서 편했고 시술도 정말 꼼꼼했어요. 위생도 완벽합니다.",svc:"젤네일"},
- {n:"Elena",f:"🇷🇺",s:5,t:"Очень чисто, все инструменты стерильные. Маникюр держится третью неделю. Персонал говорит по-английски, атмосфера люкс.",svc:"Маникюр + педикюр"},
- {n:"あゆみ",f:"🇯🇵",s:5,t:"ヘッドスパが最高でした。桜のシャンデリアの下で受けるマッサージは忘れられません。ネイルも丁寧で大満足です。",svc:"ヘッドスパ"},
- {n:"Marion",f:"🇫🇷",s:5,t:"Accueil adorable, thé offert, salon impeccable. Le rituel pédicure Deep Care vaut largement son prix · on ressort sur un nuage.",svc:"Spa pédicure"},
- {n:"Grace",f:"🇦🇺",s:5,t:"Walked in from My Khe beach without a booking · welcomed with tea and the most relaxing pedicure of my life. Sterile single-use tools, spotless place.",svc:"Deep Care pedicure"},
- {n:"王婷",f:"🇨🇳",s:5,t:"离美溪海滩很近，环境优雅干净。做了猫眼美甲非常精致，技师很专业，还有中文服务。强烈推荐！",svc:"猫眼美甲"},
- {n:"Hannah",f:"🇺🇸",s:5,t:"The nail art here is genuinely artist-level. They copied my Pinterest reference perfectly and the price was a third of what I pay at home.",svc:"Nail art"},
- {n:"Thảo",f:"🇻🇳",s:5,t:"Tiệm đẹp, sạch sẽ, chị em kỹ thuật viên tay nghề cao và rất dễ thương. Gội đầu dưỡng sinh cực kỳ thư giãn.",svc:"Gội đầu dưỡng sinh"}
+ {n:"Лера Богданова",s:5,w:"a month ago",t:"My friend and I came here for a full-body massage and a relaxing hair wash, and it was an amazing experience from start to finish. My therapist, Giang, was incredibly attentive and caring, constantly checking that I was comfortable and making sure every part of the treatment was perfect. Her professionalism and kindness made me feel…",a:"rv/a0.jpg",p:["rv/p0_0.jpg"]},
+ {n:"Karen Gallegos",s:5,w:"3 weeks ago",t:"Great experience! The service was excellent, everyone was friendly and professional. A special thank you to Fiona—she’s the best! I am so happy with my nails. Highly recommend! I would definitely come back!",a:"rv/a1.jpg",p:["rv/p1_0.jpg", "rv/p1_1.jpg", "rv/p1_2.jpg"]},
+ {n:"Mae G",s:5,w:"2 months ago",t:"Such a wonderful experience! I did the Reborn Signature Spa Pedicure and loved every moment of it. I felt completely pampered, the snacks and drinks were such a thoughtful touch, and the owner is absolutely lovely. You can really feel the care and effort put into the experience. Definitely coming back! Iris",a:"rv/a2.jpg",p:["rv/p2_0.jpg", "rv/p2_1.jpg", "rv/p2_2.jpg"]},
+ {n:"ONE",s:4,w:"a month ago",t:"Fiona is, without question, one of the most professional business owners I encountered during my stay in Da Nang. She was warm, welcoming, and exceptionally accommodating, and I truly appreciated the attention to detail demonstrated by both her and her team. My mother and I were delighted with our manicures and pedicures, and the…",a:"rv/a3.jpg",p:["rv/p3_0.jpg", "rv/p3_1.jpg"]},
+ {n:"Camie",s:5,w:"2 months ago",t:"oh wow this place is such amazing!! i love my nail so much, they did so great job. thank you 😍😍 also the shop is so beautiful and clean, i love the flowers on the gate and details of everything here so pretty. highly recommend🤞🏻🤞🏻 i will def come back for spa pedicre and hairwash …",a:"rv/a4.jpg",p:["rv/p4_0.jpg", "rv/p4_1.jpg", "rv/p4_2.jpg"]},
+ {n:"Read Elliot",s:5,w:"2 months ago",t:"I had such a great experience here! The treatment was amazing and I felt really well taken care of from start to finish. The staff were incredibly kind, welcoming, and professional, which made me feel comfortable right away. I truly appreciated the warm atmosphere and attention to detail. I will definitely come back without…",a:"rv/a5.jpg",p:["rv/p5_0.jpg", "rv/p5_1.jpg"]},
+ {n:"Isuhanas",s:5,w:"a month ago",t:"The owner is so nice and friendly! This spa is definitely one of the cleanest and prettiest spa ive been in danang. Her staffs were also very nice and gave the best massage!",a:"rv/a6.jpg",p:["rv/p6_0.jpg", "rv/p6_1.jpg", "rv/p6_2.jpg"]},
+ {n:"Ava Nguyen",s:5,w:"a month ago",t:"Ly and Cam did nails and toes and it turned out absolutely perfect. The salon is very clean and aesthetically pleasing. The technicians paid attention to every detail. Loved Reborn Nails & Retreat!!",a:"rv/a7.jpg",p:["rv/p7_0.jpg", "rv/p7_1.jpg", "rv/p7_2.jpg"]},
+ {n:"Hà Ngô",s:5,w:"2 months ago",t:"I had a wonderful experience here. The staff were friendly, the space was relaxing and smelled amazing. I tried the therapeutic hair wash service with around 10 steps and truly enjoyed the whole process 🫶 Definitely coming back and recommending it to my friends. …",a:"rv/a8.jpg",p:["rv/p8_0.jpg", "rv/p8_1.jpg"]},
+ {n:"Desi Rismayanti",s:5,w:"a month ago",t:"Had the best foot spa ever! The staff are so attentive and kind, i love everything! Would definitely come back 🤍 …",a:"rv/a9.jpg",p:["rv/p9_0.jpg", "rv/p9_1.jpg", "rv/p9_2.jpg"]},
+ {n:"elizabeth martin",s:5,w:"a month ago",t:"Absolutely beautiful modern salon Spotlessly clean Li was extremely professional and I had the best hair spa I’ve has in Danang Fiona the owner is lovely & speaks excellent English The coconut water n fruit/snacks were a lovely touch I highly recommend :)",a:"rv/a10.jpg",p:["rv/p10_0.jpg", "rv/p10_1.jpg"]},
+ {n:"Claire Pixodeo",s:5,w:"2 months ago",t:"Great experience for nails and hair washing services. My boyfriend loved the spa pedicure too! Friendly, professional staff and a very relaxing experience. Highly recommended!",a:"rv/a11.jpg",p:["rv/p11_0.jpg"]},
+ {n:"Crystal Garcia",s:5,w:"2 months ago",t:"Customer service was amazing and the girls did a great job with my pedicure and fixing my nails from back home! They were all so kind and Fiona was so accomodating and generous. I recommend this place! 10/10 service 💓 …",a:"rv/a12.jpg",p:["rv/p12_0.jpg", "rv/p12_1.jpg"]},
+ {n:"hannahliu10",s:5,w:"a month ago",t:"Suong and Cam did very well!! I came from HK! My fds n I came here twice during our trip :D 🩷🩷🩷",a:"rv/a13.jpg",p:["rv/p13_0.jpg", "rv/p13_1.jpg", "rv/p13_2.jpg"]}
 ];
 
 /* Social proof · real reels from @reborn_nailsnretreat (she reposts her TikToks here) */

@@ -32,7 +32,7 @@ const pubDate=slug=>{const i=dripOrder.findIndex(l=>l.slug===slug);const d=new D
 const OUT='./docs';
 fs.rmSync(OUT,{recursive:true,force:true});
 fs.mkdirSync(OUT+'/assets',{recursive:true});
-for(const f of fs.readdirSync('./assets'))fs.copyFileSync('./assets/'+f,OUT+'/assets/'+f);
+fs.cpSync('./assets',OUT+'/assets',{recursive:true});
 
 /* ---------- layout ---------- */
 const head=(t,d,url,extra='')=>`<!doctype html><html lang="${extra.includes('lang-override')?'':'en'}"><head>
@@ -106,8 +106,16 @@ ${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a> · <a href="
 
 const stars=`<span class="stars">★★★★★</span>`;
 const reviewCards=(n=6)=>`<div class="revrow">${REVIEWS.slice(0,n).map(r=>`
-<figure class="rev"><figcaption>${r.f} <strong>${r.n}</strong> ${stars}</figcaption><blockquote>${r.t}</blockquote><span class="rsvc">${r.svc}</span></figure>`).join('')}</div>
-<p class="revmore">Read all <strong>${BIZ.ratingCount}+ reviews (★ ${BIZ.rating})</strong> on <a href="${BIZ.maps}" rel="noopener">Google Maps</a> or <a href="${BIZ.tripadvisor}" rel="noopener">TripAdvisor</a>.</p>`;
+<figure class="rev">
+ <header class="rvh">
+  ${r.a?`<img class="rva" src="${BASE}/assets/${r.a}" alt="" loading="lazy" width="44" height="44">`:'<span class="rva ph"></span>'}
+  <div><b>${r.n}</b><span class="rvm">${'★'.repeat(r.s)}${'☆'.repeat(5-r.s)} · ${r.w}</span></div>
+  <svg class="rvg" viewBox="0 0 24 24" aria-label="Google review"><path fill="#4285F4" d="M22.5 12.2c0-.8-.1-1.4-.2-2H12v3.9h6c-.1 1-.8 2.5-2.2 3.5l3.4 2.6c2-1.8 3.3-4.6 3.3-8z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.4-2.6c-.9.6-2.2 1.1-3.8 1.1-2.9 0-5.4-1.9-6.3-4.6l-3.5 2.7C4 20.1 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.7 14.3c-.2-.7-.4-1.4-.4-2.3s.1-1.6.4-2.3L2.2 7C1.4 8.5 1 10.2 1 12s.4 3.5 1.2 5z"/><path fill="#EA4335" d="M12 4.8c2 0 3.4.9 4.2 1.6l3-2.9C17.4 1.8 14.9.8 12 .8 7.7.8 4 3.7 2.2 7l3.5 2.7C6.6 6.9 9.1 4.8 12 4.8z"/></svg>
+ </header>
+ <blockquote>${r.t}</blockquote>
+ ${r.p&&r.p.length?`<div class="rvp">${r.p.map(p=>`<a href="${BASE}/assets/${p}" target="_blank" rel="noopener"><img src="${BASE}/assets/${p}" alt="Photo by ${r.n} at ${BIZ.name}" loading="lazy"></a>`).join('')}</div>`:''}
+</figure>`).join('')}</div>
+<p class="revmore">Every review above is a real Google review. Read all <strong>${BIZ.ratingCount}+ (★ ${BIZ.rating})</strong> on <a href="${BIZ.maps}" rel="noopener">Google Maps</a>.</p>`;
 
 const mapBlock=(from='')=>`<section class="mapsec" id="find-us"><div class="wrap">
 <p class="tag">Visit us</p><h2>Five minutes from My Khe Beach</h2>
@@ -314,7 +322,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
  background-image:radial-gradient(rgba(255,255,255,.16) .5px,transparent .5px);background-size:3px 3px}
 .chero .flor{position:absolute;z-index:-1;width:min(230px,20vw);opacity:.22;mix-blend-mode:screen;filter:blur(.3px)}
 .chero .flor.tl{top:-14px;left:-22px}.chero .flor.tr{top:-14px;right:-22px}
-.cin{max-width:900px;animation:cIn 1.1s cubic-bezier(.2,.8,.25,1) both}
+.cin{max-width:900px;margin-top:0;animation:cIn 1.1s cubic-bezier(.2,.8,.25,1) both}
 @keyframes cIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 .clogo{width:150px;margin:0 auto 16px;filter:drop-shadow(0 4px 18px rgba(20,10,4,.4))}
 .ceyebrow{font-size:12px;letter-spacing:.34em;text-transform:uppercase;font-weight:700;color:#E9CFA4;margin:0 0 14px}
@@ -486,6 +494,22 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 /* · promo code button · */
 .pcode{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.15}
 .pbcode{line-height:1.2}
+
+/* real google reviews */
+.revrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px;margin-top:24px;align-items:start}
+.rev{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px 20px 16px;margin:0}
+.rvh{display:flex;align-items:center;gap:11px;margin-bottom:11px}
+.rvh>div{min-width:0}
+.rvh b{display:block;font-size:15.5px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rva{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;background:#EDE4D6}
+.rvm{display:block;font-size:12.5px;color:var(--gold);font-weight:600;letter-spacing:.03em}
+.rvg{width:20px;height:20px;min-width:20px;margin-inline-start:auto;flex:none}
+.rev blockquote{margin:0;font-size:14.8px;line-height:1.52;color:var(--ink)}
+.rev blockquote::before{content:none}
+.rvp{display:flex;gap:7px;margin-top:12px}
+.rvp a{flex:1;min-width:0;display:block}
+.rvp img{width:100%;height:92px;object-fit:cover;border-radius:12px;transition:transform .3s ease;display:block}
+.rvp a:hover img{transform:scale(1.04)}
 /* · general polish · */
 h2{letter-spacing:-.01em}
 .card h3{font-family:var(--serif);font-weight:400;font-size:23px}
@@ -511,7 +535,7 @@ const homeHtml=head(
   <img class="clogo" src="${BASE}/assets/logo_light.webp" alt="${BIZ.name}" width="150">
   <p class="ceyebrow">Nails · Spa Pedicure · Head Spa · Massage</p>
   <h1 class="ctitle"><span>The nail salon &amp; head spa</span><span>of Da Nang,</span><em>five minutes from the beach</em></h1>
-  <p class="csub">56 Châu Thị Vĩnh Tế, An Thuong · 5 minutes from My Khe Beach.<br>${stars} <b>${BIZ.rating}</b> from ${BIZ.ratingCount}+ Google reviews · sterilised single-use tools · English spoken.</p>
+  <p class="csub">56 Châu Thị Vĩnh Tế, An Thuong · 5 minutes from My Khe Beach.<br>${stars} <b>${BIZ.rating}</b> from ${BIZ.ratingCount}+ Google reviews · sterilised single-use tools · English spoken, menu in 20 languages.</p>
   <div class="cbtns"><a class="cta gold" href="${BIZ.directions}" rel="noopener">Get directions</a><a class="ghost light" href="#services">Menu &amp; prices</a></div>
  </div>
  <div class="cfacts"><span>Gel from 200K</span><i></i><span>Head spa 120–850K</span><i></i><span>Pedicure rituals 250–590K</span><i></i><span>Open daily 9–20</span></div>
@@ -519,7 +543,7 @@ const homeHtml=head(
 <section class="trustbar"><div class="wrap"><div class="tbrow">
  <div class="tbit"><b>★ ${BIZ.rating}</b><span>${BIZ.ratingCount}+ Google reviews</span></div>
  <div class="tbit"><b>19 steps</b><span>in our signature ritual</span></div>
- <div class="tbit"><b>20 languages</b><span>on the printed menu</span></div>
+ <div class="tbit"><b>English spoken</b><span>menu in 20 languages, no mix-ups</span></div>
  <div class="tbit"><b>European</b><span>hygiene standard, single-use files</span></div>
 </div></div></section>
 <section id="services"><div class="wrap"><p class="tag">Menu & prices</p><h2>Services at Reborn · full price list</h2>
@@ -582,7 +606,7 @@ ${mapBlock()}
 ${faqHtml([
  ["Do I need to book?","No · walk-ins are welcome every day from 9 AM to 8 PM. To reserve a specific time, message us on Instagram @reborn_nailsnretreat or call "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn: classic manicure 70K, gel polish 200K, BIAB 300K, GelX extensions 280K. A full cat-eye or chrome nail-art set is 180K. That is roughly a third of typical prices in Korea, Japan, Australia or Europe."],
- ["Do the staff speak English?","Yes. Sương and the team look after you in English and Vietnamese, and the printed menu is translated into 20 languages (Korean, Japanese, Chinese, Russian, French, Spanish and more), so you can point at exactly what you want."],
+ ["Do the staff speak English?","Yes. Sương and the team look after you in English and Vietnamese, and the printed menu is translated into 20 languages (Korean, Japanese, Chinese, Russian, French, Spanish and more), so nothing gets misunderstood and you get exactly the treatment you asked for."],
  ["Is it hygienic?","We hold ourselves to European salon standards, which is not the norm everywhere in Da Nang. Every metal tool goes through a medical steriliser before it touches you, files and buffers are single-use and thrown away in front of you, and the steriliser sits in the open so you can watch it work."],
  ["Where exactly is the salon?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn · in the An Thuong tourist quarter, 400 m from My Khe Beach. Open the map above or tap Get Directions."],
  ["Is there a discount if I come from this website?","Yes. Show the code "+BIZ.promo.code+" at reception on your first visit and you get "+BIZ.promo.pct+"% off the service menu. One use per guest, not combinable with other offers."],
@@ -614,7 +638,7 @@ const RB_POP=['My Khe Beach','An Thuong Tourist Area','Marble Mountains','Da Nan
  paint(RB_POP.map(n=>RB_LOC.find(l=>l.n===n)).filter(Boolean));
 })();
 </script>`
-+ld({...bizLd(),"@id":SITE+"/#salon"})
++ld({...bizLd(),"@id":SITE+"/#salon","review":REVIEWS.slice(0,6).map(r=>({"@type":"Review","author":{"@type":"Person","name":r.n},"reviewRating":{"@type":"Rating","ratingValue":r.s,"bestRating":5},"reviewBody":r.t}))})
 +ld({"@context":"https://schema.org",...faqLd([
  ["Do I need to book at Reborn Nails & Retreat?","No · walk-ins are welcome every day 9:00–20:00. Booking is possible via Instagram DM @reborn_nailsnretreat or by phone "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn Nails & Retreat: manicure 70K, gel polish 200K, BIAB 300K, GelX 280K, full nail-art sets from 180K (thousand VND)."],

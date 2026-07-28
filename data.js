@@ -55,6 +55,12 @@ const SERVICES=[
   faq:[["What is a Vietnamese hair wash and why is it famous?","A Vietnamese hair wash is a full ritual: double herbal shampoo, scalp massage, neck and shoulder massage, often with facial care and herbal steam. At Reborn it lasts 25 to 105 minutes and costs 120K–850K — a fraction of spa prices in Korea or Japan."],
       ["Which head spa should I choose?","First visit: our guests' favourite is the Reborn Signature (80 min, 500K) — facial cleansing, quartz-stone massage, scalp exfoliation, herbal steam and a snack. Short on time: Relax Ritual, 45 min, 250K."],
       ["Is the head spa suitable for men?","Absolutely — the ritual is unisex and very popular with male travellers after the beach or golf."]]},
+ {slug:"foot-massage",name:"Foot Massage & Foot Therapy",short:"Foot massage",img:"footbath.jpg",
+  desc:"Our Foot Therapy lounge: cream leather armchairs, herbal soaks, calf and foot massage, hot stones and warm towels — as an add-on or inside a full pedicure ritual.",
+  prices:[["Foot & calf massage · 15 min","100K"],["Foot & calf massage · 30 min","190K"],["Hot stone massage add-on","80K"],["Soft Touch pedicure + massage · 40 min","250K"],["Deep Care ritual + massage · 65 min","450K"],["Reborn Signature + hot stones · 75 min","590K"]],
+  faq:[["How much does a foot massage cost in Da Nang?","Around My Khe Beach, a foot massage usually runs 200K–500K for an hour, and beach-side spas charge 10–30% more than the suburbs. At Reborn a foot and calf massage is 100K for 15 minutes or 190K for 30 minutes, and it is already included in every spa pedicure ritual from 250K."],
+      ["Can I have a foot massage without a pedicure?","Yes. Walk in and ask for the Foot Therapy lounge — 15 or 30 minutes, on the same cream leather armchairs, with a warm herbal soak first."],
+      ["Do you do reflexology-style pressure?","Our technicians work the classic Vietnamese foot and calf sequence with firm, warm pressure, and you can ask for lighter or stronger at any moment."]]},
  {slug:"waxing",name:"Waxing",short:"Waxing",img:"wax.jpg",
   desc:"Gentle warm wax for silky-smooth skin — lips to full legs, done in a private treatment room.",
   prices:[["Upper lip","90K"],["Underarms","120K"],["Half arms","180K"],["Full arms","350K"],["Half legs","250K"],["Full legs","480K"]],
@@ -87,6 +93,24 @@ const SOCIAL=[
  {type:"instagram",label:"@reborn_nailsnretreat",url:"https://www.instagram.com/reborn_nailsnretreat/",t:"Instagram — latest sets, reels & booking by DM",img:"flatlay.jpg"},
  {type:"facebook",label:"Reborn Nails & Retreat",url:"https://www.facebook.com/people/Reborn-Nails-Retreat/61589196314835/",t:"Facebook page — news & guest photos",img:"salon.jpg"},
  {type:"tripadvisor",label:"TripAdvisor",url:"https://www.tripadvisor.com/Attraction_Review-g298085-d34389993-Reviews-Reborn_Nails_Retreat-Da_Nang.html",t:"Reviewed by international travellers",img:"interior.jpg"}
+];
+
+/* Signature rituals — real sequences, grouped into movements */
+const RITUALS=[
+ {slug:"head-spa-hair-wash",name:"Reborn Signature Head Spa",mins:80,price:"500K",img:"chand.jpg",
+  intro:"Vietnamese herbal hair-wash therapy sequenced like a Korean head spa — nineteen steps, eighty minutes, one long exhale.",
+  moves:[["Arrival","Warm herbal foot soak, tea, and the lights go low","0–10 min"],
+         ["The face","Cleansing, gentle exfoliation, quartz-stone meridian massage, herbal steam, mask","10–35 min"],
+         ["Scalp & hair","Scalp exfoliation, double herbal wash, herbal steam, nourishing hair mask","35–60 min"],
+         ["Release","Neck and shoulders, hand massage, warm compress on the belly","60–72 min"],
+         ["Finish","Blow-dry, hair oil, fresh fruit and a last cup of tea","72–80 min"]]},
+ {slug:"spa-pedicure",name:"Deep Care Spa Pedicure",mins:65,price:"450K",img:"footbath.jpg",
+  intro:"Our best seller: twelve steps on a cream leather armchair, from herbal soak to warm towel.",
+  moves:[["Soak","Warm herbal foot bath with salts and citrus","0–10 min"],
+         ["Care","Cuticle work, nail shaping, heel buffing","10–30 min"],
+         ["Renew","Foot steaming, exfoliation, intensive heel treatment","30–45 min"],
+         ["Nourish","Hydrating mask, foot and calf massage, warm towel wrap","45–60 min"],
+         ["Finish","Nourishing oils, fresh fruit","60–65 min"]]}
 ];
 
 /* pSEO locations — dist computed from coords (haversine) */
@@ -197,4 +221,4 @@ const HUBS=[
        ["Tiệm ở đâu?","56 Châu Thị Vĩnh Tế, phường Ngũ Hành Sơn — ngay khu An Thượng, 5 phút đi bộ ra biển Mỹ Khê."]]}
 ];
 
-module.exports={BIZ,SERVICES,REVIEWS,SOCIAL,REELS,LOCATIONS,HUBS};
+module.exports={BIZ,SERVICES,REVIEWS,SOCIAL,REELS,RITUALS,LOCATIONS,HUBS};

@@ -3,7 +3,7 @@
    Drip publishing: core pages at launch, then DRIP_PER_DAY location pages/day,
    deterministic order (md5 salt), sitemap lists ONLY published pages. */
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
-const {BIZ,SERVICES,REVIEWS,SOCIAL,REELS,LOCATIONS,HUBS}=require('./data.js');
+const {BIZ,SERVICES,REVIEWS,SOCIAL,REELS,RITUALS,LOCATIONS,HUBS}=require('./data.js');
 
 const SITE="https://saitamareborn.github.io/reborn-nails-danang";
 const BASE="/reborn-nails-danang";
@@ -101,6 +101,31 @@ const mapBlock=(from='')=>`<section class="mapsec" id="find-us"><div class="wrap
 <a class="ghost" href="tel:${BIZ.phoneRaw}">Call ${BIZ.phone}</a></p>
 </div></section>`;
 
+const MARKET={
+ 'head-spa-hair-wash':{title:'What a Vietnamese hair wash really costs in Da Nang',
+  intro:'Prices around My Khe Beach in 2026, from budget shampoo bars to hotel-style spas — and where Reborn sits.',
+  rows:[['Quick neighbourhood wash · 30–45 min','160K – 250K','Shampoo, short massage, blow-dry'],
+        ['Tourist-area spa · 45–60 min','300K – 500K','Wash, massage, sometimes a face mask'],
+        ['Hotel-style herbal spa · 60–90 min','550K – 900K','Herbal wash, longer massage, tea'],
+        ['<b>Reborn Basic · 25 min</b>','<b>120K</b>','Double herbal wash, scalp massage, blow-dry, hair oil'],
+        ['<b>Reborn Signature · 80 min</b>','<b>500K</b>','<b>19 steps</b>: facial care, quartz-stone massage, scalp exfoliation, herbal steam, hair mask, snack'],
+        ['<b>Reborn Ultimate · 95 min</b>','<b>750K</b>','21 steps with hot stones, hyaluronic infusion and bio-light']],
+  note:'Market figures are indicative ranges published by Da Nang spa guides in 2026; our own prices are the ones printed in the salon.'},
+ 'foot-massage':{title:'What a foot massage costs in Da Nang',
+  intro:'What you can expect to pay near My Khe Beach — and what is included at Reborn.',
+  rows:[['Street-side foot massage · 60 min','200K – 350K','Massage only, shared room'],
+        ['Beach-area spa · 60 min','400K – 600K','Massage, tea, private room (tourist areas charge 10–30% more)'],
+        ['<b>Reborn foot &amp; calf massage · 15 min</b>','<b>100K</b>','On a cream leather armchair in the Foot Therapy lounge'],
+        ['<b>Reborn foot &amp; calf massage · 30 min</b>','<b>190K</b>','With a warm herbal soak first'],
+        ['<b>Reborn Deep Care ritual · 65 min</b>','<b>450K</b>','12 steps: soak, heel therapy, exfoliation, mask, massage, warm towel, fruit']],
+  note:'Market figures are indicative ranges published by Da Nang spa guides in 2026.'}
+};
+const marketBlock=slug=>{const m=MARKET[slug];if(!m)return '';
+ return `<section class="market"><div class="wrap"><p class="tag">Price check</p><h2>${m.title}</h2>
+ <p class="secsub">${m.intro}</p>
+ <div class="tblwrap"><table class="mkt"><thead><tr><th>What you get</th><th>Price</th><th>Included</th></tr></thead><tbody>
+ ${m.rows.map(r=>`<tr class="${r[0].includes('<b>')?'us':''}"><td>${r[0]}</td><td class="p">${r[1]}</td><td class="inc">${r[2]}</td></tr>`).join('')}
+ </tbody></table></div><p class="mktnote">${m.note}</p></div></section>`;};
 const faqHtml=faq=>`<div class="faq">${faq.map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div>`;
 const faqLd=faq=>({"@type":"FAQPage","mainEntity":faq.map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))});
 const ld=o=>`<script type="application/ld+json">${JSON.stringify(o)}</script>`;
@@ -253,6 +278,129 @@ section .wrap>h2::after{content:"";position:absolute;left:50%;transform:translat
 .fabbtn.ms{background:linear-gradient(45deg,#0698FA,#A10EEB,#FF5297)}
 @media(max-width:760px){.fab{right:14px;bottom:14px}}
 
+
+/* ================= EDITORIAL LAYER ================= */
+body{background:var(--paper)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5;mix-blend-mode:multiply;
+ background-image:radial-gradient(circle at 20% 30%,rgba(122,74,43,.05),transparent 60%),radial-gradient(circle at 82% 12%,rgba(176,138,62,.05),transparent 55%)}
+.wrap,.nav,.foot,section{position:relative;z-index:2}
+
+/* — cinematic hero — */
+.chero{position:relative;min-height:min(94vh,880px);display:flex;flex-direction:column;align-items:center;justify-content:center;
+ text-align:center;overflow:hidden;padding:96px 22px 30px;color:#FCF7EC;isolation:isolate}
+.chero .cbg{position:absolute;inset:0;z-index:-2}
+.chero .cbg video{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+.chero .cveil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(38,24,13,.74) 0%,rgba(38,24,13,.46) 34%,rgba(38,24,13,.58) 62%,rgba(38,24,13,.86) 100%)}
+.chero .flor{position:absolute;z-index:-1;width:min(230px,20vw);opacity:.22;mix-blend-mode:screen;filter:blur(.3px)}
+.chero .flor.tl{top:-14px;left:-22px}.chero .flor.tr{top:-14px;right:-22px}
+.cin{max-width:900px;animation:cIn 1.1s cubic-bezier(.2,.8,.25,1) both}
+@keyframes cIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.clogo{width:150px;margin:0 auto 16px;filter:drop-shadow(0 4px 18px rgba(20,10,4,.4))}
+.ceyebrow{font-size:12px;letter-spacing:.34em;text-transform:uppercase;font-weight:700;color:#E9CFA4;margin:0 0 14px}
+.ctitle{font-family:var(--serif);font-weight:400;color:#FFF9EF;font-size:clamp(38px,6.6vw,84px);line-height:1.02;margin:0;
+ text-shadow:0 4px 40px rgba(30,16,6,.45)}
+.ctitle span{display:block}
+.ctitle em{display:block;font-style:italic;color:#EBC98F}
+.ctitle span,.ctitle em{animation:cLine 1.15s cubic-bezier(.2,.8,.25,1) both}
+.ctitle span:nth-child(2){animation-delay:.12s}.ctitle em{animation-delay:.24s}
+@keyframes cLine{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.csub{font-size:17px;color:rgba(255,247,235,.9);max-width:620px;margin:22px auto 0}
+.csub b{color:#EBC98F}
+.cbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.ghost.light{border-color:rgba(255,247,235,.5);color:#FCF7EC;background:transparent}
+.ghost.light:hover{background:rgba(255,247,235,.12)}
+.cfacts{position:relative;display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:auto;padding-top:52px;
+ font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,247,235,.72);font-weight:600}
+.cfacts i{width:4px;height:4px;border-radius:50%;background:#C9A15C;display:inline-block}
+.scrollcue{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);width:26px;height:42px;border:1px solid rgba(255,247,235,.45);border-radius:999px;display:flex;justify-content:center;padding-top:8px}
+.scrollcue span{width:3px;height:8px;border-radius:2px;background:#E9CFA4;animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+@media (prefers-reduced-motion:reduce){.scrollcue span{animation:none}.cin,.ctitle span,.ctitle em{animation:none}}
+.nav{background:rgba(246,241,231,.9)}
+
+/* — dark ritual chapter — */
+.ritual{background:#2A1D12;color:#F1E4CE;padding:74px 0 78px;position:relative;overflow:hidden}
+.ritual::before,.ritual::after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,161,92,.55),transparent)}
+.ritual::before{top:0}.ritual::after{bottom:0}
+.ritual h2.light{color:#FFF6E7}.ritual .tag.light{color:#D9B478;text-align:center;display:block}
+.ritual h2.light::after{background:#C9A15C;box-shadow:none}
+.secsub.light{color:rgba(241,228,206,.72)}
+.ritgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px}
+.rit{background:rgba(255,247,235,.045);border:1px solid rgba(201,161,92,.28);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.rit>img{width:100%;height:210px;object-fit:cover;opacity:.92}
+.ritb{padding:24px 26px 26px}
+.rit h3{font-family:var(--serif);font-weight:400;color:#FFF6E7;font-size:27px;margin:0 0 6px}
+.ritmeta{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#D9B478;font-weight:700;margin:0 0 12px}
+.ritin{color:rgba(241,228,206,.78);font-size:15px;margin:0 0 20px}
+.rittl{list-style:none;margin:0;padding:0 0 0 22px;border-left:1px solid rgba(201,161,92,.3);counter-reset:m}
+.rittl li{position:relative;padding:0 0 20px;counter-increment:m}
+.rittl li:last-child{padding-bottom:6px}
+.rittl li::before{content:counter(m);position:absolute;left:-33px;top:-2px;width:22px;height:22px;border-radius:50%;
+ background:#2A1D12;border:1px solid rgba(201,161,92,.55);color:#D9B478;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.rittl b{display:block;color:#FFF6E7;font-size:16.5px;font-weight:700;letter-spacing:.01em}
+.rittl span{display:block;color:rgba(241,228,206,.72);font-size:14px;margin-top:2px}
+.rittl time{display:block;color:#D9B478;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-top:5px;font-weight:700}
+.ritlink{display:inline-block;margin-top:16px;color:#EBC98F;font-weight:700;font-size:14.5px;text-decoration:none;border-bottom:1px solid rgba(235,201,143,.4);padding-bottom:2px}
+
+/* — visit finder — */
+.finder{background:linear-gradient(180deg,var(--panel),var(--paper))}
+.fbox{max-width:760px;margin:26px auto 0}
+#fq{width:100%;font:inherit;font-size:18px;padding:18px 22px;border-radius:999px;border:1.5px solid var(--linestrong);
+ background:var(--panel);color:var(--ink);box-shadow:0 10px 30px rgba(90,60,30,.07)}
+#fq:focus{outline:none;border-color:var(--gold);box-shadow:0 10px 34px rgba(176,138,62,.18)}
+.fchips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.fchip{font:inherit;font-size:13.5px;font-weight:600;padding:9px 15px;border-radius:999px;border:1px solid var(--line);
+ background:var(--panel);color:var(--brand);cursor:pointer}
+.fchip em{font-style:normal;color:var(--ink2);font-weight:600}
+.fchip:hover{border-color:var(--gold)}
+.fout:empty{display:none}
+.fcard{margin-top:22px;background:var(--panel);border:1.5px solid var(--brand);border-radius:26px;padding:26px 30px;
+ display:grid;grid-template-columns:auto auto 1fr;gap:26px;align-items:center;box-shadow:0 16px 44px rgba(90,60,30,.12);
+ animation:fIn .45s cubic-bezier(.2,.8,.3,1) both}
+@keyframes fIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.fnum b,.fway b{display:block;font-family:var(--serif);font-weight:400;font-size:38px;color:var(--brand);line-height:1}
+.fnum span,.fway span{display:block;font-size:13px;color:var(--ink2);margin-top:6px;max-width:200px}
+.fway{padding-left:26px;border-left:1px solid var(--line)}
+.fway b{font-size:30px}
+.fcta{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.hintline{text-align:center;color:var(--ink2);font-size:14px;margin-top:22px}
+@media(max-width:860px){
+ .ritgrid{grid-template-columns:1fr}
+ .fcard{grid-template-columns:1fr;text-align:center;gap:18px}
+ .fway{padding-left:0;border-left:none;border-top:1px solid var(--line);padding-top:18px}
+ .fnum span,.fway span{max-width:none}
+ .fcta{justify-content:center}
+ .chero{min-height:88vh;padding-top:78px}
+ .cfacts{padding-top:34px;font-size:10.5px;gap:9px}
+}
+
+/* — market price table — */
+.market{background:linear-gradient(180deg,var(--paper),var(--panel))}
+.mkt{width:100%;border-collapse:collapse;font-size:15px;background:var(--panel);min-width:640px}
+.mkt th{text-align:left;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);font-weight:700;
+ padding:14px 18px;border-bottom:1px solid var(--linestrong)}
+.mkt td{padding:15px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+.mkt td.p{font-family:var(--serif);font-size:19px;color:var(--brand);white-space:nowrap}
+.mkt td.inc{color:var(--ink2);font-size:14px}
+.mkt tr.us{background:linear-gradient(90deg,rgba(176,138,62,.1),rgba(176,138,62,.03))}
+.mkt tr.us td{border-bottom-color:rgba(176,138,62,.3)}
+.mkt tr.us td.p{color:var(--brand2)}
+.mkt tr:last-child td{border-bottom:none}
+.mktnote{font-size:12.5px;color:var(--ink2);margin-top:14px;text-align:center;font-style:italic}
+.tblwrap{overflow-x:auto;border:1.5px solid var(--brand);border-radius:22px;box-shadow:0 14px 40px rgba(90,60,30,.1);margin-top:26px}
+
+/* — trust bar — */
+.trustbar{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
+.tbrow{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;text-align:center}
+.tbit b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;color:var(--brand);line-height:1.1}
+.tbit span{display:block;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);font-weight:600;margin-top:6px}
+@media(max-width:760px){.tbrow{grid-template-columns:repeat(2,1fr);gap:18px}}
+/* — general polish — */
+h2{letter-spacing:-.01em}
+.card h3{font-family:var(--serif);font-weight:400;font-size:23px}
+.card .cp{font-size:15px;letter-spacing:.01em}
+.gal img{height:300px}
+.mapsec{background:var(--panel)}
 `);
 
 /* ---------- home ---------- */
@@ -265,16 +413,25 @@ const homeHtml=head(
  SITE+"/",
  HUBS.map(h=>`<link rel="alternate" hreflang="${h.code==='zh'?'zh-Hans':h.code}" href="${SITE}/${h.dir}/">`).join('')+`<link rel="alternate" hreflang="en" href="${SITE}/"><link rel="alternate" hreflang="x-default" href="${SITE}/">`)
 +nav()
-+`<div class="hero"><img class="flor tl" src="${BASE}/assets/flor_tl.webp" alt=""><img class="flor tr" src="${BASE}/assets/flor_tr.webp" alt="">
-<div class="hwrap">
-<img class="hlogo" src="${BASE}/assets/logo.webp" alt="${BIZ.name}" width="170">
-<p class="tag">Nails · Spa Pedicure · Head Spa · Waxing</p>
-<h1>The nail salon Da Nang travellers fall in love with</h1>
-<p class="sub">5 minutes from My Khe Beach. ${stars} <strong>${BIZ.rating} on Google</strong> · ${BIZ.ratingCount}+ reviews · sterilised single-use tools · ${BIZ.langs}.</p>
-<div class="btnrow"><a class="cta gold" href="${BIZ.directions}" rel="noopener">Get directions</a><a class="cta" href="#services">See services & prices</a><a class="ghost" href="${BIZ.instagram}" rel="noopener">Book on Instagram</a></div>
-<p class="badgeline">Gel from 200K <i>✦</i> Head spa from 120K <i>✦</i> Pedicure rituals 250–590K <i>✦</i> Open daily 9:00–20:00</p>
-<div class="heromedia"><video autoplay muted loop playsinline poster="${BASE}/assets/nails.jpg" src="${BASE}/assets/vid_hero.mp4" title="Fresh gel nails at Reborn Da Nang"></video></div>
-</div></div>
++`<div class="chero">
+ <div class="cbg"><video autoplay muted loop playsinline poster="${BASE}/assets/nails.jpg" src="${BASE}/assets/vid_hero.mp4"></video><span class="cveil"></span></div>
+ <img class="flor tl" src="${BASE}/assets/flor_tl.webp" alt=""><img class="flor tr" src="${BASE}/assets/flor_tr.webp" alt="">
+ <div class="cin">
+  <img class="clogo" src="${BASE}/assets/logo_light.webp" alt="${BIZ.name}" width="150">
+  <p class="ceyebrow">Nails · Spa Pedicure · Head Spa · Da Nang</p>
+  <h1 class="ctitle"><span>Five minutes from</span><span>My Khe Beach,</span><em>a whole afternoon away</em></h1>
+  <p class="csub">${stars} <b>${BIZ.rating}</b> from ${BIZ.ratingCount}+ Google reviews · sterilised single-use tools · seven languages spoken.</p>
+  <div class="cbtns"><a class="cta gold" href="${BIZ.directions}" rel="noopener">Get directions</a><a class="ghost light" href="#services">Menu &amp; prices</a></div>
+ </div>
+ <div class="cfacts"><span>Gel from 200K</span><i></i><span>Head spa 120–850K</span><i></i><span>Pedicure rituals 250–590K</span><i></i><span>Open daily 9–20</span></div>
+ <a class="scrollcue" href="#services" aria-label="Scroll"><span></span></a>
+</div>
+<section class="trustbar"><div class="wrap"><div class="tbrow">
+ <div class="tbit"><b>★ ${BIZ.rating}</b><span>${BIZ.ratingCount}+ Google reviews</span></div>
+ <div class="tbit"><b>19 steps</b><span>in our signature ritual</span></div>
+ <div class="tbit"><b>7 languages</b><span>spoken in the salon</span></div>
+ <div class="tbit"><b>Single-use</b><span>files &amp; buffers, sterilised tools</span></div>
+</div></div></section>
 <section id="services"><div class="wrap"><p class="tag">Menu & prices</p><h2>Services at Reborn — full price list</h2>
 <p class="sub" style="margin-left:0;text-align:left">Prices in thousand Vietnamese đồng: 100K = 100,000 ₫ ≈ $4. No hidden fees — the menu below is exactly what you pay in the salon.</p>
 <div class="grid">${svcCards}</div></div></section>
@@ -283,6 +440,31 @@ const homeHtml=head(
 <div class="menuScroll">${[1,2,3,4,5].map(i=>`<a href="${BASE}/assets/menu-${i}.jpg" target="_blank" rel="noopener" class="menuPage"><img src="${BASE}/assets/menu-${i}.jpg" alt="Reborn Nails & Retreat menu — page ${i}" loading="lazy"></a>`).join('')}</div></div></section>
 <section class="gallerysec"><div class="wrap"><p class="tag">The salon</p><h2>Step inside Reborn</h2>
 <div class="gal">${['salon','arch','interior','refined','chand','tray'].map((g,i)=>`<img src="${BASE}/assets/${g}.jpg" alt="${BIZ.name} salon Da Nang — ${['reception','foot therapy lounge','interior','refined touch room','cherry blossom chandelier','spa ingredients'][i]}" loading="lazy">`).join('')}</div></div></section>
+<section class="ritual"><div class="wrap">
+<p class="tag light">The Reborn way</p><h2 class="light">Every treatment here is a ritual</h2>
+<p class="secsub light">Not a chair and a bottle of polish — a sequence, timed, in a room built to make you forget the street outside.</p>
+<div class="ritgrid">${RITUALS.map(r=>`<article class="rit">
+  <img src="${BASE}/assets/${r.img}" alt="${r.name} at ${BIZ.name}" loading="lazy">
+  <div class="ritb">
+   <h3>${r.name}</h3>
+   <p class="ritmeta">${r.mins} minutes · ${r.price} · ${r.moves.length} movements</p>
+   <p class="ritin">${r.intro}</p>
+   <ol class="rittl">${r.moves.map(m=>`<li><b>${m[0]}</b><span>${m[1]}</span><time>${m[2]}</time></li>`).join('')}</ol>
+   <a class="ritlink" href="${BASE}/services/${r.slug}/">See the full ${r.slug==='spa-pedicure'?'pedicure':'head spa'} menu →</a>
+  </div></article>`).join('')}</div>
+</div></section>
+
+<section class="finder" id="finder"><div class="wrap">
+<p class="tag">Plan your visit</p><h2>Where are you staying?</h2>
+<p class="secsub">Pick your hotel, beach or landmark — we will tell you exactly how far the salon is and open the route for you.</p>
+<div class="fbox">
+ <input id="fq" type="search" autocomplete="off" placeholder="Start typing: My Khe, Hyatt, An Thuong, airport…" aria-label="Your hotel or landmark in Da Nang">
+ <div id="fchips" class="fchips"></div>
+ <div id="fout" class="fout" aria-live="polite"></div>
+</div>
+<p class="hintline">Staying somewhere else? <a href="${BASE}/da-nang/">See every area of Da Nang →</a></p>
+</div></section>
+
 <section id="reviews"><div class="wrap"><p class="tag">Guest love</p><h2>★ ${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews</h2>${reviewCards(9)}</div></section>
 <section><div class="wrap"><p class="tag">As seen on social</p><h2>Watch the experience</h2>
 <p class="secsub">Straight from the salon floor — tap a reel for sound, or open it on Instagram.</p>
@@ -299,6 +481,32 @@ ${faqHtml([
  ["Where exactly is the salon?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn — in the An Thuong tourist quarter, 400 m from My Khe Beach. Open the map above or tap Get Directions."],
  ["Can I pay by card?","Yes — cards and cash (VND) are both accepted."]])}
 </div></section>`
++`<script>
+const RB_LOC=${JSON.stringify(LOCATIONS.map(l=>{const d=dist(BIZ,l);return {n:l.name,s:publishedLocs.some(p=>p.slug===l.slug)?l.slug:'',d:km(d),w:walkMin(d),g:grabMin(d),near:d<=1.6?1:0};}))};
+const RB_POP=['My Khe Beach','An Thuong Tourist Area','Marble Mountains','Da Nang Airport (DAD)','Hoi An'];
+(function(){
+ const q=document.getElementById('fq'),chips=document.getElementById('fchips'),out=document.getElementById('fout');
+ if(!q)return;
+ const dir=n=>'https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(n+' Da Nang')+'&destination=Reborn+Nails+%26+Retreat+Da+Nang&destination_place_id=ChIJ4S2_LGIXQjER5UUCohuc8V4';
+ function card(l){
+  out.innerHTML='<div class="fcard"><div class="fnum"><b>'+l.d+'</b><span>from '+l.n+'</span></div>'+
+   '<div class="fway">'+(l.near?'<b>'+l.w+' min</b> on foot':'<b>'+l.g+' min</b> by Grab')+'<span>'+(l.near?'an easy stroll through An Thuong':'about '+Math.max(30,Math.round(l.g*3.5))+'K by Grab')+'</span></div>'+
+   '<div class="fcta"><a class="cta gold" target="_blank" rel="noopener" href="'+dir(l.n)+'">Open the route</a>'+
+   (l.s?'<a class="ghost" href="${BASE}/nail-salon/'+l.s+'/">What to book from '+l.n+'</a>':'')+'</div></div>';
+ }
+ function paint(list){
+  chips.innerHTML=list.slice(0,6).map((l,i)=>'<button class="fchip" data-i="'+RB_LOC.indexOf(l)+'">'+l.n+' <em>'+l.d+'</em></button>').join('');
+ }
+ chips.addEventListener('click',e=>{const b=e.target.closest('.fchip');if(!b)return;const l=RB_LOC[+b.dataset.i];q.value=l.n;card(l);paint([l]);});
+ q.addEventListener('input',()=>{
+  const v=q.value.trim().toLowerCase();
+  if(!v){paint(RB_POP.map(n=>RB_LOC.find(l=>l.n===n)).filter(Boolean));out.innerHTML='';return;}
+  const m=RB_LOC.filter(l=>l.n.toLowerCase().includes(v));
+  paint(m); if(m.length===1)card(m[0]); else out.innerHTML='';
+ });
+ paint(RB_POP.map(n=>RB_LOC.find(l=>l.n===n)).filter(Boolean));
+})();
+</script>`
 +ld({...bizLd(),"@id":SITE+"/#salon"})
 +ld({"@context":"https://schema.org",...faqLd([
  ["Do I need to book at Reborn Nails & Retreat?","No — walk-ins are welcome every day 9:00–20:00. Booking is possible via Instagram DM @reborn_nailsnretreat or by phone "+BIZ.phone+"."],
@@ -311,8 +519,12 @@ fs.writeFileSync(OUT+'/index.html',homeHtml);
 for(const s of SERVICES){
  const url=`${SITE}/services/${s.slug}/`;
  const others=SERVICES.filter(x=>x.slug!==s.slug).slice(0,3);
- const html=head(`${s.name} in Da Nang — prices & menu · ${BIZ.short} ★4.9`,
-  `${s.desc} Full ${s.short.toLowerCase()} price list at ${BIZ.name}, 5 min from My Khe Beach. ★4.9 Google rating, walk-ins daily 9–20.`,url)
+ const TITLES={'head-spa-hair-wash':['Hair Wash & Head Spa in Da Nang — 120K–850K · '+BIZ.short+' ★4.9','Vietnamese hair wash & Korean head spa near My Khe Beach: 25 to 105 minutes, 120K–850K. Signature ritual 500K, 19 steps. ★4.9 Google, walk-ins daily 9–20.'],
+ 'foot-massage':['Foot Massage in Da Nang — from 100K · Foot Therapy at '+BIZ.short,'Foot & calf massage from 100K in our Foot Therapy lounge near My Khe Beach, or a full spa pedicure ritual from 250K. ★4.9 Google, walk-ins daily 9–20.'],
+ 'spa-pedicure':['Spa Pedicure in Da Nang — rituals 250K–590K · '+BIZ.short+' ★4.9','Herbal foot soak, heel therapy, hot stones and warm towels on cream leather armchairs. Deep Care 450K (65 min). ★4.9 Google, walk-ins daily 9–20.']};
+ const T=TITLES[s.slug];
+ const html=head(T?T[0]:`${s.name} in Da Nang — prices & menu · ${BIZ.short} ★4.9`,
+  T?T[1]:`${s.desc} Full ${s.short.toLowerCase()} price list at ${BIZ.name}, 5 min from My Khe Beach. ★4.9 Google rating, walk-ins daily 9–20.`,url)
  +nav('s')
  +`<div class="wrap"><p class="crumb"><a href="${BASE}/">Home</a> › <a href="${BASE}/#services">Services</a> › ${s.short}</p></div>
 <div class="hero"><div class="hwrap">
@@ -324,6 +536,7 @@ for(const s of SERVICES){
 <section><div class="wrap"><h2>${s.short} price list</h2>
 <div class="answer">${s.name} at ${BIZ.name} costs <strong>${s.prices[0][1]}</strong> for ${s.prices[0][0].toLowerCase()} (thousand VND — 100K ≈ $4). ${BIZ.hoursHuman}, walk-ins welcome.</div>
 <div class="menuCard">${s.prices.map(p=>`<div class="prow"><span>${p[0]}</span><i></i><b>${p[1]}</b></div>`).join('')}</div></div></section>
+${marketBlock(s.slug)}
 <section><div class="wrap"><h2>Why guests choose Reborn for ${s.short.toLowerCase()}</h2>${reviewCards(3)}</div></section>
 <section><div class="wrap"><h2>${s.short} — FAQ</h2>${faqHtml(s.faq)}</div></section>
 ${mapBlock()}

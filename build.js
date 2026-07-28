@@ -105,7 +105,8 @@ ${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a> · <a href="
 <script>document.querySelectorAll('.rvid').forEach(w=>{const v=w.querySelector('video');w.addEventListener('click',()=>{if(v.paused){document.querySelectorAll('.rvid video').forEach(o=>{if(o!==v){o.pause();o.parentElement.classList.remove('playing')}});v.muted=false;v.play();w.classList.add('playing');}else{v.pause();w.classList.remove('playing');}});});</script><script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.card,.rev,.soc,.ptable,.answer,.faq details').forEach(el=>{el.classList.add('rv');io.observe(el)})}</script></body></html>`;
 
 const stars=`<span class="stars">★★★★★</span>`;
-const reviewCards=(n=6)=>`<div class="revrow">${REVIEWS.slice(0,n).map(r=>`
+const FIVE=REVIEWS.filter(r=>r.s===5);
+const reviewCards=(n=6)=>`<div class="revrow">${FIVE.slice(0,n).map(r=>`
 <figure class="rev">
  <header class="rvh">
   ${r.a?`<img class="rva" src="${BASE}/assets/${r.a}" alt="" loading="lazy" width="44" height="44">`:'<span class="rva ph"></span>'}
@@ -638,7 +639,7 @@ const RB_POP=['My Khe Beach','An Thuong Tourist Area','Marble Mountains','Da Nan
  paint(RB_POP.map(n=>RB_LOC.find(l=>l.n===n)).filter(Boolean));
 })();
 </script>`
-+ld({...bizLd(),"@id":SITE+"/#salon","review":REVIEWS.slice(0,6).map(r=>({"@type":"Review","author":{"@type":"Person","name":r.n},"reviewRating":{"@type":"Rating","ratingValue":r.s,"bestRating":5},"reviewBody":r.t}))})
++ld({...bizLd(),"@id":SITE+"/#salon","review":REVIEWS.filter(r=>r.s===5).slice(0,6).map(r=>({"@type":"Review","author":{"@type":"Person","name":r.n},"reviewRating":{"@type":"Rating","ratingValue":r.s,"bestRating":5},"reviewBody":r.t}))})
 +ld({"@context":"https://schema.org",...faqLd([
  ["Do I need to book at Reborn Nails & Retreat?","No · walk-ins are welcome every day 9:00–20:00. Booking is possible via Instagram DM @reborn_nailsnretreat or by phone "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn Nails & Retreat: manicure 70K, gel polish 200K, BIAB 300K, GelX 280K, full nail-art sets from 180K (thousand VND)."],

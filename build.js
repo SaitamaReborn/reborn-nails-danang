@@ -526,6 +526,19 @@ h2{letter-spacing:-.01em}
 .card .cp{font-size:15px;letter-spacing:.01em}
 .gal img{height:300px}
 .mapsec{background:var(--panel)}
+
+/* ===== final overrides ===== */
+.reelwrap{position:relative;margin-top:26px}
+.reelgrid{display:flex!important;grid-template-columns:none!important;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+ scroll-behavior:smooth;padding:4px 2px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.reelgrid::-webkit-scrollbar{display:none}
+.reelgrid>.reel{flex:0 0 clamp(190px,20vw,236px);scroll-snap-align:start}
+.rnav{position:absolute;top:34%;z-index:4;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);
+ background:rgba(253,251,245,.97);color:var(--brand);font-size:26px;line-height:1;cursor:pointer;
+ box-shadow:0 10px 26px rgba(90,60,30,.18);display:flex;align-items:center;justify-content:center}
+.rnav.prev{left:-16px}.rnav.next{right:-16px}
+.rnav:hover{background:#fff;border-color:var(--gold)}
+@media(max-width:900px){.rnav{display:none}}
 `);
 
 /* ---------- home ---------- */

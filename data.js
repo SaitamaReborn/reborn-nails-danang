@@ -118,6 +118,18 @@ const SOCIAL=[
  {type:"tripadvisor",label:"TripAdvisor",url:"https://www.tripadvisor.com/Attraction_Review-g298085-d34389993-Reviews-Reborn_Nails_Retreat-Da_Nang.html",t:"Reviewed by international travellers",img:"interior.jpg"}
 ];
 
+const WORKS=[
+ {f:"work/w6_0.jpg",c:"Summer vibe nails"},
+ {f:"work/w7_0.jpg",c:"Hand-painted floral set"},
+ {f:"work/w8_0.jpg",c:"Soft French with charms"},
+ {f:"work/w8_1.jpg",c:"Blush ombré set"},
+ {f:"work/w8_2.jpg",c:"Chrome and pearls"},
+ {f:"work/w9_0.jpg",c:"Milky white almond nails"},
+ {f:"work/w10_0.jpg",c:"Nude set with gold details"},
+ {f:"work/w11_0.jpg",c:"Blue gel pedicure"},
+ {f:"work/w4_0.jpg",c:"Guests on the day of their set"}
+];
+
 /* Signature rituals · real sequences, grouped into movements */
 const RITUALS=[
  {slug:"head-spa-hair-wash",name:"Reborn Signature Head Spa",mins:80,price:"500K",img:"chand.jpg",
@@ -244,4 +256,4 @@ const HUBS=[
        ["Tiệm ở đâu?","56 Châu Thị Vĩnh Tế, phường Ngũ Hành Sơn · ngay khu An Thượng, 5 phút đi bộ ra biển Mỹ Khê."]]}
 ];
 
-module.exports={BIZ,SERVICES,REVIEWS,SOCIAL,REELS,RITUALS,LOCATIONS,HUBS};
+module.exports={BIZ,SERVICES,REVIEWS,SOCIAL,REELS,RITUALS,WORKS,LOCATIONS,HUBS};

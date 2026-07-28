@@ -3,7 +3,7 @@
    Drip publishing: core pages at launch, then DRIP_PER_DAY location pages/day,
    deterministic order (md5 salt), sitemap lists ONLY published pages. */
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
-const {BIZ,SERVICES,REVIEWS,SOCIAL,REELS,RITUALS,LOCATIONS,HUBS}=require('./data.js');
+const {BIZ,SERVICES,REVIEWS,SOCIAL,REELS,RITUALS,WORKS,LOCATIONS,HUBS}=require('./data.js');
 
 const SITE="https://saitamareborn.github.io/reborn-nails-danang";
 const BASE="/reborn-nails-danang";
@@ -327,10 +327,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 @keyframes cIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 .clogo{width:clamp(62px,8.2vh,100px);margin:0 auto clamp(6px,1.2vh,10px);filter:drop-shadow(0 4px 18px rgba(20,10,4,.45))}
 .ceyebrow{font-size:clamp(9.5px,1.3vh,11px);letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:#E9CFA4;margin:0 0 clamp(6px,1.1vh,10px)}
-.ctitle{font-family:var(--serif);font-weight:400;color:#FFF9EF;font-size:clamp(26px,min(4.3vw,5.8vh),52px);line-height:1.06;margin:0;
+.ctitle{font-family:var(--serif);font-weight:400;color:#FFF9EF;font-size:clamp(24px,min(3.6vw,4.7vh),46px);line-height:1.08;margin:0;
  text-shadow:0 4px 40px rgba(30,16,6,.5)}
 .ctitle span{display:block}
-.ctitle em{display:block;font-style:italic;color:#EBC98F}
+.ctitle em{display:block;font-style:italic;color:#EBC98F;font-size:.66em;margin-top:.34em;letter-spacing:.005em}
 .ctitle span,.ctitle em{animation:cLine 1.15s cubic-bezier(.2,.8,.25,1) both}
 .ctitle span:nth-child(2){animation-delay:.12s}.ctitle em{animation-delay:.24s}
 @keyframes cLine{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
@@ -508,6 +508,16 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .rvp a{flex:1;min-width:0;display:block}
 .rvp img{width:100%;height:92px;object-fit:cover;border-radius:12px;transition:transform .3s ease;display:block}
 .rvp a:hover img{transform:scale(1.04)}
+
+/* portfolio */
+.works{background:var(--paper)}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:26px}
+.wk{margin:0;position:relative;border-radius:18px;overflow:hidden;background:var(--panel);box-shadow:0 10px 28px rgba(90,60,30,.09)}
+.wk img{width:100%;height:270px;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.wk:hover img{transform:scale(1.05)}
+.wk figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 11px;color:#FFF6E8;font-size:13px;font-weight:600;
+ background:linear-gradient(180deg,transparent,rgba(30,18,8,.82))}
+@media(max-width:600px){.wk img{height:210px}}
 /* · general polish · */
 h2{letter-spacing:-.01em}
 .card h3{font-family:var(--serif);font-weight:400;font-size:23px}
@@ -545,6 +555,11 @@ const homeHtml=head(
  <div class="tbit"><b>European</b><span>hygiene standard, single-use files</span></div>
 </div></div></section>
 <section id="reviews"><div class="wrap"><p class="tag">Guest love</p><h2>★ ${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews</h2>${reviewCards(9)}</div></section>
+<section class="works"><div class="wrap"><p class="tag">Fresh from the salon</p><h2>Sets we finished this month</h2>
+<p class="secsub">Every photo below was taken at 56 Châu Thị Vĩnh Tế, on our guests' own hands. No stock images, no filters.</p>
+<div class="wgrid">${WORKS.map(w=>`<figure class="wk"><img src="${BASE}/assets/${w.f}" alt="${w.c} at ${BIZ.name} Da Nang" loading="lazy"><figcaption>${w.c}</figcaption></figure>`).join('')}</div>
+<p class="hintline">More every week on <a href="${BIZ.instagram}" rel="noopener">Instagram</a>.</p>
+</div></section>
 <section class="gallerysec"><div class="wrap"><p class="tag">The salon</p><h2>Step inside Reborn</h2>
 <div class="gal">${['salon','arch','interior','refined','chand','tray'].map((g,i)=>`<img src="${BASE}/assets/${g}.jpg" alt="${BIZ.name} salon Da Nang · ${['reception','foot therapy lounge','interior','refined touch room','cherry blossom chandelier','spa ingredients'][i]}" loading="lazy">`).join('')}</div></div></section>
 <section class="story"><div class="wrap">

@@ -17,15 +17,15 @@ const BIZ={
  facebook:"https://www.facebook.com/people/Reborn-Nails-Retreat/61589196314835/",
  tripadvisor:"https://www.tripadvisor.com/Attraction_Review-g298085-d34389993-Reviews-Reborn_Nails_Retreat-Da_Nang.html",
  igPost:"https://www.instagram.com/p/DYg-if_kQw5/",
-promo:{code:"SuongReborn",pct:5,
+promo:{code:"FionaReborn",pct:5,
   line:"Found us online? Your first visit gets 5% off.",
   terms:"Show the code at reception on your first visit to Reborn. One use per guest, on the full service menu, not combinable with other offers."},
  langs:"English and Vietnamese spoken · printed menu in 20 languages",
- owner:"Sương",
+ owner:"Fiona (Sương)",
  story:{
   title:"Paris taught us the standard. Da Nang gave us the soul.",
-  p1:"Sương learned nails at home in Vietnam, then went travelling through France and the rest of Europe. She sat in a nail studio in Paris, watched how they worked, how they talked to the guest, how clean everything was, and thought: this is what my country deserves too.",
-  p2:"Reborn is that idea, opened on Châu Thị Vĩnh Tế: Paris-level standards, Korean and Japanese techniques, Vietnamese herbal rituals, at Vietnamese prices. Sương speaks fluent English and runs the floor herself, and the printed menu is translated into 20 languages, so nothing gets lost in translation.",
+  p1:"Fiona learned nails at home in Vietnam, then went travelling through France and the rest of Europe. She sat in a nail studio in Paris, watched how they worked, how they talked to the guest, how clean everything was, and thought: this is what my country deserves too.",
+  p2:"Reborn is that idea, opened on Châu Thị Vĩnh Tế: Paris-level standards, Korean and Japanese techniques, Vietnamese herbal rituals, at Vietnamese prices. Fiona speaks fluent English and runs the floor herself, and the printed menu is translated into 20 languages, so nothing gets lost in translation.",
   p3:"The team you meet at the door is the team in these photos, in the brown wrap uniforms, on opening day.",
   quote:"A beautiful space for people to pause and feel reborn."
  }

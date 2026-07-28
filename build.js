@@ -312,40 +312,37 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .wrap,.nav,.foot,section{position:relative;z-index:2}
 
 /* · cinematic hero · */
-.chero{position:relative;min-height:min(94vh,880px);display:flex;flex-direction:column;align-items:center;justify-content:center;
- text-align:center;overflow:hidden;padding:96px 22px 30px;color:#FCF7EC;isolation:isolate}
+.chero{position:relative;min-height:calc(100svh - 116px);display:flex;flex-direction:column;align-items:center;justify-content:center;
+ text-align:center;overflow:hidden;padding:14px 22px 18px;color:#FCF7EC;isolation:isolate}
 .chero .cbg{position:absolute;inset:0;z-index:-2}
-.chero .cbg video{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+.chero .cbg video{width:100%;height:100%;object-fit:cover;transform:scale(1.03)}
 .chero .cveil{position:absolute;inset:0;background:
- radial-gradient(120% 80% at 50% 42%,rgba(28,17,8,.42) 0%,rgba(28,17,8,.72) 62%,rgba(28,17,8,.9) 100%),
- linear-gradient(180deg,rgba(28,17,8,.8) 0%,rgba(28,17,8,.5) 30%,rgba(28,17,8,.62) 66%,rgba(28,17,8,.92) 100%)}
-.chero .cgrain{position:absolute;inset:0;opacity:.5;mix-blend-mode:soft-light;
+ radial-gradient(115% 75% at 50% 44%,rgba(22,13,6,.5) 0%,rgba(22,13,6,.8) 58%,rgba(22,13,6,.95) 100%),
+ linear-gradient(180deg,rgba(22,13,6,.9) 0%,rgba(22,13,6,.6) 26%,rgba(22,13,6,.68) 60%,rgba(22,13,6,.95) 100%)}
+.chero .cgrain{position:absolute;inset:0;opacity:.45;mix-blend-mode:soft-light;
  background-image:radial-gradient(rgba(255,255,255,.16) .5px,transparent .5px);background-size:3px 3px}
-.chero .flor{position:absolute;z-index:-1;width:min(230px,20vw);opacity:.22;mix-blend-mode:screen;filter:blur(.3px)}
-.chero .flor.tl{top:-14px;left:-22px}.chero .flor.tr{top:-14px;right:-22px}
-.cin{max-width:900px;margin-top:0;animation:cIn 1.1s cubic-bezier(.2,.8,.25,1) both}
-@keyframes cIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-.clogo{width:150px;margin:0 auto 16px;filter:drop-shadow(0 4px 18px rgba(20,10,4,.4))}
-.ceyebrow{font-size:12px;letter-spacing:.34em;text-transform:uppercase;font-weight:700;color:#E9CFA4;margin:0 0 14px}
-.ctitle{font-family:var(--serif);font-weight:400;color:#FFF9EF;font-size:clamp(38px,6.6vw,84px);line-height:1.02;margin:0;
- text-shadow:0 4px 40px rgba(30,16,6,.45)}
+.chero .flor{position:absolute;z-index:-1;width:min(200px,17vw);opacity:.2;mix-blend-mode:screen}
+.chero .flor.tl{top:-14px;left:-20px}.chero .flor.tr{top:-14px;right:-20px}
+.cin{max-width:900px;animation:cIn 1.1s cubic-bezier(.2,.8,.25,1) both}
+@keyframes cIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.clogo{width:clamp(62px,8.2vh,100px);margin:0 auto clamp(6px,1.2vh,10px);filter:drop-shadow(0 4px 18px rgba(20,10,4,.45))}
+.ceyebrow{font-size:clamp(9.5px,1.3vh,11px);letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:#E9CFA4;margin:0 0 clamp(6px,1.1vh,10px)}
+.ctitle{font-family:var(--serif);font-weight:400;color:#FFF9EF;font-size:clamp(26px,min(4.3vw,5.8vh),52px);line-height:1.06;margin:0;
+ text-shadow:0 4px 40px rgba(30,16,6,.5)}
 .ctitle span{display:block}
 .ctitle em{display:block;font-style:italic;color:#EBC98F}
 .ctitle span,.ctitle em{animation:cLine 1.15s cubic-bezier(.2,.8,.25,1) both}
 .ctitle span:nth-child(2){animation-delay:.12s}.ctitle em{animation-delay:.24s}
-@keyframes cLine{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
-.csub{font-size:17px;color:rgba(255,247,235,.9);max-width:620px;margin:22px auto 0}
+@keyframes cLine{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.csub{font-size:clamp(12.5px,1.8vh,15px);line-height:1.45;color:rgba(255,247,235,.9);max-width:700px;margin:clamp(9px,1.6vh,15px) auto 0}
 .csub b{color:#EBC98F}
-.cbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.cbtns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-top:clamp(12px,2.2vh,22px)}
 .ghost.light{border-color:rgba(255,247,235,.5);color:#FCF7EC;background:transparent}
 .ghost.light:hover{background:rgba(255,247,235,.12)}
-.cfacts{position:relative;display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:auto;padding-top:52px;
- font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,247,235,.72);font-weight:600}
+.cfacts{position:relative;display:flex;gap:11px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:clamp(12px,2.4vh,24px);
+ font-size:clamp(9px,1.3vh,11.5px);letter-spacing:.15em;text-transform:uppercase;color:rgba(255,247,235,.72);font-weight:600}
 .cfacts i{width:4px;height:4px;border-radius:50%;background:#C9A15C;display:inline-block}
-.scrollcue{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);width:26px;height:42px;border:1px solid rgba(255,247,235,.45);border-radius:999px;display:flex;justify-content:center;padding-top:8px}
-.scrollcue span{width:3px;height:8px;border-radius:2px;background:#E9CFA4;animation:cue 1.8s ease-in-out infinite}
-@keyframes cue{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
-@media (prefers-reduced-motion:reduce){.scrollcue span{animation:none}.cin,.ctitle span,.ctitle em{animation:none}}
+@media (prefers-reduced-motion:reduce){.cin,.ctitle span,.ctitle em{animation:none}}
 .nav{background:rgba(246,241,231,.9)}
 
 /* · dark ritual chapter · */
@@ -535,8 +532,8 @@ const homeHtml=head(
  <div class="cin">
   <img class="clogo" src="${BASE}/assets/logo_light.webp" alt="${BIZ.name}" width="150">
   <p class="ceyebrow">Nails · Spa Pedicure · Head Spa · Massage</p>
-  <h1 class="ctitle"><span>The nail salon &amp; head spa</span><span>of Da Nang,</span><em>five minutes from the beach</em></h1>
-  <p class="csub">56 Châu Thị Vĩnh Tế, An Thuong · 5 minutes from My Khe Beach.<br>${stars} <b>${BIZ.rating}</b> from ${BIZ.ratingCount}+ Google reviews · sterilised single-use tools · English spoken, menu in 20 languages.</p>
+  <h1 class="ctitle"><span>Paris standards,</span><span>Vietnamese prices.</span><em>Da Nang's 4.9★ nail &amp; head spa</em></h1>
+  <p class="csub">Fiona trained in Vietnam, studied the craft in Paris, and brought that standard back to 56 Châu Thị Vĩnh Tế, five minutes from My Khe Beach.<br>${stars} <b>${BIZ.rating}</b> from ${BIZ.ratingCount}+ Google reviews · sterilised single-use tools · English spoken, menu in 20 languages.</p>
   <div class="cbtns"><a class="cta gold" href="${BIZ.directions}" rel="noopener">Get directions</a><a class="ghost light" href="#services">Menu &amp; prices</a></div>
  </div>
  <div class="cfacts"><span>Gel from 200K</span><i></i><span>Head spa 120–850K</span><i></i><span>Pedicure rituals 250–590K</span><i></i><span>Open daily 9–20</span></div>
@@ -547,40 +544,9 @@ const homeHtml=head(
  <div class="tbit"><b>English spoken</b><span>menu in 20 languages, no mix-ups</span></div>
  <div class="tbit"><b>European</b><span>hygiene standard, single-use files</span></div>
 </div></div></section>
-<section id="services"><div class="wrap"><p class="tag">Menu & prices</p><h2>Services at Reborn · full price list</h2>
-<p class="sub" style="margin-left:0;text-align:left">Prices in thousand Vietnamese đồng: 100K = 100,000 ₫ ≈ $4. No hidden fees · the menu below is exactly what you pay in the salon.</p>
-<div class="grid">${svcCards}</div></div></section>
-${promoCard()}
-<section id="menu"><div class="wrap"><p class="tag">The menu</p><h2>Our menu, exactly as in the salon</h2>
-<p class="secsub">Swipe through the printed pages · what you see is what you pay.</p>
-<div class="menuScroll">${[1,2,3,4,5].map(i=>`<a href="${BASE}/assets/menu-${i}.jpg" target="_blank" rel="noopener" class="menuPage"><img src="${BASE}/assets/menu-${i}.jpg" alt="Reborn Nails & Retreat menu · page ${i}" loading="lazy"></a>`).join('')}</div></div></section>
+<section id="reviews"><div class="wrap"><p class="tag">Guest love</p><h2>★ ${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews</h2>${reviewCards(9)}</div></section>
 <section class="gallerysec"><div class="wrap"><p class="tag">The salon</p><h2>Step inside Reborn</h2>
 <div class="gal">${['salon','arch','interior','refined','chand','tray'].map((g,i)=>`<img src="${BASE}/assets/${g}.jpg" alt="${BIZ.name} salon Da Nang · ${['reception','foot therapy lounge','interior','refined touch room','cherry blossom chandelier','spa ingredients'][i]}" loading="lazy">`).join('')}</div></div></section>
-<section class="ritual"><div class="wrap">
-<p class="tag light">The Reborn way</p><h2 class="light">Every treatment here is a ritual</h2>
-<p class="secsub light">Not a chair and a bottle of polish · a sequence, timed, in a room built to make you forget the street outside.</p>
-<div class="ritgrid">${RITUALS.map(r=>`<article class="rit">
-  <img src="${BASE}/assets/${r.img}" alt="${r.name} at ${BIZ.name}" loading="lazy">
-  <div class="ritb">
-   <h3>${r.name}</h3>
-   <p class="ritmeta">${r.mins} minutes · ${r.price} · ${r.moves.length} movements</p>
-   <p class="ritin">${r.intro}</p>
-   <ol class="rittl">${r.moves.map(m=>`<li><b>${m[0]}</b><span>${m[1]}</span><time>${m[2]}</time></li>`).join('')}</ol>
-   <a class="ritlink" href="${BASE}/services/${r.slug}/">See the full ${r.slug==='spa-pedicure'?'pedicure':'head spa'} menu →</a>
-  </div></article>`).join('')}</div>
-</div></section>
-
-<section class="finder" id="finder"><div class="wrap">
-<p class="tag">Plan your visit</p><h2>Where are you staying?</h2>
-<p class="secsub">Pick your hotel, beach or landmark · we will tell you exactly how far the salon is and open the route for you.</p>
-<div class="fbox">
- <input id="fq" type="search" autocomplete="off" placeholder="Start typing: My Khe, Hyatt, An Thuong, airport…" aria-label="Your hotel or landmark in Da Nang">
- <div id="fchips" class="fchips"></div>
- <div id="fout" class="fout" aria-live="polite"></div>
-</div>
-<p class="hintline">Staying somewhere else? <a href="${BASE}/da-nang/">See every area of Da Nang →</a></p>
-</div></section>
-
 <section class="story"><div class="wrap">
 <div class="stgrid">
  <div class="stimg"><img src="${BASE}/assets/founder.jpg" alt="${BIZ.owner}, founder of ${BIZ.name}, on opening day" loading="lazy">
@@ -596,7 +562,38 @@ ${promoCard()}
 </div>
 <div class="stteam"><img src="${BASE}/assets/team.jpg" alt="The ${BIZ.name} team on opening day" loading="lazy"><img src="${BASE}/assets/opening.jpg" alt="Opening day at ${BIZ.name} Da Nang" loading="lazy"></div>
 </div></section>
-<section id="reviews"><div class="wrap"><p class="tag">Guest love</p><h2>★ ${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews</h2>${reviewCards(9)}</div></section>
+<section class="ritual"><div class="wrap">
+<p class="tag light">The Reborn way</p><h2 class="light">Every treatment here is a ritual</h2>
+<p class="secsub light">Not a chair and a bottle of polish · a sequence, timed, in a room built to make you forget the street outside.</p>
+<div class="ritgrid">${RITUALS.map(r=>`<article class="rit">
+  <img src="${BASE}/assets/${r.img}" alt="${r.name} at ${BIZ.name}" loading="lazy">
+  <div class="ritb">
+   <h3>${r.name}</h3>
+   <p class="ritmeta">${r.mins} minutes · ${r.price} · ${r.moves.length} movements</p>
+   <p class="ritin">${r.intro}</p>
+   <ol class="rittl">${r.moves.map(m=>`<li><b>${m[0]}</b><span>${m[1]}</span><time>${m[2]}</time></li>`).join('')}</ol>
+   <a class="ritlink" href="${BASE}/services/${r.slug}/">See the full ${r.slug==='spa-pedicure'?'pedicure':'head spa'} menu →</a>
+  </div></article>`).join('')}</div>
+</div></section>
+
+<section id="services"><div class="wrap"><p class="tag">Menu & prices</p><h2>Services at Reborn · full price list</h2>
+<p class="sub" style="margin-left:0;text-align:left">Prices in thousand Vietnamese đồng: 100K = 100,000 ₫ ≈ $4. No hidden fees · the menu below is exactly what you pay in the salon.</p>
+<div class="grid">${svcCards}</div></div></section>
+${promoCard()}
+<section id="menu"><div class="wrap"><p class="tag">The menu</p><h2>Our menu, exactly as in the salon</h2>
+<p class="secsub">Swipe through the printed pages · what you see is what you pay.</p>
+<div class="menuScroll">${[1,2,3,4,5].map(i=>`<a href="${BASE}/assets/menu-${i}.jpg" target="_blank" rel="noopener" class="menuPage"><img src="${BASE}/assets/menu-${i}.jpg" alt="Reborn Nails & Retreat menu · page ${i}" loading="lazy"></a>`).join('')}</div></div></section>
+<section class="finder" id="finder"><div class="wrap">
+<p class="tag">Plan your visit</p><h2>Where are you staying?</h2>
+<p class="secsub">Pick your hotel, beach or landmark · we will tell you exactly how far the salon is and open the route for you.</p>
+<div class="fbox">
+ <input id="fq" type="search" autocomplete="off" placeholder="Start typing: My Khe, Hyatt, An Thuong, airport…" aria-label="Your hotel or landmark in Da Nang">
+ <div id="fchips" class="fchips"></div>
+ <div id="fout" class="fout" aria-live="polite"></div>
+</div>
+<p class="hintline">Staying somewhere else? <a href="${BASE}/da-nang/">See every area of Da Nang →</a></p>
+</div></section>
+
 <section><div class="wrap"><p class="tag">As seen on social</p><h2>Watch the experience</h2>
 <p class="secsub">Straight from the salon floor · tap a reel for sound, or open it on Instagram.</p>
 <div class="reelgrid">${REELS.map(r=>`<figure class="reel"><div class="rvid"><video muted loop playsinline preload="none" poster="${BASE}/assets/${r.v}.jpg" src="${BASE}/assets/${r.v}.mp4"></video><span class="rplay"></span></div><figcaption>${r.t} · <a href="https://www.instagram.com/p/${r.c}/" rel="noopener" target="_blank">Instagram ↗</a></figcaption></figure>`).join('')}</div>

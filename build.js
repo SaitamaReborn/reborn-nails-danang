@@ -88,7 +88,9 @@ ${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a> · <a href="
 <nav class="fnav"><a href="${BASE}/">Home</a>${SERVICES.map(s=>` · <a href="${BASE}/services/${s.slug}/">${s.short}</a>`).join('')} · <a href="${BASE}/da-nang/">Da Nang areas</a></nav>
 <p class="fcopy">© ${NOW.getUTCFullYear()} ${BIZ.name} · premium nail salon, spa pedicure, head spa & waxing in Da Nang.</p>
 </div></footer>
-<script>document.addEventListener('click',e=>{const b=e.target.closest('[data-code]');if(!b)return;
+<script>document.addEventListener('click',e=>{const n=e.target.closest('.rnav');if(n){const t=document.getElementById('reelTrack');
+ t.scrollBy({left:(+n.dataset.dir)*(t.querySelector('.reel').offsetWidth+16)*2,behavior:'smooth'});return;}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-code]');if(!b)return;
  const c=b.dataset.code;const done=()=>{const o=b.textContent;b.classList.add('copied');
   if(b.classList.contains('pcode')){b.querySelector('span').textContent='Copied ✓';setTimeout(()=>b.querySelector('span').textContent='Tap to copy',1800);}
   else{b.textContent='Copied ✓';setTimeout(()=>{b.textContent=o;b.classList.remove('copied')},1800);}};
@@ -325,16 +327,16 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .chero .flor.tl{top:-14px;left:-20px}.chero .flor.tr{top:-14px;right:-20px}
 .cin{max-width:900px;animation:cIn 1.1s cubic-bezier(.2,.8,.25,1) both}
 @keyframes cIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-.clogo{width:clamp(62px,8.2vh,100px);margin:0 auto clamp(6px,1.2vh,10px);filter:drop-shadow(0 4px 18px rgba(20,10,4,.45))}
-.ceyebrow{font-size:clamp(9.5px,1.3vh,11px);letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:#E9CFA4;margin:0 0 clamp(6px,1.1vh,10px)}
-.ctitle{font-family:var(--serif);font-weight:400;color:#FFF9EF;font-size:clamp(24px,min(3.6vw,4.7vh),46px);line-height:1.08;margin:0;
+.clogo{width:clamp(96px,13vh,150px);margin:0 auto clamp(8px,1.5vh,14px);filter:drop-shadow(0 4px 18px rgba(20,10,4,.45))}
+.ceyebrow{font-size:clamp(10px,1.4vh,12px);letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:#E9CFA4;margin:0 0 clamp(6px,1.1vh,10px)}
+.ctitle{font-family:var(--serif);font-weight:400;color:#FFF9EF;font-size:clamp(27px,min(4.05vw,5.2vh),52px);line-height:1.08;margin:0;
  text-shadow:0 4px 40px rgba(30,16,6,.5)}
 .ctitle span{display:block}
 .ctitle em{display:block;font-style:italic;color:#EBC98F;font-size:.66em;margin-top:.34em;letter-spacing:.005em}
 .ctitle span,.ctitle em{animation:cLine 1.15s cubic-bezier(.2,.8,.25,1) both}
 .ctitle span:nth-child(2){animation-delay:.12s}.ctitle em{animation-delay:.24s}
 @keyframes cLine{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-.csub{font-size:clamp(12.5px,1.8vh,15px);line-height:1.45;color:rgba(255,247,235,.9);max-width:700px;margin:clamp(9px,1.6vh,15px) auto 0}
+.csub{font-size:clamp(13.5px,1.95vh,16.5px);line-height:1.45;color:rgba(255,247,235,.9);max-width:700px;margin:clamp(9px,1.6vh,15px) auto 0}
 .csub b{color:#EBC98F}
 .cbtns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-top:clamp(12px,2.2vh,22px)}
 .ghost.light{border-color:rgba(255,247,235,.5);color:#FCF7EC;background:transparent}
@@ -611,7 +613,8 @@ ${promoCard()}
 
 <section><div class="wrap"><p class="tag">As seen on social</p><h2>Watch the experience</h2>
 <p class="secsub">Straight from the salon floor · tap a reel for sound, or open it on Instagram.</p>
-<div class="reelgrid">${REELS.map(r=>`<figure class="reel"><div class="rvid"><video muted loop playsinline preload="none" poster="${BASE}/assets/${r.v}.jpg" src="${BASE}/assets/${r.v}.mp4"></video><span class="rplay"></span></div><figcaption>${r.t} · <a href="https://www.instagram.com/p/${r.c}/" rel="noopener" target="_blank">Instagram ↗</a></figcaption></figure>`).join('')}</div>
+<div class="reelwrap"><button class="rnav prev" data-dir="-1" aria-label="Previous">‹</button><button class="rnav next" data-dir="1" aria-label="Next">›</button>
+<div class="reelgrid" id="reelTrack">${REELS.map(r=>`<figure class="reel"><div class="rvid"><video muted loop playsinline preload="none" poster="${BASE}/assets/${r.v}.jpg" src="${BASE}/assets/${r.v}.mp4"></video><span class="rplay"></span></div><figcaption>${r.t} · <a href="https://www.instagram.com/p/${r.c}/" rel="noopener" target="_blank">Instagram ↗</a></figcaption></figure>`).join('')}</div></div>
 <div class="socrow" style="margin-top:26px">${socCards}</div></div></section>
 ${mapBlock()}
 <section><div class="wrap"><p class="tag">Good to know</p><h2>Frequently asked questions</h2>

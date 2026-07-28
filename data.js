@@ -107,9 +107,13 @@ const REVIEWS=[
 /* Social proof · real reels from @reborn_nailsnretreat (she reposts her TikToks here) */
 const REELS=[
  {v:"reel_pedi",c:"DbAgyOPxxGK",t:"The pedicure you deserve"},
- {v:"reel_inf",c:"DZUUoGBxN4b",t:"“This felt medically necessary” · guest vlog",inf:1},
+ {v:"reel_DauuLpiPUdS",c:"DauuLpiPUdS",t:"Your next nail appointment starts here"},
  {v:"reel_butterfly",c:"Da0YmoLBTwh",t:"A single butterfly in the ocean"},
+ {v:"reel_DaE52_uxcqA",c:"DaE52_uxcqA",t:"Special nails for a special girl"},
  {v:"reel_chrome",c:"DZ1tZPBxP0y",t:"Chrome nails never go out of style"},
+ {v:"reel_DZ7Z94MB7Ej",c:"DZ7Z94MB7Ej",t:"Fresh set, close up"},
+ {v:"reel_DbFX16JlRTj",c:"DbFX16JlRTj",t:"Welcoming our youngest guests"},
+ {v:"reel_inf",c:"DZUUoGBxN4b",t:"“This felt medically necessary” · guest vlog"},
  {v:"reel_brand",c:"DbLliwRBplP",t:"Reborn. The Original."}
 ];
 const SOCIAL=[
@@ -119,15 +123,15 @@ const SOCIAL=[
 ];
 
 const WORKS=[
- {f:"work/w6_0.jpg",c:"Summer vibe nails"},
- {f:"work/w7_0.jpg",c:"Hand-painted floral set"},
- {f:"work/w8_0.jpg",c:"Soft French with charms"},
+ {f:"work/w7_0.jpg",c:"Soft French with charms · on our card"},
+ {f:"work/w6_0.jpg",c:"Summer vibe nails · on our card"},
+ {f:"work/w10_0.jpg",c:"Nude set with gold details · on our card"},
+ {f:"work/w4_0.jpg",c:"Guests on the day of their set"},
+ {f:"work/w8_0.jpg",c:"Hand-painted floral set"},
  {f:"work/w8_1.jpg",c:"Blush ombré set"},
  {f:"work/w8_2.jpg",c:"Chrome and pearls"},
  {f:"work/w9_0.jpg",c:"Milky white almond nails"},
- {f:"work/w10_0.jpg",c:"Nude set with gold details"},
- {f:"work/w11_0.jpg",c:"Blue gel pedicure"},
- {f:"work/w4_0.jpg",c:"Guests on the day of their set"}
+ {f:"work/w11_0.jpg",c:"Blue gel pedicure"}
 ];
 
 /* Signature rituals · real sequences, grouped into movements */

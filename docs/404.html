@@ -38,7 +38,9 @@ Open daily 9:00 AM – 8:00 PM · <a href="tel:+84788668588">+84 788 668 588</a>
 <nav class="fnav"><a href="/reborn-nails-danang/">Home</a> · <a href="/reborn-nails-danang/services/gel-nails/">Gel polish</a> · <a href="/reborn-nails-danang/services/biab-builder-gel/">BIAB / Builder</a> · <a href="/reborn-nails-danang/services/gelx-extensions/">GelX</a> · <a href="/reborn-nails-danang/services/nail-art/">Nail art</a> · <a href="/reborn-nails-danang/services/spa-pedicure/">Pedicure</a> · <a href="/reborn-nails-danang/services/head-spa-hair-wash/">Head spa</a> · <a href="/reborn-nails-danang/services/foot-massage/">Foot massage</a> · <a href="/reborn-nails-danang/services/massage/">Massage</a> · <a href="/reborn-nails-danang/services/waxing/">Waxing</a> · <a href="/reborn-nails-danang/da-nang/">Da Nang areas</a></nav>
 <p class="fcopy">© 2026 Reborn Nails & Retreat · premium nail salon, spa pedicure, head spa & waxing in Da Nang.</p>
 </div></footer>
-<script>document.addEventListener('click',e=>{const b=e.target.closest('[data-code]');if(!b)return;
+<script>document.addEventListener('click',e=>{const n=e.target.closest('.rnav');if(n){const t=document.getElementById('reelTrack');
+ t.scrollBy({left:(+n.dataset.dir)*(t.querySelector('.reel').offsetWidth+16)*2,behavior:'smooth'});return;}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-code]');if(!b)return;
  const c=b.dataset.code;const done=()=>{const o=b.textContent;b.classList.add('copied');
   if(b.classList.contains('pcode')){b.querySelector('span').textContent='Copied ✓';setTimeout(()=>b.querySelector('span').textContent='Tap to copy',1800);}
   else{b.textContent='Copied ✓';setTimeout(()=>{b.textContent=o;b.classList.remove('copied')},1800);}};

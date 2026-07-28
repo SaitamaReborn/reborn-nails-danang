@@ -123,15 +123,14 @@ const SOCIAL=[
 ];
 
 const WORKS=[
- {f:"work/w7_0.jpg",c:"Soft French with charms · on our card"},
- {f:"work/w6_0.jpg",c:"Summer vibe nails · on our card"},
- {f:"work/w10_0.jpg",c:"Nude set with gold details · on our card"},
- {f:"work/w4_0.jpg",c:"Guests on the day of their set"},
- {f:"work/w8_0.jpg",c:"Hand-painted floral set"},
- {f:"work/w8_1.jpg",c:"Blush ombré set"},
- {f:"work/w8_2.jpg",c:"Chrome and pearls"},
- {f:"work/w9_0.jpg",c:"Milky white almond nails"},
- {f:"work/w11_0.jpg",c:"Blue gel pedicure"}
+ {f:"work/w8_0.jpg",c:"Hand-painted florals with charms · on our card"},
+ {f:"work/w6_0.jpg",c:"Summer vibe set · on our card"},
+ {f:"work/w8_2.jpg",c:"Soft French with painted flowers · on our card"},
+ {f:"work/w9_0.jpg",c:"Red and white floral set"},
+ {f:"work/w8_1.jpg",c:"Milky white almond set"},
+ {f:"work/w10_0.jpg",c:"Nude set with painted details"},
+ {f:"work/w11_0.jpg",c:"Blue gel pedicure, in progress"},
+ {f:"work/w4_0.jpg",c:"“They are the best” · a guest showing her set"}
 ];
 
 /* Signature rituals · real sequences, grouped into movements */

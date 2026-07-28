@@ -1,4 +1,4 @@
-/* Reborn Nails & Retreat — site data */
+/* Reborn Nails & Retreat · site data */
 const BIZ={
  name:"Reborn Nails & Retreat",
  short:"Reborn",
@@ -20,94 +20,102 @@ const BIZ={
 promo:{code:"SuongReborn",pct:5,
   line:"Found us online? Your first visit gets 5% off.",
   terms:"Show the code at reception on your first visit to Reborn. One use per guest, on the full service menu, not combinable with other offers."},
- langs:"English · 한국어 · 日本語 · Русский · Français · Español · 中文"
+ langs:"English (fluent), Vietnamese, Korean, Japanese, Russian and Chinese greetings",
+ owner:"Sương",
+ story:{
+  title:"Paris taught us the standard. Da Nang gave us the soul.",
+  p1:"Sương learned nails at home in Vietnam, then went travelling through France and the rest of Europe. She sat in a nail studio in Paris, watched how they worked, how they talked to the guest, how clean everything was, and thought: this is what my country deserves too.",
+  p2:"Reborn is that idea, opened on Châu Thị Vĩnh Tế: Paris-level standards, Korean and Japanese techniques, Vietnamese herbal rituals, at Vietnamese prices. Sương speaks fluent English and runs the floor herself, so nothing gets lost in translation.",
+  p3:"The team you meet at the door is the team in these photos, in the brown wrap uniforms, on opening day.",
+  quote:"A beautiful space for people to pause and feel reborn."
+ }
 };
 
 const SERVICES=[
- {slug:"gel-nails",name:"Gel Nails & Gel Polish",short:"Gel polish",img:"nails.jpg",vid:true,
+ {slug:"gel-nails",vsrc:"vid_hero",name:"Gel Nails & Gel Polish",short:"Gel polish",img:"nails.jpg",vid:true,
   desc:"Mirror-shine gel manicure that lasts 2–3 weeks, applied by certified technicians with sterilised single-use tools.",
   prices:[["Gel polish (full colour)","200K"],["Base + top coat only","100K"],["Classic polish","100K"],["Skittle nails (multi-colour)","250K"],["Hard gel strengthening layer","from 60K"],["Gel colour removal","60K"]],
   faq:[["How long does gel polish last at Reborn?","Our gel polish keeps its mirror shine for 2–3 weeks. We use professional Korean and Japanese gel systems and finish every set with cuticle care."],
-      ["Do you remove my old gel first?","Yes. Gentle gel removal is 60K and protects your natural nail — we never rip or force the old layer off."],
+      ["Do you remove my old gel first?","Yes. Gentle gel removal is 60K and protects your natural nail · we never rip or force the old layer off."],
       ["Do I need to book ahead for a gel manicure?","Walk-ins are welcome every day from 9 AM to 8 PM. Most gel manicures take about 45 minutes."]]},
- {slug:"biab-builder-gel",name:"BIAB & Builder Gel",short:"BIAB / Builder",img:"nails.jpg",vid:true,
-  desc:"Builder-in-a-bottle and sculpted builder gel for strong, natural-looking nails — fills, overlays and short or long extensions.",
+ {slug:"biab-builder-gel",vsrc:"reel_brand",name:"BIAB & Builder Gel",short:"BIAB / Builder",img:"nails.jpg",vid:true,
+  desc:"Builder-in-a-bottle and sculpted builder gel for strong, natural-looking nails · fills, overlays and short or long extensions.",
   prices:[["BIAB (builder in a bottle)","300K"],["Builder gel on natural nails","400K"],["Builder gel fill (refill)","380K"],["Short extension","500K"],["Long extension","550K"],["Single tip repair","55K"],["Builder gel removal","90K"]],
   faq:[["What is BIAB and is it better than acrylic?","BIAB is a soakable builder gel that strengthens your natural nail with a natural look. It is lighter and gentler than acrylic and removal does not damage the nail plate."],
       ["How long does a builder gel set take?","A full builder gel set takes around 80 minutes including shaping and cuticle care."],
-      ["Can you fix one broken nail?","Yes — a single tip repair or extension is 55K and takes about 10 minutes."]]},
- {slug:"gelx-extensions",name:"GelX Nail Extensions",short:"GelX",img:"nails.jpg",vid:true,
-  desc:"Light, full-cover soft gel extensions — instant length with a featherweight feel, perfect for holidays and events.",
+      ["Can you fix one broken nail?","Yes · a single tip repair or extension is 55K and takes about 10 minutes."]]},
+ {slug:"gelx-extensions",vsrc:"reel_butterfly",name:"GelX Nail Extensions",short:"GelX",img:"nails.jpg",vid:true,
+  desc:"Light, full-cover soft gel extensions · instant length with a featherweight feel, perfect for holidays and events.",
   prices:[["GelX full set","280K"],["Press-on removal","70K"],["Single tip (extension)","55K"]],
   faq:[["How long do GelX extensions last?","GelX typically lasts 3–4 weeks with normal wear. They are light, flexible and kind to your natural nails."],
-      ["GelX or builder gel — which should I choose?","Choose GelX for instant length and a light feel; choose builder gel for maximum strength on your natural nail. Our technicians will advise you at the salon."]]},
- {slug:"nail-art",name:"Nail Art & Design",short:"Nail art",img:"nails.jpg",vid:true,
+      ["GelX or builder gel · which should I choose?","Choose GelX for instant length and a light feel; choose builder gel for maximum strength on your natural nail. Our technicians will advise you at the salon."]]},
+ {slug:"nail-art",vsrc:"reel_chrome",name:"Nail Art & Design",short:"Nail art",img:"nails.jpg",vid:true,
   desc:"Hand-painted designs, cat-eye and chrome, ombré and French tips, 3D gel flowers, pearls, charms and blooming-gel watercolour.",
-  prices:[["Cat eye / chrome — full set","180K"],["Ombré / French — full set","220K"],["Hand-painted design (per nail)","15K–100K"],["3D chrome art (per nail)","40K–80K"],["3D gel flowers (per nail)","40K–70K"],["Pearls, charms, glitter (per nail)","20K–80K"],["Stickers (per nail)","10K–40K"]],
+  prices:[["Cat eye / chrome · full set","180K"],["Ombré / French · full set","220K"],["Hand-painted design (per nail)","15K–100K"],["3D chrome art (per nail)","40K–80K"],["3D gel flowers (per nail)","40K–70K"],["Pearls, charms, glitter (per nail)","20K–80K"],["Stickers (per nail)","10K–40K"]],
   faq:[["How much does nail art cost in Da Nang?","At Reborn, nail art starts at 10K per nail for stickers and 15K for hand-painted designs. A full cat-eye or chrome set is 180K, ombré or French 220K. The final price depends on complexity and your technician confirms it before starting."],
-      ["Can you copy a design from a photo?","Yes — bring any photo or Pinterest reference and our artists will recreate or adapt it to your nails."]]},
- {slug:"spa-pedicure",name:"Spa Pedicure",short:"Pedicure",img:"footbath.jpg",
-  desc:"Herbal foot soaks, heel therapy, hot-stone massage and warm-towel rituals on cream leather armchairs — from a 40-minute refresh to the 75-minute Reborn Signature.",
-  prices:[["Soft Touch · 40 min","250K"],["Relaxing Pedicure Ritual · 55 min","380K"],["Deep Care · 65 min — best seller","450K"],["Reborn Signature · 75 min","590K"],["Hot stone add-on","80K"],["Gel polish for toes","180K"]],
+      ["Can you copy a design from a photo?","Yes · bring any photo or Pinterest reference and our artists will recreate or adapt it to your nails."]]},
+ {slug:"spa-pedicure",vsrc:"reel_pedi",name:"Spa Pedicure",short:"Pedicure",img:"footbath.jpg",
+  desc:"Herbal foot soaks, heel therapy, hot-stone massage and warm-towel rituals on cream leather armchairs · from a 40-minute refresh to the 75-minute Reborn Signature.",
+  prices:[["Soft Touch · 40 min","250K"],["Relaxing Pedicure Ritual · 55 min","380K"],["Deep Care · 65 min · best seller","450K"],["Reborn Signature · 75 min","590K"],["Hot stone add-on","80K"],["Gel polish for toes","180K"]],
   faq:[["What is included in the Deep Care pedicure?","Deep Care (65 min, 450K) includes a warm herbal foot soak, cuticle care, nail shaping, heel buffing, foot steaming, exfoliation, intensive heel treatment, hydrating mask, foot and calf massage, warm towel wrap, nourishing oils and fresh fruit."],
       ["Is it safe and hygienic?","Every tool is sterilised in a medical steriliser before it touches you, and files or buffers are single-use."],
-      ["Can two people have a pedicure together?","Yes — couples and friends are seated side by side. Groups are welcome, just message us on Instagram or walk in."]]},
- {slug:"head-spa-hair-wash",name:"Head Spa & Hair Wash",short:"Head spa",img:"chand.jpg",
+      ["Can two people have a pedicure together?","Yes · couples and friends are seated side by side. Groups are welcome, just message us on Instagram or walk in."]]},
+ {slug:"head-spa-hair-wash",vsrc:"reel_inf",name:"Head Spa & Hair Wash",short:"Head spa",img:"chand.jpg",
   desc:"Vietnamese herbal hair-wash therapy meets Korean head spa: scalp massage, facial care, hot stones and herbal steam under a cherry-blossom chandelier.",
-  prices:[["Basic hair wash · 25 min","120K"],["Relax Ritual · 45 min","250K"],["Deep Relax Ritual · 60 min","380K"],["Warm Stone Escape · 70 min","450K"],["Reborn Signature · 80 min — best seller","500K"],["Carbony Skin Detox / CO₂ · 75 min","600K"],["Reborn Ultimate Ritual · 95 min","750K"],["Luxury Skin Recovery · 105 min","850K"]],
-  faq:[["What is a Vietnamese hair wash and why is it famous?","A Vietnamese hair wash is a full ritual: double herbal shampoo, scalp massage, neck and shoulder massage, often with facial care and herbal steam. At Reborn it lasts 25 to 105 minutes and costs 120K–850K — a fraction of spa prices in Korea or Japan."],
-      ["Which head spa should I choose?","First visit: our guests' favourite is the Reborn Signature (80 min, 500K) — facial cleansing, quartz-stone massage, scalp exfoliation, herbal steam and a snack. Short on time: Relax Ritual, 45 min, 250K."],
-      ["Is the head spa suitable for men?","Absolutely — the ritual is unisex and very popular with male travellers after the beach or golf."]]},
- {slug:"foot-massage",name:"Foot Massage & Foot Therapy",short:"Foot massage",img:"footbath.jpg",
-  desc:"Our Foot Therapy lounge: cream leather armchairs, herbal soaks, calf and foot massage, hot stones and warm towels — as an add-on or inside a full pedicure ritual.",
+  prices:[["Basic hair wash · 25 min","120K"],["Relax Ritual · 45 min","250K"],["Deep Relax Ritual · 60 min","380K"],["Warm Stone Escape · 70 min","450K"],["Reborn Signature · 80 min · best seller","500K"],["Carbony Skin Detox / CO₂ · 75 min","600K"],["Reborn Ultimate Ritual · 95 min","750K"],["Luxury Skin Recovery · 105 min","850K"]],
+  faq:[["What is a Vietnamese hair wash and why is it famous?","A Vietnamese hair wash is a full ritual: double herbal shampoo, scalp massage, neck and shoulder massage, often with facial care and herbal steam. At Reborn it lasts 25 to 105 minutes and costs 120K–850K · a fraction of spa prices in Korea or Japan."],
+      ["Which head spa should I choose?","First visit: our guests' favourite is the Reborn Signature (80 min, 500K) · facial cleansing, quartz-stone massage, scalp exfoliation, herbal steam and a snack. Short on time: Relax Ritual, 45 min, 250K."],
+      ["Is the head spa suitable for men?","Absolutely · the ritual is unisex and very popular with male travellers after the beach or golf."]]},
+ {slug:"foot-massage",vsrc:"reel_pedi",name:"Foot Massage & Foot Therapy",short:"Foot massage",img:"footbath.jpg",
+  desc:"Our Foot Therapy lounge: cream leather armchairs, herbal soaks, calf and foot massage, hot stones and warm towels · as an add-on or inside a full pedicure ritual.",
   prices:[["Foot & calf massage · 15 min","100K"],["Foot & calf massage · 30 min","190K"],["Hot stone massage add-on","80K"],["Soft Touch pedicure + massage · 40 min","250K"],["Deep Care ritual + massage · 65 min","450K"],["Reborn Signature + hot stones · 75 min","590K"]],
   faq:[["How much does a foot massage cost in Da Nang?","Around My Khe Beach, a foot massage usually runs 200K–500K for an hour, and beach-side spas charge 10–30% more than the suburbs. At Reborn a foot and calf massage is 100K for 15 minutes or 190K for 30 minutes, and it is already included in every spa pedicure ritual from 250K."],
-      ["Can I have a foot massage without a pedicure?","Yes. Walk in and ask for the Foot Therapy lounge — 15 or 30 minutes, on the same cream leather armchairs, with a warm herbal soak first."],
+      ["Can I have a foot massage without a pedicure?","Yes. Walk in and ask for the Foot Therapy lounge · 15 or 30 minutes, on the same cream leather armchairs, with a warm herbal soak first."],
       ["Do you do reflexology-style pressure?","Our technicians work the classic Vietnamese foot and calf sequence with firm, warm pressure, and you can ask for lighter or stronger at any moment."]]},
- {slug:"massage",name:"Massage & Body Rituals",short:"Massage",img:"room.jpg",
-  desc:"Hot stones, neck and shoulder release, foot and calf work, hand and facial massage — as a treatment on its own or woven into a longer ritual.",
+ {slug:"massage",vsrc:"reel_pedi",name:"Massage & Body Rituals",short:"Massage",img:"room.jpg",
+  desc:"Hot stones, neck and shoulder release, foot and calf work, hand and facial massage · as a treatment on its own or woven into a longer ritual.",
   prices:[["Foot & calf massage · 15 min","100K"],["Foot & calf massage · 30 min","190K"],["Hot stone massage add-on","80K"],["Facial massage add-on · 15 min","90K"],["Hot stone therapy · face, neck & shoulders","120K"],["Neck & shoulder massage","included in every head-spa ritual"],["Full-body massage","ask at reception"]],
-  faq:[["Do you offer massage as well as nails?","Yes. Massage runs through everything we do — neck and shoulder release in every head-spa ritual, foot and calf massage in every pedicure, plus hot stones, facial and hand massage you can add to any treatment or book on their own."],
-      ["How much is a massage in Da Nang?","Beach-area spas usually charge 400K–600K for an hour. At Reborn a focused foot and calf massage is 100K for 15 minutes or 190K for 30, hot stones are 80K, and the full 80-minute Signature ritual — which is largely massage — is 500K."],
+  faq:[["Do you offer massage as well as nails?","Yes. Massage runs through everything we do · neck and shoulder release in every head-spa ritual, foot and calf massage in every pedicure, plus hot stones, facial and hand massage you can add to any treatment or book on their own."],
+      ["How much is a massage in Da Nang?","Beach-area spas usually charge 400K–600K for an hour. At Reborn a focused foot and calf massage is 100K for 15 minutes or 190K for 30, hot stones are 80K, and the full 80-minute Signature ritual · which is largely massage · is 500K."],
       ["Can I combine a massage with nails?","That is exactly how most guests use us: a technician works on your nails while another gives the head, neck or foot massage. Ask at reception and we will sequence it for you."]]},
  {slug:"waxing",name:"Waxing",short:"Waxing",img:"wax.jpg",
-  desc:"Gentle warm wax for silky-smooth skin — lips to full legs, done in a private treatment room.",
+  desc:"Gentle warm wax for silky-smooth skin · lips to full legs, done in a private treatment room.",
   prices:[["Upper lip","90K"],["Underarms","120K"],["Half arms","180K"],["Full arms","350K"],["Half legs","250K"],["Full legs","480K"]],
   faq:[["Does waxing at Reborn hurt?","We use warm, skin-kind wax and an experienced, gentle technique. Most guests find it far more comfortable than expected."],
       ["How should I prepare for waxing?","Let hair grow to about 5 mm and avoid strong sun exposure the day before. Aftercare balm is applied at the end."]]}
 ];
 
-/* Reviews carousel — themes drawn from real Google/TripAdvisor feedback */
+/* Reviews carousel · themes drawn from real Google/TripAdvisor feedback */
 const REVIEWS=[
  {n:"Sarah",f:"🇬🇧",s:5,t:"The best nail salon we found in Da Nang. My gel nails were done with so much precision and the head spa afterwards was heaven.",svc:"GelX + head spa"},
  {n:"지민",f:"🇰🇷",s:5,t:"다낭에서 최고의 네일샵! 직원분들이 한국어를 하셔서 편했고 시술도 정말 꼼꼼했어요. 위생도 완벽합니다.",svc:"젤네일"},
  {n:"Elena",f:"🇷🇺",s:5,t:"Очень чисто, все инструменты стерильные. Маникюр держится третью неделю. Персонал говорит по-английски, атмосфера люкс.",svc:"Маникюр + педикюр"},
  {n:"あゆみ",f:"🇯🇵",s:5,t:"ヘッドスパが最高でした。桜のシャンデリアの下で受けるマッサージは忘れられません。ネイルも丁寧で大満足です。",svc:"ヘッドスパ"},
- {n:"Marion",f:"🇫🇷",s:5,t:"Accueil adorable, thé offert, salon impeccable. Le rituel pédicure Deep Care vaut largement son prix — on ressort sur un nuage.",svc:"Spa pédicure"},
- {n:"Grace",f:"🇦🇺",s:5,t:"Walked in from My Khe beach without a booking — welcomed with tea and the most relaxing pedicure of my life. Sterile single-use tools, spotless place.",svc:"Deep Care pedicure"},
+ {n:"Marion",f:"🇫🇷",s:5,t:"Accueil adorable, thé offert, salon impeccable. Le rituel pédicure Deep Care vaut largement son prix · on ressort sur un nuage.",svc:"Spa pédicure"},
+ {n:"Grace",f:"🇦🇺",s:5,t:"Walked in from My Khe beach without a booking · welcomed with tea and the most relaxing pedicure of my life. Sterile single-use tools, spotless place.",svc:"Deep Care pedicure"},
  {n:"王婷",f:"🇨🇳",s:5,t:"离美溪海滩很近，环境优雅干净。做了猫眼美甲非常精致，技师很专业，还有中文服务。强烈推荐！",svc:"猫眼美甲"},
  {n:"Hannah",f:"🇺🇸",s:5,t:"The nail art here is genuinely artist-level. They copied my Pinterest reference perfectly and the price was a third of what I pay at home.",svc:"Nail art"},
  {n:"Thảo",f:"🇻🇳",s:5,t:"Tiệm đẹp, sạch sẽ, chị em kỹ thuật viên tay nghề cao và rất dễ thương. Gội đầu dưỡng sinh cực kỳ thư giãn.",svc:"Gội đầu dưỡng sinh"}
 ];
 
-/* Social proof — real reels from @reborn_nailsnretreat (she reposts her TikToks here) */
+/* Social proof · real reels from @reborn_nailsnretreat (she reposts her TikToks here) */
 const REELS=[
  {v:"reel_pedi",c:"DbAgyOPxxGK",t:"The pedicure you deserve"},
- {v:"reel_inf",c:"DZUUoGBxN4b",t:"“This felt medically necessary” — guest vlog",inf:1},
+ {v:"reel_inf",c:"DZUUoGBxN4b",t:"“This felt medically necessary” · guest vlog",inf:1},
  {v:"reel_butterfly",c:"Da0YmoLBTwh",t:"A single butterfly in the ocean"},
  {v:"reel_chrome",c:"DZ1tZPBxP0y",t:"Chrome nails never go out of style"},
  {v:"reel_brand",c:"DbLliwRBplP",t:"Reborn. The Original."}
 ];
 const SOCIAL=[
- {type:"instagram",label:"@reborn_nailsnretreat",url:"https://www.instagram.com/reborn_nailsnretreat/",t:"Instagram — latest sets, reels & booking by DM",img:"flatlay.jpg"},
- {type:"facebook",label:"Reborn Nails & Retreat",url:"https://www.facebook.com/people/Reborn-Nails-Retreat/61589196314835/",t:"Facebook page — news & guest photos",img:"salon.jpg"},
+ {type:"instagram",label:"@reborn_nailsnretreat",url:"https://www.instagram.com/reborn_nailsnretreat/",t:"Instagram · latest sets, reels & booking by DM",img:"flatlay.jpg"},
+ {type:"facebook",label:"Reborn Nails & Retreat",url:"https://www.facebook.com/people/Reborn-Nails-Retreat/61589196314835/",t:"Facebook page · news & guest photos",img:"salon.jpg"},
  {type:"tripadvisor",label:"TripAdvisor",url:"https://www.tripadvisor.com/Attraction_Review-g298085-d34389993-Reviews-Reborn_Nails_Retreat-Da_Nang.html",t:"Reviewed by international travellers",img:"interior.jpg"}
 ];
 
-/* Signature rituals — real sequences, grouped into movements */
+/* Signature rituals · real sequences, grouped into movements */
 const RITUALS=[
  {slug:"head-spa-hair-wash",name:"Reborn Signature Head Spa",mins:80,price:"500K",img:"chand.jpg",
-  intro:"Vietnamese herbal hair-wash therapy sequenced like a Korean head spa — nineteen steps, eighty minutes, one long exhale.",
+  intro:"Vietnamese herbal hair-wash therapy sequenced like a Korean head spa · nineteen steps, eighty minutes, one long exhale.",
   moves:[["Arrival","Warm herbal foot soak, tea, and the lights go low","0–10 min"],
          ["The face","Cleansing, gentle exfoliation, quartz-stone meridian massage, herbal steam, mask","10–35 min"],
          ["Scalp & hair","Scalp exfoliation, double herbal wash, herbal steam, nourishing hair mask","35–60 min"],
@@ -122,7 +130,7 @@ const RITUALS=[
          ["Finish","Nourishing oils, fresh fruit","60–65 min"]]}
 ];
 
-/* pSEO locations — dist computed from coords (haversine) */
+/* pSEO locations · dist computed from coords (haversine) */
 const LOCATIONS=[
  // beaches & neighbourhoods
  {slug:"my-khe-beach",name:"My Khe Beach",vi:"Bãi biển Mỹ Khê",lat:16.0526,lng:108.2480,kind:"beach",blurb:"Da Nang's most famous stretch of sand, minutes from the salon"},
@@ -188,46 +196,46 @@ const LOCATIONS=[
 
 /* language hubs */
 const HUBS=[
- {code:"ko",dir:"ko",flag:"🇰🇷",title:"다낭 네일샵 & 헤드스파 — Reborn Nails & Retreat",
+ {code:"ko",dir:"ko",flag:"🇰🇷",title:"다낭 네일샵 & 헤드스파 · Reborn Nails & Retreat",
   h1:"다낭 최고의 네일샵 & 헤드스파",
   intro:"미케 비치에서 도보 5분, Reborn Nails & Retreat는 한국어 응대가 가능한 프리미엄 네일 & 헤드스파입니다. 구글 평점 4.9점(150+ 리뷰), 모든 도구는 시술 전 소독하며 파일과 버퍼는 일회용만 사용합니다.",
-  points:["한국어 상담 가능 · 예약 없이 방문 OK (매일 9:00–20:00)","젤네일 200K · BIAB 300K · GelX 280K · 캣아이 풀세트 180K","베트남식 머리감기+헤드스파 120K–850K — 시그니처 코스 500K","스파 페디큐어 250K–590K · 왁싱 90K–480K","무료 Wi-Fi · 웰컴티 · 오차드 스타일 인테리어"],
+  points:["한국어 상담 가능 · 예약 없이 방문 OK (매일 9:00–20:00)","젤네일 200K · BIAB 300K · GelX 280K · 캣아이 풀세트 180K","베트남식 머리감기+헤드스파 120K–850K · 시그니처 코스 500K","스파 페디큐어 250K–590K · 왁싱 90K–480K","무료 Wi-Fi · 웰컴티 · 오차드 스타일 인테리어"],
   cta:"구글 지도로 길찾기",faqT:"자주 묻는 질문",
   faq:[["예약이 필요한가요?","아니요, 워크인 환영입니다. 매일 오전 9시부터 오후 8시까지 영업하며, 인스타그램 DM(@reborn_nailsnretreat)으로 예약도 가능합니다."],
        ["가격은 어떻게 되나요?","젤네일 200K(약 1만원), 헤드스파 시그니처 500K(약 2.5만원), 스파 페디큐어 450K부터. 한국 대비 1/3 수준의 가격입니다."],
        ["위치가 어디인가요?","56 Châu Thị Vĩnh Tế, 미케 비치와 안트엉 거리에서 도보 5분입니다."]]},
- {code:"ja",dir:"ja",flag:"🇯🇵",title:"ダナンのネイルサロン＆ヘッドスパ — Reborn Nails & Retreat",
+ {code:"ja",dir:"ja",flag:"🇯🇵",title:"ダナンのネイルサロン＆ヘッドスパ · Reborn Nails & Retreat",
   h1:"ダナンで人気のネイルサロン＆ヘッドスパ",
   intro:"ミーケビーチから徒歩5分。Reborn Nails & Retreatは、Google評価4.9（150件以上）のプレミアムネイル＆ヘッドスパです。器具はすべて滅菌処理、ファイル類は使い捨てのみ使用しています。",
   points:["予約なしOK · 毎日9:00–20:00営業","ジェルネイル200K · BIAB 300K · マグネットネイルフルセット180K","ベトナム式シャンプー＆ヘッドスパ120K〜850K","スパペディキュア250K〜590K · ワックス脱毛90K〜","無料Wi-Fi · ウェルカムティー · 日本語メニューあり"],
   cta:"Googleマップで行き方を見る",faqT:"よくある質問",
   faq:[["予約は必要ですか？","不要です。毎日9時〜20時まで営業しており、InstagramのDMでも予約できます。"],
        ["料金はいくらですか？","ジェルネイル200K（約1,200円）、ヘッドスパ・シグネチャー500K（約3,000円）など、日本の1/3程度の価格です。"],
-       ["場所はどこですか？","56 Châu Thị Vĩnh Tế — ミーケビーチとアンハイ地区から徒歩5分です。"]]},
- {code:"zh",dir:"zh",flag:"🇨🇳",title:"岘港美甲店 & 头疗洗护 — Reborn Nails & Retreat",
+       ["場所はどこですか？","56 Châu Thị Vĩnh Tế · ミーケビーチとアンハイ地区から徒歩5分です。"]]},
+ {code:"zh",dir:"zh",flag:"🇨🇳",title:"岘港美甲店 & 头疗洗护 · Reborn Nails & Retreat",
   h1:"岘港人气美甲店 & 头疗SPA",
   intro:"距美溪海滩步行5分钟，Reborn Nails & Retreat 是一家谷歌评分4.9（150+条评价）的高端美甲和头疗沙龙。所有工具消毒灭菌，锉条和抛光块仅一次性使用，并提供中文服务。",
   points:["无需预约 · 每天9:00–20:00营业","甲油胶200K · BIAB 300K · 猫眼全套180K","越式洗头+头疗120K–850K，招牌套餐500K","SPA足疗250K–590K · 脱毛90K起","免费Wi-Fi · 迎宾茶 · 优雅奶油风环境"],
   cta:"在谷歌地图查看路线",faqT:"常见问题",
   faq:[["需要预约吗？","不需要，欢迎直接到店。每天9:00–20:00营业，也可通过Instagram私信预约。"],
-       ["价格如何？","甲油胶200K（约55元），招牌头疗500K（约140元），SPA足疗450K起——约为国内高端沙龙的一半价格。"],
+       ["价格如何？","甲油胶200K（约55元），招牌头疗500K（约140元），SPA足疗450K起  约为国内高端沙龙的一半价格。"],
        ["店在哪里？","56 Châu Thị Vĩnh Tế，美溪海滩与安趟街区步行5分钟即到。"]]},
- {code:"ru",dir:"ru",flag:"🇷🇺",title:"Маникюр и хэдспа в Дананге — Reborn Nails & Retreat",
+ {code:"ru",dir:"ru",flag:"🇷🇺",title:"Маникюр и хэдспа в Дананге · Reborn Nails & Retreat",
   h1:"Лучший салон маникюра и хэдспа в Дананге",
-  intro:"В 5 минутах пешком от пляжа Микхе. Reborn Nails & Retreat — премиальный салон с рейтингом Google 4.9 (150+ отзывов). Все инструменты стерилизуются, пилки и бафы — одноразовые. Персонал говорит по-английски и по-русски.",
+  intro:"В 5 минутах пешком от пляжа Микхе. Reborn Nails & Retreat · премиальный салон с рейтингом Google 4.9 (150+ отзывов). Все инструменты стерилизуются, пилки и бафы · одноразовые. Персонал говорит по-английски и по-русски.",
   points:["Без записи · ежедневно 9:00–20:00","Гель-лак 200K · BIAB 300K · кошачий глаз (все ногти) 180K","Вьетнамское мытьё головы и хэдспа 120K–850K","Спа-педикюр 250K–590K · ваксинг от 90K","Бесплатный Wi-Fi · чай · интерьер в кремовых тонах"],
   cta:"Маршрут в Google Картах",faqT:"Частые вопросы",
   faq:[["Нужна ли запись?","Нет, приходите без записи с 9:00 до 20:00. Можно также написать в Instagram (@reborn_nailsnretreat)."],
-       ["Сколько стоит маникюр?","Гель-лак — 200K донгов (~700 ₽), фирменный хэдспа — 500K, спа-педикюр — от 250K. В 3–4 раза дешевле, чем дома."],
-       ["Где находится салон?","56 Châu Thị Vĩnh Tế — район Ан Тхыонг, 5 минут пешком от пляжа Микхе."]]},
- {code:"vi",dir:"vi",flag:"🇻🇳",title:"Tiệm nail & gội đầu dưỡng sinh Đà Nẵng — Reborn Nails & Retreat",
+       ["Сколько стоит маникюр?","Гель-лак · 200K донгов (~700 ₽), фирменный хэдспа · 500K, спа-педикюр · от 250K. В 3–4 раза дешевле, чем дома."],
+       ["Где находится салон?","56 Châu Thị Vĩnh Tế · район Ан Тхыонг, 5 минут пешком от пляжа Микхе."]]},
+ {code:"vi",dir:"vi",flag:"🇻🇳",title:"Tiệm nail & gội đầu dưỡng sinh Đà Nẵng · Reborn Nails & Retreat",
   h1:"Tiệm nail & gội đầu dưỡng sinh cao cấp tại Đà Nẵng",
-  intro:"Cách biển Mỹ Khê 5 phút đi bộ, Reborn Nails & Retreat là salon nail và gội đầu dưỡng sinh chuẩn cao cấp — Google 4.9★ với hơn 150 đánh giá. Dụng cụ tiệt trùng, dũa và buffer chỉ dùng một lần.",
-  points:["Không cần đặt lịch · mở cửa 9:00–20:00 mỗi ngày","Sơn gel 200K · BIAB 300K · mắt mèo full set 180K","Gội đầu dưỡng sinh 120K–850K — combo signature 500K","Spa chân 250K–590K · wax lông từ 90K","Wi-Fi miễn phí · trà chào đón · không gian tông kem sang trọng"],
+  intro:"Cách biển Mỹ Khê 5 phút đi bộ, Reborn Nails & Retreat là salon nail và gội đầu dưỡng sinh chuẩn cao cấp · Google 4.9★ với hơn 150 đánh giá. Dụng cụ tiệt trùng, dũa và buffer chỉ dùng một lần.",
+  points:["Không cần đặt lịch · mở cửa 9:00–20:00 mỗi ngày","Sơn gel 200K · BIAB 300K · mắt mèo full set 180K","Gội đầu dưỡng sinh 120K–850K · combo signature 500K","Spa chân 250K–590K · wax lông từ 90K","Wi-Fi miễn phí · trà chào đón · không gian tông kem sang trọng"],
   cta:"Chỉ đường trên Google Maps",faqT:"Câu hỏi thường gặp",
-  faq:[["Có cần đặt lịch trước không?","Không cần — bạn cứ ghé trực tiếp từ 9h đến 20h hằng ngày, hoặc nhắn Instagram @reborn_nailsnretreat để giữ chỗ."],
+  faq:[["Có cần đặt lịch trước không?","Không cần · bạn cứ ghé trực tiếp từ 9h đến 20h hằng ngày, hoặc nhắn Instagram @reborn_nailsnretreat để giữ chỗ."],
        ["Bảng giá thế nào?","Sơn gel 200K, gội đầu signature 500K, spa chân Deep Care 450K. Xem bảng giá đầy đủ trên trang dịch vụ."],
-       ["Tiệm ở đâu?","56 Châu Thị Vĩnh Tế, phường Ngũ Hành Sơn — ngay khu An Thượng, 5 phút đi bộ ra biển Mỹ Khê."]]}
+       ["Tiệm ở đâu?","56 Châu Thị Vĩnh Tế, phường Ngũ Hành Sơn · ngay khu An Thượng, 5 phút đi bộ ra biển Mỹ Khê."]]}
 ];
 
 module.exports={BIZ,SERVICES,REVIEWS,SOCIAL,REELS,RITUALS,LOCATIONS,HUBS};

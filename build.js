@@ -1,4 +1,4 @@
-/* Reborn Nails & Retreat — static site generator (zero deps)
+/* Reborn Nails & Retreat · static site generator (zero deps)
    node build.js  → outputs into ./docs (GitHub Pages source)
    Drip publishing: core pages at launch, then DRIP_PER_DAY location pages/day,
    deterministic order (md5 salt), sitemap lists ONLY published pages. */
@@ -65,7 +65,7 @@ const promoCard=()=>`<section class="promosec"><div class="wrap"><div class="pro
  <a class="cta" href="${BIZ.directions}" rel="noopener">Get directions</a>
 </div></div></div></section>`;
 const nav=(active='')=>`${promoBar()}<header class="nav"><div class="wrap navin">
-<a class="logo" href="${BASE}/"><img src="${BASE}/assets/logo.webp" alt="Reborn Nails & Retreat logo" width="96" height="73"></a>
+<a class="logo" href="${BASE}/"><img src="${BASE}/assets/logo.webp" alt="Reborn Nails & Retreat logo" width="96" height="73" style="width:96px;height:auto"></a>
 <nav class="navlinks">
 <a href="${BASE}/#services"${active=='s'?' class="on"':''}>Services & Prices</a>
 <a href="${BASE}/da-nang/">Near you in Da Nang</a>
@@ -75,6 +75,7 @@ const nav=(active='')=>`${promoBar()}<header class="nav"><div class="wrap navin"
 <details class="langdd"><summary>EN</summary><nav>
 <a href="${BASE}/">English</a><a href="${BASE}/ko/">한국어</a><a href="${BASE}/ja/">日本語</a><a href="${BASE}/zh/">中文</a><a href="${BASE}/ru/">Русский</a><a href="${BASE}/vi/">Tiếng Việt</a>
 </nav></details>
+<a class="tel" href="tel:${BIZ.phoneRaw}" aria-label="Call the salon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><b>${BIZ.phone}</b></a>
 <a class="cta small" href="${BIZ.directions}" rel="noopener">Directions</a>
 </div>
 </header>`;
@@ -85,7 +86,7 @@ const footer=()=>`<footer class="foot"><div class="wrap">
 ${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a> · <a href="${BIZ.whatsapp}" rel="noopener">WhatsApp</a> · ★ ${BIZ.rating} on <a href="${BIZ.maps}" rel="noopener">Google Maps</a></p>
 <p class="fsoc"><a href="${BIZ.instagram}" rel="noopener">Instagram</a> · <a href="${BIZ.tiktok}" rel="noopener">TikTok</a> · <a href="${BIZ.facebook}" rel="noopener">Facebook</a> · <a href="${BIZ.tripadvisor}" rel="noopener">TripAdvisor</a> · <a href="${BIZ.review}" rel="noopener">Leave a review</a></p>
 <nav class="fnav"><a href="${BASE}/">Home</a>${SERVICES.map(s=>` · <a href="${BASE}/services/${s.slug}/">${s.short}</a>`).join('')} · <a href="${BASE}/da-nang/">Da Nang areas</a></nav>
-<p class="fcopy">© ${NOW.getUTCFullYear()} ${BIZ.name} — premium nail salon, spa pedicure, head spa & waxing in Da Nang.</p>
+<p class="fcopy">© ${NOW.getUTCFullYear()} ${BIZ.name} · premium nail salon, spa pedicure, head spa & waxing in Da Nang.</p>
 </div></footer>
 <script>document.addEventListener('click',e=>{const b=e.target.closest('[data-code]');if(!b)return;
  const c=b.dataset.code;const done=()=>{const o=b.textContent;b.classList.add('copied');
@@ -95,14 +96,11 @@ ${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a> · <a href="
  else{const t=document.createElement('textarea');t.value=c;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(x){}t.remove();done();}
 });</script>
 <div class="fab" id="fab">
- <div class="fabmenu">
-  <a class="fabbtn wa" href="${BIZ.whatsapp}" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.2 2.2-.2 3.9 1.1 1.9 2.6 3.4 4.6 4.4 1.6.8 2.4.8 3.2.7.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg></a>
-  <a class="fabbtn ph" href="tel:${BIZ.phoneRaw}" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
-  <a class="fabbtn ig" href="${BIZ.instagram}" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none"/></svg></a>
-  <a class="fabbtn za" href="https://zalo.me/84788668588" rel="noopener" aria-label="Zalo"><span>Zalo</span></a>
-  <a class="fabbtn ms" href="https://m.me/61589196314835" rel="noopener" aria-label="Messenger"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2zm1.1 12.4-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.4 5.8z"/></svg></a>
- </div>
- <button class="fabmain" aria-label="Contact us" onclick="this.parentElement.classList.toggle('open')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a8 8 0 0 1-8 8H4l2.2-2.6A8 8 0 1 1 21 12z"/></svg></button>
+ <a class="fabbtn wa" href="${BIZ.whatsapp}" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.2 2.2-.2 3.9 1.1 1.9 2.6 3.4 4.6 4.4 1.6.8 2.4.8 3.2.7.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg><em>WhatsApp</em></a>
+ <a class="fabbtn ph" href="tel:${BIZ.phoneRaw}" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><em>Call</em></a>
+ <a class="fabbtn ig" href="${BIZ.instagram}" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none"/></svg><em>Instagram</em></a>
+ <a class="fabbtn za" href="https://zalo.me/84788668588" rel="noopener" aria-label="Zalo"><span>Zalo</span><em>Zalo</em></a>
+ <a class="fabbtn ms" href="https://m.me/61589196314835" rel="noopener" aria-label="Messenger"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2zm1.1 12.4-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.4 5.8z"/></svg><em>Messenger</em></a>
 </div>
 <script>document.querySelectorAll('.rvid').forEach(w=>{const v=w.querySelector('video');w.addEventListener('click',()=>{if(v.paused){document.querySelectorAll('.rvid video').forEach(o=>{if(o!==v){o.pause();o.parentElement.classList.remove('playing')}});v.muted=false;v.play();w.classList.add('playing');}else{v.pause();w.classList.remove('playing');}});});</script><script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.card,.rev,.soc,.ptable,.answer,.faq details').forEach(el=>{el.classList.add('rv');io.observe(el)})}</script></body></html>`;
 
@@ -122,7 +120,7 @@ const mapBlock=(from='')=>`<section class="mapsec" id="find-us"><div class="wrap
 
 const MARKET={
  'head-spa-hair-wash':{title:'What a Vietnamese hair wash really costs in Da Nang',
-  intro:'Prices around My Khe Beach in 2026, from budget shampoo bars to hotel-style spas — and where Reborn sits.',
+  intro:'Prices around My Khe Beach in 2026, from budget shampoo bars to hotel-style spas · and where Reborn sits.',
   rows:[['Quick neighbourhood wash · 30–45 min','160K – 250K','Shampoo, short massage, blow-dry'],
         ['Tourist-area spa · 45–60 min','300K – 500K','Wash, massage, sometimes a face mask'],
         ['Hotel-style herbal spa · 60–90 min','550K – 900K','Herbal wash, longer massage, tea'],
@@ -131,7 +129,7 @@ const MARKET={
         ['<b>Reborn Ultimate · 95 min</b>','<b>750K</b>','21 steps with hot stones, hyaluronic infusion and bio-light']],
   note:'Market figures are indicative ranges published by Da Nang spa guides in 2026; our own prices are the ones printed in the salon.'},
  'foot-massage':{title:'What a foot massage costs in Da Nang',
-  intro:'What you can expect to pay near My Khe Beach — and what is included at Reborn.',
+  intro:'What you can expect to pay near My Khe Beach · and what is included at Reborn.',
   rows:[['Street-side foot massage · 60 min','200K – 350K','Massage only, shared room'],
         ['Beach-area spa · 60 min','400K – 600K','Massage, tea, private room (tourist areas charge 10–30% more)'],
         ['<b>Reborn foot &amp; calf massage · 15 min</b>','<b>100K</b>','On a cream leather armchair in the Foot Therapy lounge'],
@@ -284,11 +282,11 @@ section .wrap>h2::after{content:"";position:absolute;left:50%;transform:translat
 ::selection{background:#E4D2A8}
 /* floating contact widget */
 .fab{position:fixed;right:20px;bottom:20px;z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-.fabmain{width:60px;height:60px;border-radius:50%;background:var(--brand);color:#FBF3E6;border:none;cursor:pointer;box-shadow:0 12px 34px rgba(60,38,18,.35);display:flex;align-items:center;justify-content:center;transition:transform .2s ease}
-.fabmain:hover{transform:scale(1.06)}.fabmain svg{width:26px;height:26px}
-.fabmenu{display:flex;flex-direction:column;gap:10px;opacity:0;pointer-events:none;transform:translateY(14px);transition:opacity .25s ease,transform .25s cubic-bezier(.2,.8,.3,1.2)}
-.fab.open .fabmenu{opacity:1;pointer-events:auto;transform:none}
-.fabbtn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 22px rgba(40,25,10,.28);text-decoration:none;transition:transform .18s ease}
+
+
+.fabbtn em{position:absolute;right:54px;background:#3B2C1E;color:#F6EEDD;font-style:normal;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:999px;white-space:nowrap;opacity:0;transform:translateX(6px);transition:.2s ease;pointer-events:none}
+.fabbtn:hover em{opacity:1;transform:none}
+.fabbtn{position:relative;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 22px rgba(40,25,10,.28);text-decoration:none;transition:transform .18s ease}
 .fabbtn:hover{transform:scale(1.08)}
 .fabbtn svg{width:24px;height:24px}
 .fabbtn.wa{background:#25D366}.fabbtn.ph{background:var(--brand2)}
@@ -304,12 +302,16 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
  background-image:radial-gradient(circle at 20% 30%,rgba(122,74,43,.05),transparent 60%),radial-gradient(circle at 82% 12%,rgba(176,138,62,.05),transparent 55%)}
 .wrap,.nav,.foot,section{position:relative;z-index:2}
 
-/* — cinematic hero — */
+/* · cinematic hero · */
 .chero{position:relative;min-height:min(94vh,880px);display:flex;flex-direction:column;align-items:center;justify-content:center;
  text-align:center;overflow:hidden;padding:96px 22px 30px;color:#FCF7EC;isolation:isolate}
 .chero .cbg{position:absolute;inset:0;z-index:-2}
 .chero .cbg video{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
-.chero .cveil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(38,24,13,.74) 0%,rgba(38,24,13,.46) 34%,rgba(38,24,13,.58) 62%,rgba(38,24,13,.86) 100%)}
+.chero .cveil{position:absolute;inset:0;background:
+ radial-gradient(120% 80% at 50% 42%,rgba(28,17,8,.42) 0%,rgba(28,17,8,.72) 62%,rgba(28,17,8,.9) 100%),
+ linear-gradient(180deg,rgba(28,17,8,.8) 0%,rgba(28,17,8,.5) 30%,rgba(28,17,8,.62) 66%,rgba(28,17,8,.92) 100%)}
+.chero .cgrain{position:absolute;inset:0;opacity:.5;mix-blend-mode:soft-light;
+ background-image:radial-gradient(rgba(255,255,255,.16) .5px,transparent .5px);background-size:3px 3px}
 .chero .flor{position:absolute;z-index:-1;width:min(230px,20vw);opacity:.22;mix-blend-mode:screen;filter:blur(.3px)}
 .chero .flor.tl{top:-14px;left:-22px}.chero .flor.tr{top:-14px;right:-22px}
 .cin{max-width:900px;animation:cIn 1.1s cubic-bezier(.2,.8,.25,1) both}
@@ -337,7 +339,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 @media (prefers-reduced-motion:reduce){.scrollcue span{animation:none}.cin,.ctitle span,.ctitle em{animation:none}}
 .nav{background:rgba(246,241,231,.9)}
 
-/* — dark ritual chapter — */
+/* · dark ritual chapter · */
 .ritual{background:#2A1D12;color:#F1E4CE;padding:74px 0 78px;position:relative;overflow:hidden}
 .ritual::before,.ritual::after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,161,92,.55),transparent)}
 .ritual::before{top:0}.ritual::after{bottom:0}
@@ -361,7 +363,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .rittl time{display:block;color:#D9B478;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-top:5px;font-weight:700}
 .ritlink{display:inline-block;margin-top:16px;color:#EBC98F;font-weight:700;font-size:14.5px;text-decoration:none;border-bottom:1px solid rgba(235,201,143,.4);padding-bottom:2px}
 
-/* — visit finder — */
+/* · visit finder · */
 .finder{background:linear-gradient(180deg,var(--panel),var(--paper))}
 .fbox{max-width:760px;margin:26px auto 0}
 #fq{width:100%;font:inherit;font-size:18px;padding:18px 22px;border-radius:999px;border:1.5px solid var(--linestrong);
@@ -393,7 +395,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
  .cfacts{padding-top:34px;font-size:10.5px;gap:9px}
 }
 
-/* — market price table — */
+/* · market price table · */
 .market{background:linear-gradient(180deg,var(--paper),var(--panel))}
 .mkt{width:100%;border-collapse:collapse;font-size:15px;background:var(--panel);min-width:640px}
 .mkt th{text-align:left;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);font-weight:700;
@@ -408,14 +410,14 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .mktnote{font-size:12.5px;color:var(--ink2);margin-top:14px;text-align:center;font-style:italic}
 .tblwrap{overflow-x:auto;border:1.5px solid var(--brand);border-radius:22px;box-shadow:0 14px 40px rgba(90,60,30,.1);margin-top:26px}
 
-/* — trust bar — */
+/* · trust bar · */
 .trustbar{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
 .tbrow{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;text-align:center}
 .tbit b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;color:var(--brand);line-height:1.1}
 .tbit span{display:block;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);font-weight:600;margin-top:6px}
 @media(max-width:760px){.tbrow{grid-template-columns:repeat(2,1fr);gap:18px}}
 
-/* — promo — */
+/* · promo · */
 .pbar{background:linear-gradient(90deg,#7A4A2B,#A9812F 45%,#7A4A2B);color:#FFF7E9;font-size:13.5px}
 .pbin{display:flex;align-items:center;justify-content:center;gap:10px;padding:9px 22px;flex-wrap:wrap;text-align:center}
 .pbtag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;background:rgba(255,247,233,.16);
@@ -440,7 +442,51 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .pcode.copied{border-style:solid;border-color:#5F6B3F}
 @media(max-width:760px){.promo{grid-template-columns:1fr;padding:24px}.promo h2{text-align:center}.ptxt{text-align:center}
  .pbin{font-size:12.5px;gap:7px;padding:8px 14px}.pbtag{display:none}}
-/* — general polish — */
+
+.tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--brand);font-size:14px;font-weight:700;
+ border:1px solid var(--line);border-radius:999px;padding:9px 15px;background:var(--panel);white-space:nowrap}
+.tel svg{width:17px;height:17px}
+.tel:hover{border-color:var(--gold)}
+@media(max-width:980px){.tel b{display:none}.tel{padding:9px 11px}}
+.flogo{width:150px;height:auto}
+.clogo{image-rendering:auto}
+
+/* · founder story · */
+.story{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stgrid{display:grid;grid-template-columns:minmax(280px,38%) 1fr;gap:44px;align-items:center}
+.stimg{margin:0;position:relative}
+.stimg img{width:100%;border-radius:220px 220px 22px 22px;border:1.5px solid var(--brand);padding:9px;background:var(--panel)}
+.stimg figcaption{text-align:center;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);font-weight:700;margin-top:12px}
+.sttxt h2{text-align:left;padding-bottom:14px}
+.sttxt h2::after{left:0;transform:none}
+.sttxt p{font-size:16.5px;line-height:1.62;color:var(--ink)}
+.sttxt .tag{text-align:left}
+.stq{font-family:var(--serif);font-size:23px;color:var(--brand);border-left:2px solid var(--gold);margin:22px 0;padding:2px 0 2px 20px;line-height:1.35}
+.stsmall{font-size:14px!important;color:var(--ink2)!important}
+.stteam{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+.stteam img{width:100%;height:340px;object-fit:cover;object-position:50% 30%;border-radius:20px}
+@media(max-width:860px){.stgrid{grid-template-columns:1fr;gap:26px}.stteam{grid-template-columns:1fr}.stteam img{height:260px}}
+
+/* · nav refinement · */
+.nav{background:rgba(246,241,231,.92);border-bottom:1px solid rgba(122,74,43,.1)}
+.navin{padding:12px 22px;gap:26px}
+.navlinks{gap:26px;font-size:14.5px;font-weight:600;letter-spacing:.01em}
+.navlinks a{color:var(--ink);opacity:.86}
+.navlinks a:hover{opacity:1}
+.logo img{transition:transform .3s ease}
+.logo:hover img{transform:scale(1.04)}
+.langdd summary{font-size:11.5px;padding:8px 14px;letter-spacing:.16em;border-color:rgba(122,74,43,.28)}
+.cta.small{padding:11px 20px;font-size:11.5px}
+
+/* · answer block, less template-like · */
+.answer{background:transparent;border:none;border-radius:0;padding:0 0 0 24px;position:relative;font-size:18px;line-height:1.6;
+ color:var(--ink);max-width:780px;margin:26px auto 0}
+.answer::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--gold),rgba(176,138,62,.15))}
+
+/* · promo code button · */
+.pcode{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.15}
+.pbcode{line-height:1.2}
+/* · general polish · */
 h2{letter-spacing:-.01em}
 .card h3{font-family:var(--serif);font-weight:400;font-size:23px}
 .card .cp{font-size:15px;letter-spacing:.01em}
@@ -449,17 +495,17 @@ h2{letter-spacing:-.01em}
 `);
 
 /* ---------- home ---------- */
-const svcCards=SERVICES.map(s=>`<a class="card" href="${BASE}/services/${s.slug}/"><img src="${BASE}/assets/${s.img}" alt="${s.name} at Reborn Nails & Retreat Da Nang" loading="lazy"><div class="cb"><h3>${s.name}</h3><div class="cd">${s.desc}</div><div class="cp">${s.prices[0][0]} — ${s.prices[0][1]} · full menu →</div></div></a>`).join('');
+const svcCards=SERVICES.map(s=>`<a class="card" href="${BASE}/services/${s.slug}/"><img src="${BASE}/assets/${s.img}" alt="${s.name} at Reborn Nails & Retreat Da Nang" loading="lazy"><div class="cb"><h3>${s.name}</h3><div class="cd">${s.desc}</div><div class="cp">${s.prices[0][0]} · ${s.prices[0][1]} · full menu →</div></div></a>`).join('');
 const socCards=SOCIAL.map(s=>`<a class="soc" href="${s.url}" rel="noopener" target="_blank"><img src="${BASE}/assets/${s.img}" alt="" loading="lazy"><span class="badge">${s.type}</span><span class="st"><b>${s.label}</b><span>${s.t}</span></span></a>`).join('');
 
 const homeHtml=head(
- `Nail Salon & Head Spa in Da Nang — ${BIZ.name} · ★4.9`,
+ `Nail Salon & Head Spa in Da Nang · ${BIZ.name} · ★4.9`,
  `Premium nail salon near My Khe Beach: gel nails from 200K, BIAB, GelX, nail art, spa pedicure, Vietnamese head spa & waxing. ★4.9 on Google (150+ reviews). Open daily 9–20, walk-ins welcome.`,
  SITE+"/",
  HUBS.map(h=>`<link rel="alternate" hreflang="${h.code==='zh'?'zh-Hans':h.code}" href="${SITE}/${h.dir}/">`).join('')+`<link rel="alternate" hreflang="en" href="${SITE}/"><link rel="alternate" hreflang="x-default" href="${SITE}/">`)
 +nav()
 +`<div class="chero">
- <div class="cbg"><video autoplay muted loop playsinline poster="${BASE}/assets/nails.jpg" src="${BASE}/assets/vid_hero.mp4"></video><span class="cveil"></span></div>
+ <div class="cbg"><video autoplay muted loop playsinline poster="${BASE}/assets/nails.jpg" src="${BASE}/assets/hero_loop.mp4"></video><span class="cveil"></span><span class="cgrain"></span></div>
  <img class="flor tl" src="${BASE}/assets/flor_tl.webp" alt=""><img class="flor tr" src="${BASE}/assets/flor_tr.webp" alt="">
  <div class="cin">
   <img class="clogo" src="${BASE}/assets/logo_light.webp" alt="${BIZ.name}" width="150">
@@ -469,7 +515,6 @@ const homeHtml=head(
   <div class="cbtns"><a class="cta gold" href="${BIZ.directions}" rel="noopener">Get directions</a><a class="ghost light" href="#services">Menu &amp; prices</a></div>
  </div>
  <div class="cfacts"><span>Gel from 200K</span><i></i><span>Head spa 120–850K</span><i></i><span>Pedicure rituals 250–590K</span><i></i><span>Open daily 9–20</span></div>
- <a class="scrollcue" href="#services" aria-label="Scroll"><span></span></a>
 </div>
 <section class="trustbar"><div class="wrap"><div class="tbrow">
  <div class="tbit"><b>★ ${BIZ.rating}</b><span>${BIZ.ratingCount}+ Google reviews</span></div>
@@ -477,18 +522,18 @@ const homeHtml=head(
  <div class="tbit"><b>7 languages</b><span>spoken in the salon</span></div>
  <div class="tbit"><b>Single-use</b><span>files &amp; buffers, sterilised tools</span></div>
 </div></div></section>
-<section id="services"><div class="wrap"><p class="tag">Menu & prices</p><h2>Services at Reborn — full price list</h2>
-<p class="sub" style="margin-left:0;text-align:left">Prices in thousand Vietnamese đồng: 100K = 100,000 ₫ ≈ $4. No hidden fees — the menu below is exactly what you pay in the salon.</p>
+<section id="services"><div class="wrap"><p class="tag">Menu & prices</p><h2>Services at Reborn · full price list</h2>
+<p class="sub" style="margin-left:0;text-align:left">Prices in thousand Vietnamese đồng: 100K = 100,000 ₫ ≈ $4. No hidden fees · the menu below is exactly what you pay in the salon.</p>
 <div class="grid">${svcCards}</div></div></section>
 ${promoCard()}
 <section id="menu"><div class="wrap"><p class="tag">The menu</p><h2>Our menu, exactly as in the salon</h2>
-<p class="secsub">Swipe through the printed pages — what you see is what you pay.</p>
-<div class="menuScroll">${[1,2,3,4,5].map(i=>`<a href="${BASE}/assets/menu-${i}.jpg" target="_blank" rel="noopener" class="menuPage"><img src="${BASE}/assets/menu-${i}.jpg" alt="Reborn Nails & Retreat menu — page ${i}" loading="lazy"></a>`).join('')}</div></div></section>
+<p class="secsub">Swipe through the printed pages · what you see is what you pay.</p>
+<div class="menuScroll">${[1,2,3,4,5].map(i=>`<a href="${BASE}/assets/menu-${i}.jpg" target="_blank" rel="noopener" class="menuPage"><img src="${BASE}/assets/menu-${i}.jpg" alt="Reborn Nails & Retreat menu · page ${i}" loading="lazy"></a>`).join('')}</div></div></section>
 <section class="gallerysec"><div class="wrap"><p class="tag">The salon</p><h2>Step inside Reborn</h2>
-<div class="gal">${['salon','arch','interior','refined','chand','tray'].map((g,i)=>`<img src="${BASE}/assets/${g}.jpg" alt="${BIZ.name} salon Da Nang — ${['reception','foot therapy lounge','interior','refined touch room','cherry blossom chandelier','spa ingredients'][i]}" loading="lazy">`).join('')}</div></div></section>
+<div class="gal">${['salon','arch','interior','refined','chand','tray'].map((g,i)=>`<img src="${BASE}/assets/${g}.jpg" alt="${BIZ.name} salon Da Nang · ${['reception','foot therapy lounge','interior','refined touch room','cherry blossom chandelier','spa ingredients'][i]}" loading="lazy">`).join('')}</div></div></section>
 <section class="ritual"><div class="wrap">
 <p class="tag light">The Reborn way</p><h2 class="light">Every treatment here is a ritual</h2>
-<p class="secsub light">Not a chair and a bottle of polish — a sequence, timed, in a room built to make you forget the street outside.</p>
+<p class="secsub light">Not a chair and a bottle of polish · a sequence, timed, in a room built to make you forget the street outside.</p>
 <div class="ritgrid">${RITUALS.map(r=>`<article class="rit">
   <img src="${BASE}/assets/${r.img}" alt="${r.name} at ${BIZ.name}" loading="lazy">
   <div class="ritb">
@@ -502,7 +547,7 @@ ${promoCard()}
 
 <section class="finder" id="finder"><div class="wrap">
 <p class="tag">Plan your visit</p><h2>Where are you staying?</h2>
-<p class="secsub">Pick your hotel, beach or landmark — we will tell you exactly how far the salon is and open the route for you.</p>
+<p class="secsub">Pick your hotel, beach or landmark · we will tell you exactly how far the salon is and open the route for you.</p>
 <div class="fbox">
  <input id="fq" type="search" autocomplete="off" placeholder="Start typing: My Khe, Hyatt, An Thuong, airport…" aria-label="Your hotel or landmark in Da Nang">
  <div id="fchips" class="fchips"></div>
@@ -511,22 +556,37 @@ ${promoCard()}
 <p class="hintline">Staying somewhere else? <a href="${BASE}/da-nang/">See every area of Da Nang →</a></p>
 </div></section>
 
+<section class="story"><div class="wrap">
+<div class="stgrid">
+ <div class="stimg"><img src="${BASE}/assets/founder.jpg" alt="${BIZ.owner}, founder of ${BIZ.name}, on opening day" loading="lazy">
+  <figcaption>${BIZ.owner}, on opening day</figcaption></div>
+ <div class="sttxt">
+  <p class="tag">Who we are</p>
+  <h2>${BIZ.story.title}</h2>
+  <p>${BIZ.story.p1}</p>
+  <p>${BIZ.story.p2}</p>
+  <blockquote class="stq">“${BIZ.story.quote}”</blockquote>
+  <p class="stsmall">${BIZ.story.p3}</p>
+ </div>
+</div>
+<div class="stteam"><img src="${BASE}/assets/team.jpg" alt="The ${BIZ.name} team on opening day" loading="lazy"><img src="${BASE}/assets/opening.jpg" alt="Opening day at ${BIZ.name} Da Nang" loading="lazy"></div>
+</div></section>
 <section id="reviews"><div class="wrap"><p class="tag">Guest love</p><h2>★ ${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews</h2>${reviewCards(9)}</div></section>
 <section><div class="wrap"><p class="tag">As seen on social</p><h2>Watch the experience</h2>
-<p class="secsub">Straight from the salon floor — tap a reel for sound, or open it on Instagram.</p>
-<div class="reelgrid">${REELS.map(r=>`<figure class="reel"><div class="rvid"><video muted loop playsinline preload="none" poster="${BASE}/assets/${r.v}.jpg" src="${BASE}/assets/${r.v}.mp4"></video><span class="rplay"></span>${r.inf?`<span class="rtag">Creator visit</span>`:''}</div><figcaption>${r.t} · <a href="https://www.instagram.com/p/${r.c}/" rel="noopener" target="_blank">Instagram ↗</a></figcaption></figure>`).join('')}</div>
+<p class="secsub">Straight from the salon floor · tap a reel for sound, or open it on Instagram.</p>
+<div class="reelgrid">${REELS.map(r=>`<figure class="reel"><div class="rvid"><video muted loop playsinline preload="none" poster="${BASE}/assets/${r.v}.jpg" src="${BASE}/assets/${r.v}.mp4"></video><span class="rplay"></span></div><figcaption>${r.t} · <a href="https://www.instagram.com/p/${r.c}/" rel="noopener" target="_blank">Instagram ↗</a></figcaption></figure>`).join('')}</div>
 <div class="socrow" style="margin-top:26px">${socCards}</div></div></section>
 ${mapBlock()}
 <section><div class="wrap"><p class="tag">Good to know</p><h2>Frequently asked questions</h2>
-<div class="answer"><strong>${BIZ.name}</strong> is a premium nail salon and head spa at ${BIZ.street}, Da Nang — a 5-minute walk from My Khe Beach in the An Thuong quarter. It is rated ${BIZ.rating}★ from ${BIZ.ratingCount}+ Google reviews, open every day 9:00–20:00, and welcomes walk-ins.</div>
+<div class="answer"><strong>${BIZ.name}</strong> is a premium nail salon and head spa at ${BIZ.street}, Da Nang · a 5-minute walk from My Khe Beach in the An Thuong quarter. It is rated ${BIZ.rating}★ from ${BIZ.ratingCount}+ Google reviews, open every day 9:00–20:00, and welcomes walk-ins.</div>
 ${faqHtml([
- ["Do I need to book?","No — walk-ins are welcome every day from 9 AM to 8 PM. To reserve a specific time, message us on Instagram @reborn_nailsnretreat or call "+BIZ.phone+"."],
+ ["Do I need to book?","No · walk-ins are welcome every day from 9 AM to 8 PM. To reserve a specific time, message us on Instagram @reborn_nailsnretreat or call "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn: classic manicure 70K, gel polish 200K, BIAB 300K, GelX extensions 280K. A full cat-eye or chrome nail-art set is 180K. That is roughly a third of typical prices in Korea, Japan, Australia or Europe."],
- ["Do the staff speak English or Korean?","Yes — the team welcomes guests in English, Korean, Japanese, Russian, French, Spanish and Chinese, and the salon menu is multilingual."],
+ ["Do the staff speak English or Korean?","Yes · the team welcomes guests in English, Korean, Japanese, Russian, French, Spanish and Chinese, and the salon menu is multilingual."],
  ["Is it hygienic?","Every metal tool is sterilised in a medical steriliser before it touches you; files and buffers are single-use. You can see the steriliser working in the salon."],
- ["Where exactly is the salon?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn — in the An Thuong tourist quarter, 400 m from My Khe Beach. Open the map above or tap Get Directions."],
+ ["Where exactly is the salon?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn · in the An Thuong tourist quarter, 400 m from My Khe Beach. Open the map above or tap Get Directions."],
  ["Is there a discount if I come from this website?","Yes. Show the code "+BIZ.promo.code+" at reception on your first visit and you get "+BIZ.promo.pct+"% off the service menu. One use per guest, not combinable with other offers."],
- ["Can I pay by card?","Yes — cards and cash (VND) are both accepted."]])}
+ ["Can I pay by card?","Yes · cards and cash (VND) are both accepted."]])}
 </div></section>`
 +`<script>
 const RB_LOC=${JSON.stringify(LOCATIONS.map(l=>{const d=dist(BIZ,l);return {n:l.name,s:publishedLocs.some(p=>p.slug===l.slug)?l.slug:'',d:km(d),w:walkMin(d),g:grabMin(d),near:d<=1.6?1:0};}))};
@@ -556,10 +616,10 @@ const RB_POP=['My Khe Beach','An Thuong Tourist Area','Marble Mountains','Da Nan
 </script>`
 +ld({...bizLd(),"@id":SITE+"/#salon"})
 +ld({"@context":"https://schema.org",...faqLd([
- ["Do I need to book at Reborn Nails & Retreat?","No — walk-ins are welcome every day 9:00–20:00. Booking is possible via Instagram DM @reborn_nailsnretreat or by phone "+BIZ.phone+"."],
+ ["Do I need to book at Reborn Nails & Retreat?","No · walk-ins are welcome every day 9:00–20:00. Booking is possible via Instagram DM @reborn_nailsnretreat or by phone "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn Nails & Retreat: manicure 70K, gel polish 200K, BIAB 300K, GelX 280K, full nail-art sets from 180K (thousand VND)."],
- ["Where is Reborn Nails & Retreat located?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn, Da Nang — a 5-minute walk from My Khe Beach."],
- ["Is there a website discount at Reborn Nails & Retreat?","Yes — first-time guests who mention the code "+BIZ.promo.code+" at reception get "+BIZ.promo.pct+"% off the service menu."]])})
+ ["Where is Reborn Nails & Retreat located?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn, Da Nang · a 5-minute walk from My Khe Beach."],
+ ["Is there a website discount at Reborn Nails & Retreat?","Yes · first-time guests who mention the code "+BIZ.promo.code+" at reception get "+BIZ.promo.pct+"% off the service menu."]])})
 +footer();
 fs.writeFileSync(OUT+'/index.html',homeHtml);
 
@@ -567,12 +627,12 @@ fs.writeFileSync(OUT+'/index.html',homeHtml);
 for(const s of SERVICES){
  const url=`${SITE}/services/${s.slug}/`;
  const others=SERVICES.filter(x=>x.slug!==s.slug).slice(0,3);
- const TITLES={'head-spa-hair-wash':['Hair Wash & Head Spa in Da Nang — 120K–850K · '+BIZ.short+' ★4.9','Vietnamese hair wash & Korean head spa near My Khe Beach: 25 to 105 minutes, 120K–850K. Signature ritual 500K, 19 steps. ★4.9 Google, walk-ins daily 9–20.'],
- 'foot-massage':['Foot Massage in Da Nang — from 100K · Foot Therapy at '+BIZ.short,'Foot & calf massage from 100K in our Foot Therapy lounge near My Khe Beach, or a full spa pedicure ritual from 250K. ★4.9 Google, walk-ins daily 9–20.'],
- 'massage':['Massage in Da Nang — hot stone, foot & shoulder · '+BIZ.short,'Massage at a ★4.9 nail & head-spa retreat near My Khe Beach: foot & calf from 100K, hot stones 80K, neck and shoulder in every ritual. Walk-ins daily 9–20.'],
- 'spa-pedicure':['Spa Pedicure in Da Nang — rituals 250K–590K · '+BIZ.short+' ★4.9','Herbal foot soak, heel therapy, hot stones and warm towels on cream leather armchairs. Deep Care 450K (65 min). ★4.9 Google, walk-ins daily 9–20.']};
+ const TITLES={'head-spa-hair-wash':['Hair Wash & Head Spa in Da Nang · 120K–850K · '+BIZ.short+' ★4.9','Vietnamese hair wash & Korean head spa near My Khe Beach: 25 to 105 minutes, 120K–850K. Signature ritual 500K, 19 steps. ★4.9 Google, walk-ins daily 9–20.'],
+ 'foot-massage':['Foot Massage in Da Nang · from 100K · Foot Therapy at '+BIZ.short,'Foot & calf massage from 100K in our Foot Therapy lounge near My Khe Beach, or a full spa pedicure ritual from 250K. ★4.9 Google, walk-ins daily 9–20.'],
+ 'massage':['Massage in Da Nang · hot stone, foot & shoulder · '+BIZ.short,'Massage at a ★4.9 nail & head-spa retreat near My Khe Beach: foot & calf from 100K, hot stones 80K, neck and shoulder in every ritual. Walk-ins daily 9–20.'],
+ 'spa-pedicure':['Spa Pedicure in Da Nang · rituals 250K–590K · '+BIZ.short+' ★4.9','Herbal foot soak, heel therapy, hot stones and warm towels on cream leather armchairs. Deep Care 450K (65 min). ★4.9 Google, walk-ins daily 9–20.']};
  const T=TITLES[s.slug];
- const html=head(T?T[0]:`${s.name} in Da Nang — prices & menu · ${BIZ.short} ★4.9`,
+ const html=head(T?T[0]:`${s.name} in Da Nang · prices & menu · ${BIZ.short} ★4.9`,
   T?T[1]:`${s.desc} Full ${s.short.toLowerCase()} price list at ${BIZ.name}, 5 min from My Khe Beach. ★4.9 Google rating, walk-ins daily 9–20.`,url)
  +nav('s')
  +`<div class="wrap"><p class="crumb"><a href="${BASE}/">Home</a> › <a href="${BASE}/#services">Services</a> › ${s.short}</p></div>
@@ -580,15 +640,15 @@ for(const s of SERVICES){
 <p class="tag">${BIZ.short} · Da Nang</p><h1>${s.name} in Da Nang</h1>
 <p class="sub">${s.desc}</p>
 <div class="btnrow"><a class="cta gold" href="${BIZ.directions}" rel="noopener">Directions</a><a class="ghost" href="${BIZ.instagram}" rel="noopener">Book on Instagram</a></div>
-<div class="heromedia">${s.vid?`<video autoplay muted loop playsinline poster="${BASE}/assets/${s.img}" src="${BASE}/assets/vid_hero.mp4" title="${s.name} at Reborn Da Nang"></video>`:`<img src="${BASE}/assets/${s.img}" alt="${s.name} — ${BIZ.name} Da Nang">`}</div>
+<div class="heromedia">${s.vsrc?`<video autoplay muted loop playsinline poster="${BASE}/assets/${s.img}" src="${BASE}/assets/${s.vsrc}.mp4" title="${s.name} at Reborn Da Nang"></video>`:`<img src="${BASE}/assets/${s.img}" alt="${s.name}, ${BIZ.name} Da Nang">`}</div>
 </div></div>
 <section><div class="wrap"><h2>${s.short} price list</h2>
-<div class="answer">${s.name} at ${BIZ.name} costs <strong>${s.prices[0][1]}</strong> for ${s.prices[0][0].toLowerCase()} (thousand VND — 100K ≈ $4). ${BIZ.hoursHuman}, walk-ins welcome.</div>
+<div class="answer">${s.name} at ${BIZ.name} costs <strong>${s.prices[0][1]}</strong> for ${s.prices[0][0].toLowerCase()} (thousand VND · 100K ≈ $4). ${BIZ.hoursHuman}, walk-ins welcome.</div>
 <div class="menuCard">${s.prices.map(p=>`<div class="prow"><span>${p[0]}</span><i></i><b>${p[1]}</b></div>`).join('')}</div></div></section>
 ${marketBlock(s.slug)}
 ${promoCard()}
 <section><div class="wrap"><h2>Why guests choose Reborn for ${s.short.toLowerCase()}</h2>${reviewCards(3)}</div></section>
-<section><div class="wrap"><h2>${s.short} — FAQ</h2>${faqHtml(s.faq)}</div></section>
+<section><div class="wrap"><h2>${s.short} · FAQ</h2>${faqHtml(s.faq)}</div></section>
 ${mapBlock()}
 <section><div class="wrap"><h2>Also popular</h2><div class="grid">${others.map(o=>`<a class="card" href="${BASE}/services/${o.slug}/"><img src="${BASE}/assets/${o.img}" alt="${o.name}" loading="lazy"><div class="cb"><h3>${o.name}</h3><div class="cd">${o.desc}</div></div></a>`).join('')}</div></div></section>`
  +ld({"@context":"https://schema.org","@type":"Service","name":s.name,"provider":{"@id":SITE+"/#salon","@type":"NailSalon","name":BIZ.name,"address":{"@type":"PostalAddress","streetAddress":BIZ.street,"addressLocality":BIZ.city,"addressCountry":"VN"},"telephone":BIZ.phone},"areaServed":"Da Nang","url":url})
@@ -604,7 +664,7 @@ const INTROS=[
  (l)=>`Staying near ${l.name}? The best-rated nail salon around is closer than you think.`,
  (l)=>`From ${l.name}, a ★${BIZ.rating} nail and head-spa ritual is only ${'{D}'} away.`,
  (l)=>`Here is exactly how to get perfect nails when you are at ${l.name}.`,
- (l)=>`${l.name} to fresh gel nails in ${'{T}'} — this is Da Nang's favourite self-care stop.`,
+ (l)=>`${l.name} to fresh gel nails in ${'{T}'} · this is Da Nang's favourite self-care stop.`,
  (l)=>`Looking for a trusted manicure spot near ${l.name}? Travellers keep choosing the same address.`,
  (l)=>`Your ${l.name} day pairs perfectly with a spa pedicure just ${'{D}'} away.`];
 for(const l of publishedLocs){
@@ -615,10 +675,10 @@ for(const l of publishedLocs){
  const sPick=[SERVICES[hashN(l.slug+'a',4)],SERVICES[4+hashN(l.slug+'b',3)]];
  const dirUrl=`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(l.name+' Da Nang')}&destination=Reborn+Nails+%26+Retreat+Da+Nang&destination_place_id=ChIJ4S2_LGIXQjER5UUCohuc8V4`;
  const faq=[
-  [`How far is Reborn Nails & Retreat from ${l.name}?`,`${BIZ.name} is about ${km(d)} from ${l.name}${near?` — roughly a ${w}-minute walk`:` — around ${g} minutes by Grab or taxi`}. The address is ${BIZ.street}, ${BIZ.ward}, Da Nang.`],
-  [`Do I need a booking if I come from ${l.name}?`,`No — walk-ins are welcome every day from 9 AM to 8 PM. For a guaranteed slot, message Instagram @reborn_nailsnretreat before you leave ${l.name}.`],
-  [`What should I try?`,`Guests coming from ${l.name} love the ${sPick[0].short} (${sPick[0].prices[0][1]}) and the Deep Care spa pedicure (450K, 65 min) — Reborn's best seller.`]];
- const html=head(`Nail Salon near ${l.name} — ${km(d)} away · ${BIZ.short} ★4.9`,
+  [`How far is Reborn Nails & Retreat from ${l.name}?`,`${BIZ.name} is about ${km(d)} from ${l.name}${near?` · roughly a ${w}-minute walk`:` · around ${g} minutes by Grab or taxi`}. The address is ${BIZ.street}, ${BIZ.ward}, Da Nang.`],
+  [`Do I need a booking if I come from ${l.name}?`,`No · walk-ins are welcome every day from 9 AM to 8 PM. For a guaranteed slot, message Instagram @reborn_nailsnretreat before you leave ${l.name}.`],
+  [`What should I try?`,`Guests coming from ${l.name} love the ${sPick[0].short} (${sPick[0].prices[0][1]}) and the Deep Care spa pedicure (450K, 65 min) · Reborn's best seller.`]];
+ const html=head(`Nail Salon near ${l.name} · ${km(d)} away · ${BIZ.short} ★4.9`,
   `The closest top-rated nail salon & head spa to ${l.name}: ${BIZ.name}, ${km(d)} away (${T}). Gel nails 200K, pedicure rituals, ★4.9 on Google. Open daily 9–20.`,url)
  +nav()
  +`<div class="wrap"><p class="crumb"><a href="${BASE}/">Home</a> › <a href="${BASE}/da-nang/">Da Nang</a> › ${l.name}</p></div>
@@ -628,19 +688,19 @@ for(const l of publishedLocs){
 <p class="sub">${intro}</p>
 <p class="badgeline">${km(d)} from ${l.name} <i>✦</i> ${near?`${w} min walk`:`${g} min by Grab`} <i>✦</i> ★ ${BIZ.rating} · ${BIZ.ratingCount}+ reviews <i>✦</i> Daily 9:00–20:00</p>
 <div class="btnrow"><a class="cta gold" href="${dirUrl}" rel="noopener">Directions from ${l.name}</a><a class="ghost" href="${BIZ.instagram}" rel="noopener">Book on Instagram</a></div>
-<div class="heromedia"><img src="${BASE}/assets/${['salon','arch','interior','refined'][hashN(l.slug+'i',4)]}.jpg" alt="${BIZ.name} — nail salon near ${l.name} Da Nang" loading="lazy"></div>
+<div class="heromedia"><img src="${BASE}/assets/${['salon','arch','interior','refined'][hashN(l.slug+'i',4)]}.jpg" alt="${BIZ.name} · nail salon near ${l.name} Da Nang" loading="lazy"></div>
 </div></div>
 <section><div class="wrap">
-<div class="answer">The closest highly-rated nail salon to <strong>${l.name}</strong>${l.vi?` (${l.vi})`:''} is <strong>${BIZ.name}</strong>, ${km(d)} away at ${BIZ.street} in the An Thuong beach quarter${near?` — about ${w} minutes on foot`:` — about ${g} minutes by Grab (≈${Math.max(1,Math.round(d*0.9))}0K)`}. It is rated ★${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews and specialises in gel nails, BIAB, spa pedicures, Vietnamese head-spa rituals and waxing.</div>
+<div class="answer">The closest highly-rated nail salon to <strong>${l.name}</strong>${l.vi?` (${l.vi})`:''} is <strong>${BIZ.name}</strong>, ${km(d)} away at ${BIZ.street} in the An Thuong beach quarter${near?` · about ${w} minutes on foot`:` · about ${g} minutes by Grab (≈${Math.max(1,Math.round(d*0.9))}0K)`}. It is rated ★${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews and specialises in gel nails, BIAB, spa pedicures, Vietnamese head-spa rituals and waxing.</div>
 <h2>Perfect after ${l.blurb||'a day at '+l.name}</h2>
-<p>${l.kind==='hotel'?`Treat yourself without leaving the neighbourhood: from ${l.name} it is ${near?`an easy ${w}-minute stroll`:`a quick ${g}-minute Grab ride`} to the salon — ideal before dinner in An Thuong or a sunset walk on My Khe Beach.`:l.kind==='transport'?`Landing or leaving via ${l.name}? A fresh set or a head-spa ritual fits neatly around your schedule — the salon is ${g} minutes away and no booking is needed.`:`After exploring ${l.name}, swap crowds for a cream-leather armchair, a herbal foot soak and the quiet of Reborn's An Thuong salon, ${near?`${w} minutes on foot`:`${g} minutes by Grab`} away.`}</p>
+<p>${l.kind==='hotel'?`Treat yourself without leaving the neighbourhood: from ${l.name} it is ${near?`an easy ${w}-minute stroll`:`a quick ${g}-minute Grab ride`} to the salon · ideal before dinner in An Thuong or a sunset walk on My Khe Beach.`:l.kind==='transport'?`Landing or leaving via ${l.name}? A fresh set or a head-spa ritual fits neatly around your schedule · the salon is ${g} minutes away and no booking is needed.`:`After exploring ${l.name}, swap crowds for a cream-leather armchair, a herbal foot soak and the quiet of Reborn's An Thuong salon, ${near?`${w} minutes on foot`:`${g} minutes by Grab`} away.`}</p>
 <h2>Most-loved services (${new Intl.DateTimeFormat('en',{year:'numeric'}).format(NOW)} prices)</h2>
-<div class="grid">${sPick.map(o=>`<a class="card" href="${BASE}/services/${o.slug}/"><img src="${BASE}/assets/${o.img}" alt="${o.name} near ${l.name}" loading="lazy"><div class="cb"><h3>${o.name}</h3><div class="cd">${o.desc}</div><div class="cp">${o.prices[0][0]} — ${o.prices[0][1]}</div></div></a>`).join('')}</div>
+<div class="grid">${sPick.map(o=>`<a class="card" href="${BASE}/services/${o.slug}/"><img src="${BASE}/assets/${o.img}" alt="${o.name} near ${l.name}" loading="lazy"><div class="cb"><h3>${o.name}</h3><div class="cd">${o.desc}</div><div class="cp">${o.prices[0][0]} · ${o.prices[0][1]}</div></div></a>`).join('')}</div>
 <p style="margin-top:14px"><a href="${BASE}/#services">See the full menu & price list →</a></p>
 </div></section>
 <section><div class="wrap"><h2>What travellers say</h2>${reviewCards(3)}</div></section>
 ${promoCard()}
-<section><div class="wrap"><h2>FAQ — coming from ${l.name}</h2>${faqHtml(faq)}</div></section>
+<section><div class="wrap"><h2>FAQ · coming from ${l.name}</h2>${faqHtml(faq)}</div></section>
 ${mapBlock(dirUrl)}`
  +ld({"@context":"https://schema.org",...bizLd({"areaServed":{"@type":"Place","name":l.name+", Da Nang"}})})
  +ld({"@context":"https://schema.org",...faqLd(faq)})
@@ -651,11 +711,11 @@ ${mapBlock(dirUrl)}`
 }
 
 /* ---------- hub ---------- */
-const hubHtml=head(`Nail salon near you in Da Nang — every beach, hotel & landmark · ${BIZ.short}`,
- `Find the walking or Grab time from your Da Nang hotel, beach or landmark to ${BIZ.name} (★4.9) — My Khe, An Thuong, Marble Mountains, Non Nuoc resorts and more.`,SITE+"/da-nang/")
+const hubHtml=head(`Nail salon near you in Da Nang · every beach, hotel & landmark · ${BIZ.short}`,
+ `Find the walking or Grab time from your Da Nang hotel, beach or landmark to ${BIZ.name} (★4.9) · My Khe, An Thuong, Marble Mountains, Non Nuoc resorts and more.`,SITE+"/da-nang/")
 +nav()
 +`<div class="hero"><div class="hwrap"><p class="tag">Wherever you stay</p><h1>A ★4.9 nail salon near you in Da Nang</h1>
-<p class="sub">Pick where you are — we tell you exactly how far the salon is, how to get there and what to try.</p></div></div>
+<p class="sub">Pick where you are · we tell you exactly how far the salon is, how to get there and what to try.</p></div></div>
 <section><div class="wrap">
 ${['beach','area','landmark','hotel','transport','street','town'].map(kind=>{
  const list=publishedLocs.filter(l=>l.kind===kind);if(!list.length)return '';
@@ -691,7 +751,7 @@ ${mapBlock()}`
 }
 
 /* ---------- 404 / robots / llms / sitemap ---------- */
-fs.writeFileSync(OUT+'/404.html',head('Page not found — '+BIZ.name,'This page is being polished. Meanwhile — our full menu awaits.',SITE+'/')+nav()+`<div class="hero"><div class="hwrap"><h1>This page is still being polished 💅</h1><p class="sub">Meanwhile, the whole menu is one tap away.</p><div class="btnrow"><a class="cta" href="${BASE}/">Back to the salon</a></div></div></div>`+footer());
+fs.writeFileSync(OUT+'/404.html',head('Page not found · '+BIZ.name,'This page is being polished. Meanwhile · our full menu awaits.',SITE+'/')+nav()+`<div class="hero"><div class="hwrap"><h1>This page is still being polished 💅</h1><p class="sub">Meanwhile, the whole menu is one tap away.</p><div class="btnrow"><a class="cta" href="${BASE}/">Back to the salon</a></div></div></div>`+footer());
 fs.writeFileSync(OUT+'/robots.txt',`User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 fs.writeFileSync(OUT+'/llms.txt',`# ${BIZ.name}
 > Premium nail salon, spa pedicure, Vietnamese head spa & waxing in Da Nang, Vietnam. ★${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews. 5-minute walk from My Khe Beach.

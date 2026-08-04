@@ -4,6 +4,7 @@
    deterministic order (md5 salt), sitemap lists ONLY published pages. */
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
 const {BIZ,SERVICES,REVIEWS,SOCIAL,REELS,RITUALS,WORKS,LOCATIONS,HUBS}=require('./data.js');
+const {JOURNAL}=fs.existsSync('./journal.js')?require('./journal.js'):{JOURNAL:[]};
 
 const SITE="https://saitamareborn.github.io/reborn-nails-danang";
 const BASE="/reborn-nails-danang";
@@ -69,6 +70,7 @@ const nav=(active='')=>`${promoBar()}<header class="nav"><div class="wrap navin"
 <nav class="navlinks">
 <a href="${BASE}/#services"${active=='s'?' class="on"':''}>Services & Prices</a>
 <a href="${BASE}/da-nang/">Near you in Da Nang</a>
+${JOURNAL.length?`<a href="${BASE}/journal/"${active=='j'?' class="on"':''}>Journal</a>`:''}
 <a href="${BASE}/#reviews">Reviews</a>
 <a href="${BASE}/#find-us">Find us</a>
 </nav>
@@ -804,6 +806,57 @@ ${mapBlock()}`
 }
 
 /* ---------- 404 / robots / llms / sitemap ---------- */
+/* ---- Journal (weekly articles) · only entries dated today or earlier go live ---- */
+const TODAY=NOW.toISOString().slice(0,10);
+const posts=JOURNAL.filter(a=>a.date<=TODAY).sort((a,b)=>b.date.localeCompare(a.date));
+const human=d=>new Date(d+'T00:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+if(posts.length){
+ fs.mkdirSync(OUT+'/journal',{recursive:true});
+ const hubUrl=SITE+'/journal/';
+ fs.writeFileSync(OUT+'/journal/index.html',
+  head('Journal · nail care & Da Nang guides | '+BIZ.name,'Straight answers on nail care, prices and what to expect in Da Nang · written by the team at '+BIZ.name+'.',hubUrl)
+  +ld({"@context":"https://schema.org","@type":"Blog","name":BIZ.name+" Journal","url":hubUrl,
+       "publisher":{"@id":SITE+"/#salon"},
+       "blogPost":posts.map(a=>({"@type":"BlogPosting","headline":a.title,"datePublished":a.date,"url":`${SITE}/journal/${a.slug}/`}))})
+  +nav('j')
+  +`<div class="hero"><div class="hwrap"><h1>The Reborn Journal</h1><p class="sub">Honest answers about nails, prices and treatments in Da Nang · no filler.</p></div></div>
+<section class="wrap" style="padding:48px 0"><div class="ritgrid">${posts.map(a=>`<article class="rit">
+ <a href="${BASE}/journal/${a.slug}/"><img src="${BASE}/assets/${a.hero}" alt="${a.title}" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px"></a>
+ <div><p class="tag">${a.cat} · ${a.read} min read</p>
+ <h3><a href="${BASE}/journal/${a.slug}/">${a.title}</a></h3>
+ <p>${a.desc}</p>
+ <p class="tag">${human(a.date)}</p></div></article>`).join('')}</div></section>`
+  +promoCard()+footer());
+
+ posts.forEach(a=>{
+  const url=`${SITE}/journal/${a.slug}/`;
+  fs.mkdirSync(`${OUT}/journal/${a.slug}`,{recursive:true});
+  fs.writeFileSync(`${OUT}/journal/${a.slug}/index.html`,
+   head(a.title+' | '+BIZ.name,a.desc,url)
+   +ld({"@context":"https://schema.org","@type":"BlogPosting","headline":a.title,"description":a.desc,
+        "datePublished":a.date,"dateModified":a.date,"mainEntityOfPage":url,
+        "image":`${SITE}/assets/${a.hero}`,
+        "author":{"@type":"Organization","name":BIZ.name,"url":SITE+'/'},
+        "publisher":{"@id":SITE+"/#salon","@type":"NailSalon","name":BIZ.name,
+          "address":{"@type":"PostalAddress","streetAddress":BIZ.street,"addressLocality":BIZ.city,"addressCountry":"VN"}}})
+   +(a.faq&&a.faq.length?ld({"@context":"https://schema.org","@type":"FAQPage","mainEntity":a.faq.map(([q,ans])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":ans}}))}):'')
+   +nav('j')
+   +`<div class="hero"><div class="hwrap">
+<p class="tag"><a href="${BASE}/journal/">Journal</a> · ${a.cat} · ${a.read} min read</p>
+<h1>${a.title}</h1><p class="sub">${a.desc}</p>
+<p class="tag">Published ${human(a.date)}</p></div></div>
+<section class="wrap" style="padding:40px 0;max-width:760px">
+<div class="promo" style="margin-bottom:32px"><div class="pleft"><p class="tag">In short</p>
+<ul>${a.tldr.map(t=>`<li>${t}</li>`).join('')}</ul></div></div>
+${a.body.map(s=>`<h2>${s.h}</h2>${s.p.map(p=>`<p>${p}</p>`).join('')}`).join('')}
+${a.faq&&a.faq.length?`<h2>Frequently asked</h2>${a.faq.map(([q,ans])=>`<h3>${q}</h3><p>${ans}</p>`).join('')}`:''}
+<p style="margin-top:36px"><a class="cta" href="${BIZ.directions}" rel="noopener">Find the salon</a>
+ <a class="cta" href="${BIZ.whatsapp}" rel="noopener">Message us on WhatsApp</a></p>
+</section>`
+   +promoCard()+footer());
+ });
+}
+
 fs.writeFileSync(OUT+'/404.html',head('Page not found · '+BIZ.name,'This page is being polished. Meanwhile · our full menu awaits.',SITE+'/')+nav()+`<div class="hero"><div class="hwrap"><h1>This page is still being polished 💅</h1><p class="sub">Meanwhile, the whole menu is one tap away.</p><div class="btnrow"><a class="cta" href="${BASE}/">Back to the salon</a></div></div></div>`+footer());
 fs.writeFileSync(OUT+'/robots.txt',`User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 fs.writeFileSync(OUT+'/llms.txt',`# ${BIZ.name}
@@ -838,7 +891,9 @@ const urls=[
  {u:SITE+'/da-nang/',d:NOW.toISOString().slice(0,10),p:'0.8'},
  ...SERVICES.map(s=>({u:`${SITE}/services/${s.slug}/`,d:LAUNCH.toISOString().slice(0,10),p:'0.9'})),
  ...HUBS.map(h=>({u:`${SITE}/${h.dir}/`,d:LAUNCH.toISOString().slice(0,10),p:'0.8'})),
- ...publishedLocs.map(l=>({u:`${SITE}/nail-salon/${l.slug}/`,d:pubDate(l.slug),p:'0.6'}))
+ ...publishedLocs.map(l=>({u:`${SITE}/nail-salon/${l.slug}/`,d:pubDate(l.slug),p:'0.6'})),
+ ...(posts.length?[{u:SITE+'/journal/',d:posts[0].date,p:'0.7'}]:[]),
+ ...posts.map(a=>({u:`${SITE}/journal/${a.slug}/`,d:a.date,p:'0.7'}))
 ];
 fs.writeFileSync(OUT+'/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(x=>` <url><loc>${x.u}</loc><lastmod>${x.d}</lastmod><priority>${x.p}</priority></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(OUT+'/.nojekyll','');

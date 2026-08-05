@@ -6,8 +6,11 @@ const fs=require('fs'),path=require('path'),crypto=require('crypto');
 const {BIZ,SERVICES,REVIEWS,SOCIAL,REELS,RITUALS,WORKS,LOCATIONS,HUBS}=require('./data.js');
 const {JOURNAL}=fs.existsSync('./journal.js')?require('./journal.js'):{JOURNAL:[]};
 
-const SITE="https://saitamareborn.github.io/reborn-nails-danang";
-const BASE="/reborn-nails-danang";
+/* Custom domain (Porkbun, bought 2026-08-05). With a CNAME file GitHub Pages
+   serves the repo at the domain ROOT, so BASE is empty — not /reborn-nails-danang. */
+const DOMAIN="rebornnaildanang.com";
+const SITE="https://"+DOMAIN;
+const BASE="";
 const LAUNCH=new Date("2026-07-24T00:00:00Z");
 const DRIP_PER_DAY=4;
 const SALT="reborn-dn-2026"; // NEVER change (drip order stability)
@@ -897,4 +900,5 @@ const urls=[
 ];
 fs.writeFileSync(OUT+'/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(x=>` <url><loc>${x.u}</loc><lastmod>${x.d}</lastmod><priority>${x.p}</priority></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(OUT+'/.nojekyll','');
+fs.writeFileSync(OUT+'/CNAME',DOMAIN+'\n'); // custom domain — regenerated every build
 console.log(`Built ${urls.length} indexed pages (${publishedLocs.length}/${LOCATIONS.length} locations published, day ${daysSince}).`);

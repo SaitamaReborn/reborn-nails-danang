@@ -1,1 +1,5 @@
+# Search Console verification tokens, one per line.
+# Kept together so the retired github.io property stays verified while the
+# custom-domain property is established.
 DQcHUaNXFWKuy67PK23mGW2TVjoMpwgqAuDGzPYILu0
+dt9XiZ_4jTuYuwSULD2xaOSMocXkjkWt3qBr2rAvFVo

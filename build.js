@@ -15,7 +15,12 @@ const LAUNCH=new Date("2026-07-24T00:00:00Z");
 const DRIP_PER_DAY=4;
 const SALT="reborn-dn-2026"; // NEVER change (drip order stability)
 const NOW=process.env.BUILD_DATE?new Date(process.env.BUILD_DATE):new Date();
-const GSC_META=fs.existsSync('./gsc-meta.txt')?fs.readFileSync('./gsc-meta.txt','utf8').trim():'';
+/* gsc-meta.txt: one Search Console verification token per line. Several are kept
+   at once so the old github.io property stays verified while the custom domain
+   property is being set up. */
+const GSC_METAS=fs.existsSync('./gsc-meta.txt')
+  ?fs.readFileSync('./gsc-meta.txt','utf8').split('\n').map(s=>s.trim()).filter(s=>s&&!s.startsWith('#'))
+  :[];
 const GA_ID=fs.existsSync('./ga-id.txt')?fs.readFileSync('./ga-id.txt','utf8').trim():'';
 
 const md5=s=>crypto.createHash('md5').update(s).digest('hex');
@@ -44,7 +49,7 @@ const head=(t,d,url,extra='')=>`<!doctype html><html lang="${extra.includes('lan
 <title>${t}</title>
 <meta name="description" content="${d}">
 <link rel="canonical" href="${url}">
-${GSC_META?`<meta name="google-site-verification" content="${GSC_META}">`:''}
+${GSC_METAS.map(t=>`<meta name="google-site-verification" content="${t}">`).join('\n')}
 <meta property="og:title" content="${t}"><meta property="og:description" content="${d}">
 <meta property="og:image" content="${SITE}/assets/og.jpg"><meta property="og:type" content="website"><meta property="og:url" content="${url}">
 <meta name="twitter:card" content="summary_large_image">

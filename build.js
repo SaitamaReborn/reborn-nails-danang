@@ -43,6 +43,19 @@ fs.rmSync(OUT,{recursive:true,force:true});
 fs.mkdirSync(OUT+'/assets',{recursive:true});
 fs.cpSync('./assets',OUT+'/assets',{recursive:true});
 
+/* Google's favicon crawler falls back to /favicon.ico and ignores data: URIs,
+   so the icons have to be real files at the document root. */
+if(fs.existsSync('./assets/favicon'))
+  for(const f of fs.readdirSync('./assets/favicon'))
+    fs.copyFileSync('./assets/favicon/'+f,OUT+'/'+f);
+fs.writeFileSync(OUT+'/site.webmanifest',JSON.stringify({
+  name:'Reborn Nails & Retreat',short_name:'Reborn',start_url:'/',display:'standalone',
+  background_color:'#2A1F15',theme_color:'#2A1F15',
+  icons:[{src:'/icon-192.png',sizes:'192x192',type:'image/png'},
+         {src:'/icon-512.png',sizes:'512x512',type:'image/png'},
+         {src:'/icon-512.png',sizes:'512x512',type:'image/png',purpose:'maskable'}]
+},null,2));
+
 /* ---------- layout ---------- */
 const head=(t,d,url,extra='')=>`<!doctype html><html lang="${extra.includes('lang-override')?'':'en'}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -53,7 +66,12 @@ ${GSC_METAS.map(t=>`<meta name="google-site-verification" content="${t}">`).join
 <meta property="og:title" content="${t}"><meta property="og:description" content="${d}">
 <meta property="og:image" content="${SITE}/assets/og.jpg"><meta property="og:type" content="website"><meta property="og:url" content="${url}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💅</text></svg>">
+<link rel="icon" href="${BASE}/favicon.ico" sizes="48x48">
+<link rel="icon" href="${BASE}/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="${BASE}/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="${BASE}/apple-touch-icon.png">
+<link rel="manifest" href="${BASE}/site.webmanifest">
+<meta name="theme-color" content="#2A1F15">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&family=Prata&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${BASE}/assets/style.css">

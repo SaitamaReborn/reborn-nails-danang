@@ -133,7 +133,7 @@ const reviewCards=(n=6)=>`<div class="revrow">${FIVE.slice(0,n).map(r=>`
 <p class="revmore">Every review above is a real Google review. Read all <strong>${BIZ.ratingCount}+ (★ ${BIZ.rating})</strong> on <a href="${BIZ.maps}" rel="noopener">Google Maps</a>.</p>`;
 
 const mapBlock=(from='')=>`<section class="mapsec" id="find-us"><div class="wrap">
-<p class="tag">Visit us</p><h2>880 m from My Khe Beach · a 10-minute walk</h2>
+<p class="tag">Visit us</p><h2>880 m from My Khe Beach · a 10–12 minute walk</h2>
 <p class="addr"><strong>${BIZ.street}, ${BIZ.ward}, ${BIZ.city}</strong> · ${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a></p>
 <div class="mapframe"><iframe src="https://www.google.com/maps?q=Reborn+Nails+%26+Retreat,+56+Ch%C3%A2u+Th%E1%BB%8B+V%C4%A9nh+T%E1%BA%BF,+%C4%90%C3%A0+N%E1%BA%B5ng&output=embed" width="100%" height="380" style="border:0" loading="lazy" title="Map to Reborn Nails & Retreat Da Nang" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
 <p class="mapbtns"><a class="cta" href="${from||BIZ.directions}" rel="noopener">Get directions on Google Maps</a>
@@ -616,7 +616,7 @@ const homeHtml=head(
 <div class="socrow" style="margin-top:26px">${socCards}</div></div></section>
 ${mapBlock()}
 <section><div class="wrap"><p class="tag">Good to know</p><h2>Frequently asked questions</h2>
-<div class="answer"><strong>${BIZ.name}</strong> is a premium nail salon and head spa at ${BIZ.street}, Da Nang · 880 m from My Khe Beach (a 10-minute walk) in the An Thuong quarter. It is rated ${BIZ.rating}★ from ${BIZ.ratingCount}+ Google reviews, open every day 9:00–20:00, and welcomes walk-ins.</div>
+<div class="answer"><strong>${BIZ.name}</strong> is a premium nail salon and head spa at ${BIZ.street}, Da Nang · 880 m from My Khe Beach (a 10–12 minute walk) in the An Thuong quarter. It is rated ${BIZ.rating}★ from ${BIZ.ratingCount}+ Google reviews, open every day 9:00–20:00, and welcomes walk-ins.</div>
 ${faqHtml([
  ["Do I need to book?","No · walk-ins are welcome every day from 9 AM to 8 PM. To reserve a specific time, message us on Instagram @reborn_nailsnretreat or call "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn: classic manicure 70K, gel polish 200K, BIAB 300K, GelX extensions 280K. A full cat-eye or chrome nail-art set is 180K. That is roughly a third of typical prices in Korea, Japan, Australia or Europe."],
@@ -655,7 +655,7 @@ const RB_POP=['My Khe Beach','An Thuong Tourist Area','Marble Mountains','Da Nan
 +ld({"@context":"https://schema.org",...faqLd([
  ["Do I need to book at Reborn Nails & Retreat?","No · walk-ins are welcome every day 9:00–20:00. Booking is possible via Instagram DM @reborn_nailsnretreat or by phone "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn Nails & Retreat: manicure 70K, gel polish 200K, BIAB 300K, GelX 280K, full nail-art sets from 180K (thousand VND)."],
- ["Where is Reborn Nails & Retreat located?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn, Da Nang · 880 m from My Khe Beach · a 10-minute walk."]])})
+ ["Where is Reborn Nails & Retreat located?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn, Da Nang · 880 m from My Khe Beach · a 10–12 minute walk."]])})
 +footer();
 fs.writeFileSync(OUT+'/index.html',homeHtml);
 
@@ -842,7 +842,7 @@ ${a.faq&&a.faq.length?`<h2>Frequently asked</h2>${a.faq.map(([q,ans])=>`<h3>${q}
 fs.writeFileSync(OUT+'/404.html',head('Page not found · '+BIZ.name,'This page is being polished. Meanwhile · our full menu awaits.',SITE+'/')+nav()+`<div class="hero"><div class="hwrap"><h1>This page is still being polished 💅</h1><p class="sub">Meanwhile, the whole menu is one tap away.</p><div class="btnrow"><a class="cta" href="${BASE}/">Back to the salon</a></div></div></div>`+footer());
 fs.writeFileSync(OUT+'/robots.txt',`User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 fs.writeFileSync(OUT+'/llms.txt',`# ${BIZ.name}
-> Premium nail salon, spa pedicure, Vietnamese head spa & waxing in Da Nang, Vietnam. ★${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews. 880 m from My Khe Beach, a 10-minute walk.
+> Premium nail salon, spa pedicure, Vietnamese head spa & waxing in Da Nang, Vietnam. ★${BIZ.rating} from ${BIZ.ratingCount}+ Google reviews. 880 m from My Khe Beach, a 10–12 minute walk.
 
 Address: ${BIZ.street}, ${BIZ.ward}, ${BIZ.city} ${BIZ.zip}, Vietnam
 Hours: daily 09:00–20:00 · Walk-ins welcome · Phone: ${BIZ.phone}

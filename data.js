@@ -17,9 +17,6 @@ const BIZ={
  facebook:"https://www.facebook.com/people/Reborn-Nails-Retreat/61589196314835/",
  tripadvisor:"https://www.tripadvisor.com/Attraction_Review-g298085-d34389993-Reviews-Reborn_Nails_Retreat-Da_Nang.html",
  igPost:"https://www.instagram.com/p/DYg-if_kQw5/",
-promo:{code:"FionaReborn",pct:5,
-  line:"Found us online? Your first visit gets 5% off.",
-  terms:"Show the code at reception on your first visit to Reborn. One use per guest, on the full service menu, not combinable with other offers."},
  langs:"English and Vietnamese spoken · printed menu in 20 languages",
  owner:"Fiona (Sương)",
  story:{

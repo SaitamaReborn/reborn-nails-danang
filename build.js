@@ -81,19 +81,7 @@ ${GA_ID?`<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}
 ${extra}
 </head><body>`;
 
-const promoBar=()=>`<div class="pbar"><div class="wrap pbin">
-<span class="pbtag">First visit</span>
-<span class="pbtxt">${BIZ.promo.line} Use code <button class="pbcode" data-code="${BIZ.promo.code}" title="Tap to copy">${BIZ.promo.code}</button></span>
-</div></div>`;
-const promoCard=()=>`<section class="promosec"><div class="wrap"><div class="promo">
-<div class="pleft"><p class="tag">Website exclusive</p>
- <h2>${BIZ.promo.pct}% off your first visit</h2>
- <p class="ptxt">${BIZ.promo.terms}</p></div>
-<div class="pright">
- <button class="pcode" data-code="${BIZ.promo.code}"><span>Tap to copy</span><b>${BIZ.promo.code}</b></button>
- <a class="cta" href="${BIZ.directions}" rel="noopener">Get directions</a>
-</div></div></div></section>`;
-const nav=(active='')=>`${promoBar()}<header class="nav"><div class="wrap navin">
+const nav=(active='')=>`<header class="nav"><div class="wrap navin">
 <a class="logo" href="${BASE}/"><img src="${BASE}/assets/logo.webp" alt="Reborn Nails & Retreat logo" width="96" height="73" style="width:96px;height:auto"></a>
 <nav class="navlinks">
 <a href="${BASE}/#services"${active=='s'?' class="on"':''}>Services & Prices</a>
@@ -120,13 +108,7 @@ ${BIZ.hoursHuman} · <a href="tel:${BIZ.phoneRaw}">${BIZ.phone}</a> · <a href="
 </div></footer>
 <script>document.addEventListener('click',e=>{const n=e.target.closest('.rnav');if(n){const t=document.getElementById('reelTrack');
  t.scrollBy({left:(+n.dataset.dir)*(t.querySelector('.reel').offsetWidth+16)*2,behavior:'smooth'});return;}});
-document.addEventListener('click',e=>{const b=e.target.closest('[data-code]');if(!b)return;
- const c=b.dataset.code;const done=()=>{const o=b.textContent;b.classList.add('copied');
-  if(b.classList.contains('pcode')){b.querySelector('span').textContent='Copied ✓';setTimeout(()=>b.querySelector('span').textContent='Tap to copy',1800);}
-  else{b.textContent='Copied ✓';setTimeout(()=>{b.textContent=o;b.classList.remove('copied')},1800);}};
- if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(c).then(done,done);}
- else{const t=document.createElement('textarea');t.value=c;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(x){}t.remove();done();}
-});</script>
+</script>
 <div class="fab" id="fab">
  <a class="fabbtn wa" href="${BIZ.whatsapp}" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.2 2.2-.2 3.9 1.1 1.9 2.6 3.4 4.6 4.4 1.6.8 2.4.8 3.2.7.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg><em>WhatsApp</em></a>
  <a class="fabbtn ph" href="tel:${BIZ.phoneRaw}" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><em>Call</em></a>
@@ -455,32 +437,6 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .tbit span{display:block;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);font-weight:600;margin-top:6px}
 @media(max-width:760px){.tbrow{grid-template-columns:repeat(2,1fr);gap:18px}}
 
-/* · promo · */
-.pbar{background:linear-gradient(90deg,#7A4A2B,#A9812F 45%,#7A4A2B);color:#FFF7E9;font-size:13.5px}
-.pbin{display:flex;align-items:center;justify-content:center;gap:10px;padding:9px 22px;flex-wrap:wrap;text-align:center}
-.pbtag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;background:rgba(255,247,233,.16);
- padding:4px 10px;border-radius:999px}
-.pbtxt{font-weight:600}
-.pbcode{font:inherit;font-weight:800;letter-spacing:.06em;color:#2A1F0C;background:#F1DCA9;border:none;
- padding:4px 11px;border-radius:999px;cursor:pointer}
-.pbcode:hover{background:#FBEFC9}
-.promosec{padding:38px 0}
-.promo{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;background:var(--panel);
- border:1.5px solid var(--gold);border-radius:28px;padding:30px 34px;position:relative;overflow:hidden;
- box-shadow:0 16px 46px rgba(90,60,30,.1)}
-.promo::before{content:"";position:absolute;inset:8px;border:1px solid rgba(176,138,62,.28);border-radius:20px;pointer-events:none}
-.promo h2{margin:6px 0 8px;text-align:left;padding-bottom:0}
-.promo h2::after{display:none}
-.ptxt{color:var(--ink2);font-size:14.5px;max-width:520px;margin:0}
-.pright{display:flex;flex-direction:column;gap:12px;align-items:stretch;min-width:230px}
-.pcode{font:inherit;cursor:pointer;background:linear-gradient(135deg,#FBF4E2,#F4E4BE);border:1.5px dashed var(--gold);
- border-radius:18px;padding:14px 22px;text-align:center;color:var(--brand2)}
-.pcode span{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);font-weight:700}
-.pcode b{display:block;font-family:var(--serif);font-weight:400;font-size:27px;letter-spacing:.01em;margin-top:3px}
-.pcode.copied{border-style:solid;border-color:#5F6B3F}
-@media(max-width:760px){.promo{grid-template-columns:1fr;padding:24px}.promo h2{text-align:center}.ptxt{text-align:center}
- .pbin{font-size:12.5px;gap:7px;padding:8px 14px}.pbtag{display:none}}
-
 .tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--brand);font-size:14px;font-weight:700;
  border:1px solid var(--line);border-radius:999px;padding:9px 15px;background:var(--panel);white-space:nowrap}
 .tel svg{width:17px;height:17px}
@@ -521,9 +477,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
  color:var(--ink);max-width:780px;margin:26px auto 0}
 .answer::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--gold),rgba(176,138,62,.15))}
 
-/* · promo code button · */
-.pcode{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.15}
-.pbcode{line-height:1.2}
+/* · article TL;DR box · */
+.tldr{background:var(--panel);border:1.5px solid var(--gold);border-radius:22px;padding:22px 26px;margin-bottom:32px}
+.tldr ul{margin:8px 0 0;padding-left:20px}
+.tldr li{margin:5px 0}
 
 /* real google reviews */
 .revrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px;margin-top:24px;align-items:start}
@@ -638,9 +595,7 @@ const homeHtml=head(
 
 <section id="services"><div class="wrap"><p class="tag">Menu & prices</p><h2>Services at Reborn · full price list</h2>
 <p class="sub" style="margin-left:0;text-align:left">Prices in thousand Vietnamese đồng: 100K = 100,000 ₫ ≈ $4. No hidden fees · the menu below is exactly what you pay in the salon.</p>
-<div class="grid">${svcCards}</div></div></section>
-${promoCard()}
-<section id="menu"><div class="wrap"><p class="tag">The menu</p><h2>Our menu, exactly as in the salon</h2>
+<div class="grid">${svcCards}</div></div></section><section id="menu"><div class="wrap"><p class="tag">The menu</p><h2>Our menu, exactly as in the salon</h2>
 <p class="secsub">Swipe through the printed pages · what you see is what you pay.</p>
 <div class="menuScroll">${[1,2,3,4,5].map(i=>`<a href="${BASE}/assets/menu-${i}.jpg" target="_blank" rel="noopener" class="menuPage"><img src="${BASE}/assets/menu-${i}.jpg" alt="Reborn Nails & Retreat menu · page ${i}" loading="lazy"></a>`).join('')}</div></div></section>
 <section class="finder" id="finder"><div class="wrap">
@@ -668,7 +623,6 @@ ${faqHtml([
  ["Do the staff speak English?","Yes. Sương and the team look after you in English and Vietnamese, and the printed menu is translated into 20 languages (Korean, Japanese, Chinese, Russian, French, Spanish and more), so nothing gets misunderstood and you get exactly the treatment you asked for."],
  ["Is it hygienic?","We hold ourselves to European salon standards, which is not the norm everywhere in Da Nang. Every metal tool goes through a medical steriliser before it touches you, files and buffers are single-use and thrown away in front of you, and the steriliser sits in the open so you can watch it work."],
  ["Where exactly is the salon?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn · in the An Thuong tourist quarter, 400 m from My Khe Beach. Open the map above or tap Get Directions."],
- ["Is there a discount if I come from this website?","Yes. Show the code "+BIZ.promo.code+" at reception on your first visit and you get "+BIZ.promo.pct+"% off the service menu. One use per guest, not combinable with other offers."],
  ["Can I pay by card?","Yes · cards and cash (VND) are both accepted."]])}
 </div></section>`
 +`<script>
@@ -701,8 +655,7 @@ const RB_POP=['My Khe Beach','An Thuong Tourist Area','Marble Mountains','Da Nan
 +ld({"@context":"https://schema.org",...faqLd([
  ["Do I need to book at Reborn Nails & Retreat?","No · walk-ins are welcome every day 9:00–20:00. Booking is possible via Instagram DM @reborn_nailsnretreat or by phone "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn Nails & Retreat: manicure 70K, gel polish 200K, BIAB 300K, GelX 280K, full nail-art sets from 180K (thousand VND)."],
- ["Where is Reborn Nails & Retreat located?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn, Da Nang · a 5-minute walk from My Khe Beach."],
- ["Is there a website discount at Reborn Nails & Retreat?","Yes · first-time guests who mention the code "+BIZ.promo.code+" at reception get "+BIZ.promo.pct+"% off the service menu."]])})
+ ["Where is Reborn Nails & Retreat located?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn, Da Nang · a 5-minute walk from My Khe Beach."]])})
 +footer();
 fs.writeFileSync(OUT+'/index.html',homeHtml);
 
@@ -728,9 +681,7 @@ for(const s of SERVICES){
 <section><div class="wrap"><h2>${s.short} price list</h2>
 <div class="answer">${s.name} at ${BIZ.name} costs <strong>${s.prices[0][1]}</strong> for ${s.prices[0][0].toLowerCase()} (thousand VND · 100K ≈ $4). ${BIZ.hoursHuman}, walk-ins welcome.</div>
 <div class="menuCard">${s.prices.map(p=>`<div class="prow"><span>${p[0]}</span><i></i><b>${p[1]}</b></div>`).join('')}</div></div></section>
-${marketBlock(s.slug)}
-${promoCard()}
-<section><div class="wrap"><h2>Why guests choose Reborn for ${s.short.toLowerCase()}</h2>${reviewCards(3)}</div></section>
+${marketBlock(s.slug)}<section><div class="wrap"><h2>Why guests choose Reborn for ${s.short.toLowerCase()}</h2>${reviewCards(3)}</div></section>
 <section><div class="wrap"><h2>${s.short} · FAQ</h2>${faqHtml(s.faq)}</div></section>
 ${mapBlock()}
 <section><div class="wrap"><h2>Also popular</h2><div class="grid">${others.map(o=>`<a class="card" href="${BASE}/services/${o.slug}/"><img src="${BASE}/assets/${o.img}" alt="${o.name}" loading="lazy"><div class="cb"><h3>${o.name}</h3><div class="cd">${o.desc}</div></div></a>`).join('')}</div></div></section>`
@@ -781,9 +732,7 @@ for(const l of publishedLocs){
 <div class="grid">${sPick.map(o=>`<a class="card" href="${BASE}/services/${o.slug}/"><img src="${BASE}/assets/${o.img}" alt="${o.name} near ${l.name}" loading="lazy"><div class="cb"><h3>${o.name}</h3><div class="cd">${o.desc}</div><div class="cp">${o.prices[0][0]} · ${o.prices[0][1]}</div></div></a>`).join('')}</div>
 <p style="margin-top:14px"><a href="${BASE}/#services">See the full menu & price list →</a></p>
 </div></section>
-<section><div class="wrap"><h2>What travellers say</h2>${reviewCards(3)}</div></section>
-${promoCard()}
-<section><div class="wrap"><h2>FAQ · coming from ${l.name}</h2>${faqHtml(faq)}</div></section>
+<section><div class="wrap"><h2>What travellers say</h2>${reviewCards(3)}</div></section><section><div class="wrap"><h2>FAQ · coming from ${l.name}</h2>${faqHtml(faq)}</div></section>
 ${mapBlock(dirUrl)}`
  +ld({"@context":"https://schema.org",...bizLd({"areaServed":{"@type":"Place","name":l.name+", Da Nang"}})})
  +ld({"@context":"https://schema.org",...faqLd(faq)})
@@ -854,7 +803,7 @@ if(posts.length){
  <h3><a href="${BASE}/journal/${a.slug}/">${a.title}</a></h3>
  <p>${a.desc}</p>
  <p class="tag">${human(a.date)}</p></div></article>`).join('')}</div></section>`
-  +promoCard()+footer());
+  +footer());
 
  posts.forEach(a=>{
   const url=`${SITE}/journal/${a.slug}/`;
@@ -874,14 +823,14 @@ if(posts.length){
 <h1>${a.title}</h1><p class="sub">${a.desc}</p>
 <p class="tag">Published ${human(a.date)}</p></div></div>
 <section class="wrap" style="padding:40px 0;max-width:760px">
-<div class="promo" style="margin-bottom:32px"><div class="pleft"><p class="tag">In short</p>
-<ul>${a.tldr.map(t=>`<li>${t}</li>`).join('')}</ul></div></div>
+<div class="tldr"><p class="tag">In short</p>
+<ul>${a.tldr.map(t=>`<li>${t}</li>`).join('')}</ul></div>
 ${a.body.map(s=>`<h2>${s.h}</h2>${s.p.map(p=>`<p>${p}</p>`).join('')}`).join('')}
 ${a.faq&&a.faq.length?`<h2>Frequently asked</h2>${a.faq.map(([q,ans])=>`<h3>${q}</h3><p>${ans}</p>`).join('')}`:''}
 <p style="margin-top:36px"><a class="cta" href="${BIZ.directions}" rel="noopener">Find the salon</a>
  <a class="cta" href="${BIZ.whatsapp}" rel="noopener">Message us on WhatsApp</a></p>
 </section>`
-   +promoCard()+footer());
+   +footer());
  });
 }
 
@@ -895,9 +844,6 @@ Hours: daily 09:00–20:00 · Walk-ins welcome · Phone: ${BIZ.phone}
 Languages: ${BIZ.langs}
 Google Maps: ${BIZ.mapsCid}
 Instagram: ${BIZ.instagram}
-
-## Offer
-- First-time guests from the website: ${BIZ.promo.pct}% off with code ${BIZ.promo.code} (show it at reception)
 
 ## Prices (thousand VND, 100K ≈ $4)
 - Gel polish 200K · BIAB 300K · GelX 280K · Manicure 70K

@@ -57,22 +57,11 @@ fs.writeFileSync(OUT+'/site.webmanifest',JSON.stringify({
 },null,2));
 
 /* ---------- layout ---------- */
-/* Google truncates titles around 60-65 characters. Drop the trailing brand
-   segment before hard-truncating, so the part that distinguishes one page from
-   another is what survives rather than the suffix every page shares. */
-const fitTitle=s=>{
-  const len=x=>x.replace(/&amp;/g,'&').replace(/&#39;/g,"'").replace(/&quot;/g,'"').length;
-  if(len(s)<=62) return s;
-  const once=s.replace(/\s*·\s*[^·]+$/,'');
-  if(len(once)<=62&&len(once)>=25) return once;
-  const twice=once.replace(/\s*·\s*[^·]+$/,'');
-  if(len(twice)<=62&&len(twice)>=25) return twice;
-  return once.slice(0,59).replace(/[\s·—,-]+$/,'')+'…';
-};
-
+/* Titles are emitted in full, never machine-truncated: automated cuts amputate
+   the distinguishing keywords. Google handles display truncation itself. */
 const head=(t,d,url,extra='')=>`<!doctype html><html lang="${extra.includes('lang-override')?'':'en'}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${fitTitle(t)}</title>
+<title>${t}</title>
 <meta name="description" content="${d}">
 <link rel="canonical" href="${url}">
 ${GSC_METAS.map(t=>`<meta name="google-site-verification" content="${t}">`).join('\n')}

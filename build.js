@@ -79,7 +79,7 @@ ${GSC_METAS.map(t=>`<meta name="google-site-verification" content="${t}">`).join
 <link rel="stylesheet" href="${BASE}/assets/style.css">
 ${GA_ID?`<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${GA_ID}');</script>`:''}
 ${extra}
-</head><body>`;
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "y4tw8nobmk");</script></head><body>`;
 
 const nav=(active='')=>`<header class="nav"><div class="wrap navin">
 <a class="logo" href="${BASE}/"><img src="${BASE}/assets/logo.webp" alt="Reborn Nails & Retreat logo" width="96" height="73" style="width:96px;height:auto"></a>

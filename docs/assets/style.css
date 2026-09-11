@@ -13,7 +13,13 @@ h1{font-size:clamp(34px,6vw,58px);margin:.2em 0}h2{font-size:clamp(27px,4vw,40px
 .langdd summary::-webkit-details-marker{display:none}
 .langdd summary::after{content:"";width:7px;height:7px;border-right:1.5px solid var(--brand);border-bottom:1.5px solid var(--brand);transform:rotate(45deg) translateY(-2px)}
 .langdd[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
-.langdd nav{position:absolute;top:calc(100% + 10px);right:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 44px rgba(90,60,30,.18);padding:8px;min-width:170px;display:flex;flex-direction:column;z-index:60}
+/* display:flex here overrode the browser's own hiding of a closed <details>:
+   the language panel rendered open at all times, 170x278 at z-index 60, sitting
+   over the hero on a 390px screen. Clarity, 18 days: 165 dead clicks and 39 rage
+   clicks on 74 Google Ads sessions landing on this page, against 37 and 0 for
+   organic traffic on the same page. The panel now shows only when [open]. */
+.langdd nav{position:absolute;top:calc(100% + 10px);right:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 44px rgba(90,60,30,.18);padding:8px;min-width:170px;display:none;flex-direction:column;z-index:60}
+.langdd[open] nav{display:flex}
 .langdd nav a{padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px}
 .langdd nav a:hover{background:var(--paper)}
 .cta{display:inline-block;background:var(--brand);color:#FBF3E6;border-radius:999px;padding:15px 30px;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none}

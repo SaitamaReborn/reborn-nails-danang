@@ -130,7 +130,7 @@ const reviewCards=(n=6)=>`<div class="revrow">${FIVE.slice(0,n).map(r=>`
  <blockquote>${r.t}</blockquote>
  ${r.p&&r.p.length?`<div class="rvp">${r.p.map(p=>`<a href="${BASE}/assets/${p}" target="_blank" rel="noopener"><img src="${BASE}/assets/${p}" alt="Photo by ${r.n} at ${BIZ.name}" loading="lazy"></a>`).join('')}</div>`:''}
 </figure>`).join('')}</div>
-<p class="revmore">Every review above is a real Google review. Read all <strong>${BIZ.ratingCount} (★ ${BIZ.ratingText})</strong> on <a href="${BIZ.maps}" rel="noopener">Google Maps</a>.</p>`;
+<p class="revmore">Every review above is a real Google review. Read all <strong>${BIZ.ratingCount} (★ ${BIZ.ratingText} on ${BIZ.ratingDateHuman})</strong> on <a href="${BIZ.maps}" rel="noopener">Google Maps</a>.</p>`;
 
 const mapBlock=(from='')=>`<section class="mapsec" id="find-us"><div class="wrap">
 <p class="tag">Visit us</p><h2>880 m from My Khe Beach · a 10–12 minute walk</h2>
@@ -174,7 +174,6 @@ const bizLd=(extra={})=>({"@context":"https://schema.org","@type":"NailSalon","n
  "address":{"@type":"PostalAddress","streetAddress":BIZ.street,"addressLocality":BIZ.city,"addressRegion":"Đà Nẵng","postalCode":BIZ.zip,"addressCountry":"VN"},
  "geo":{"@type":"GeoCoordinates","latitude":BIZ.lat,"longitude":BIZ.lng},
  "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"20:00"},
- "aggregateRating":{"@type":"AggregateRating","ratingValue":BIZ.rating,"reviewCount":BIZ.ratingCount},
  "hasMap":BIZ.maps,"sameAs":[BIZ.instagram,BIZ.tiktok,BIZ.facebook,BIZ.tripadvisor,BIZ.maps],...extra});
 
 /* ---------- CSS ---------- */
@@ -540,7 +539,7 @@ const socCards=SOCIAL.map(s=>`<a class="soc" href="${s.url}" rel="noopener" targ
 
 const homeHtml=head(
  `Nail Salon & Head Spa in Da Nang · ${BIZ.name} · ★${BIZ.ratingText}`,
- `Premium nail salon near My Khe Beach: gel nails from 200K, BIAB, GelX, nail art, spa pedicure, Vietnamese head spa & waxing. ★${BIZ.ratingText} on Google (287 Google reviews). Open daily 9–20, walk-ins welcome.`,
+ `Premium nail salon near My Khe Beach: gel nails from 200K, BIAB, GelX, nail art, spa pedicure, Vietnamese head spa & waxing. ★${BIZ.ratingText} from ${BIZ.ratingCount} Google reviews (${BIZ.ratingDateHuman}). Open daily 9–20, walk-ins welcome.`,
  SITE+"/",
  HUBS.map(h=>`<link rel="alternate" hreflang="${h.code==='zh'?'zh-Hans':h.code}" href="${SITE}/${h.dir}/">`).join('')+`<link rel="alternate" hreflang="en" href="${SITE}/"><link rel="alternate" hreflang="x-default" href="${SITE}/">`)
 +nav()
@@ -551,18 +550,18 @@ const homeHtml=head(
   <img class="clogo" src="${BASE}/assets/logo_light.webp" alt="${BIZ.name}" width="150">
   <p class="ceyebrow">Nails · Spa Pedicure · Head Spa · Massage</p>
   <h1 class="ctitle"><span>Paris standards,</span><span>Vietnamese prices.</span><em>Da Nang's ${BIZ.ratingText}★ nail &amp; head spa</em></h1>
-  <p class="csub">Fiona trained in Vietnam, studied the craft in Paris, and brought that standard back to 56 Châu Thị Vĩnh Tế, 880 m from My Khe Beach.<br>${stars} <b>${BIZ.ratingText}</b> from ${BIZ.ratingCount} Google reviews · sterilised single-use tools · English spoken, menu in 20 languages.</p>
+  <p class="csub">Fiona trained in Vietnam, studied the craft in Paris, and brought that standard back to 56 Châu Thị Vĩnh Tế, 880 m from My Khe Beach.<br>${stars} <b>${BIZ.ratingText}</b> from ${BIZ.ratingCount} Google reviews (${BIZ.ratingDateHuman}) · sterilised single-use tools · English spoken, menu in 20 languages.</p>
   <div class="cbtns"><a class="cta gold" href="${BIZ.directions}" rel="noopener">Get directions</a><a class="ghost light" href="#services">Menu &amp; prices</a></div>
  </div>
  <div class="cfacts"><span>Gel from 200K</span><i></i><span>Head spa 120–850K</span><i></i><span>Pedicure rituals 250–590K</span><i></i><span>Open daily 9–20</span></div>
 </div>
 <section class="trustbar"><div class="wrap"><div class="tbrow">
- <div class="tbit"><b>★ ${BIZ.ratingText}</b><span>${BIZ.ratingCount} Google reviews</span></div>
+ <div class="tbit"><b>★ ${BIZ.ratingText}</b><span>${BIZ.ratingCount} Google reviews · ${BIZ.ratingDateHuman}</span></div>
  <div class="tbit"><b>19 steps</b><span>in our signature ritual</span></div>
  <div class="tbit"><b>English spoken</b><span>menu in 20 languages, no mix-ups</span></div>
  <div class="tbit"><b>European</b><span>hygiene standard, single-use files</span></div>
 </div></div></section>
-<section id="reviews"><div class="wrap"><p class="tag">Guest love</p><h2>★ ${BIZ.ratingText} from ${BIZ.ratingCount} Google reviews</h2>${reviewCards(9)}</div></section>
+<section id="reviews"><div class="wrap"><p class="tag">Guest love</p><h2>★ ${BIZ.ratingText} from ${BIZ.ratingCount} Google reviews</h2><p class="secsub">Google rating as of ${BIZ.ratingDateHuman}.</p>${reviewCards(9)}</div></section>
 <section class="works"><div class="wrap"><p class="tag">Fresh from the salon</p><h2>Sets we finished this month</h2>
 <p class="secsub">Every photo below was taken at 56 Châu Thị Vĩnh Tế, on our guests' own hands. No stock images, no filters.</p>
 <div class="wgrid">${WORKS.map(w=>`<figure class="wk"><img src="${BASE}/assets/${w.f}" alt="${w.c} at ${BIZ.name} Da Nang" loading="lazy"><figcaption>${w.c}</figcaption></figure>`).join('')}</div>
@@ -622,7 +621,7 @@ const homeHtml=head(
 <div class="socrow" style="margin-top:26px">${socCards}</div></div></section>
 ${mapBlock()}
 <section><div class="wrap"><p class="tag">Good to know</p><h2>Frequently asked questions</h2>
-<div class="answer"><strong>${BIZ.name}</strong> is a premium nail salon and head spa at ${BIZ.street}, Da Nang · 880 m from My Khe Beach (a 10–12 minute walk) in the An Thuong quarter. It is rated ${BIZ.ratingText}★ from ${BIZ.ratingCount} Google reviews, open every day 9:00–20:00, and welcomes walk-ins.</div>
+<div class="answer"><strong>${BIZ.name}</strong> is a premium nail salon and head spa at ${BIZ.street}, Da Nang · 880 m from My Khe Beach (a 10–12 minute walk) in the An Thuong quarter. It is rated ${BIZ.ratingText}★ from ${BIZ.ratingCount} Google reviews (as of ${BIZ.ratingDateHuman}), open every day 9:00–20:00, and welcomes walk-ins.</div>
 ${faqHtml([
  ["Do I need to book?","No · walk-ins are welcome every day from 9 AM to 8 PM. To reserve a specific time, message us on Instagram @reborn_nailsnretreat or call "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn: classic manicure 70K, gel polish 200K, BIAB 300K, GelX extensions 280K. A full cat-eye or chrome nail-art set is 180K. That is roughly a third of typical prices in Korea, Japan, Australia or Europe."],
@@ -728,7 +727,7 @@ for(const l of publishedLocs){
 <p class="tag">Nail salon near ${l.name}</p>
 <h1>Nail salon near ${l.name}, Da Nang</h1>
 <p class="sub">${intro}</p>
-<p class="badgeline">${km(d)} from ${l.name} <i>✦</i> ${near?`${w} min walk`:`${g} min by Grab`} <i>✦</i> ★ ${BIZ.ratingText} · ${BIZ.ratingCount} reviews <i>✦</i> Daily 9:00–20:00</p>
+<p class="badgeline">${km(d)} from ${l.name} <i>✦</i> ${near?`${w} min walk`:`${g} min by Grab`} <i>✦</i> ★ ${BIZ.ratingText} · ${BIZ.ratingCount} Google reviews (${BIZ.ratingDateHuman}) <i>✦</i> Daily 9:00–20:00</p>
 <div class="btnrow"><a class="cta gold" href="${dirUrl}" rel="noopener">Directions from ${l.name}</a><a class="ghost" href="${BIZ.instagram}" rel="noopener">Book on Instagram</a></div>
 <div class="heromedia"><img src="${BASE}/assets/${['salon','arch','interior','refined'][hashN(l.slug+'i',4)]}.jpg" alt="${BIZ.name} · nail salon near ${l.name} Da Nang" loading="lazy"></div>
 </div></div>
@@ -736,7 +735,7 @@ for(const l of publishedLocs){
 <div class="answer">${d<=3
  ?`The closest highly-rated nail salon to <strong>${l.name}</strong>${l.vi?` (${l.vi})`:''} is <strong>${BIZ.name}</strong>, ${km(d)} away at ${BIZ.street} in the An Thuong beach quarter${near?` · about ${w} minutes on foot`:` · about ${g} minutes by Grab (≈${Math.max(1,Math.round(d*0.9))}0K)`}.`
  :`From <strong>${l.name}</strong>${l.vi?` (${l.vi})`:''}, the nail salon to book for when you are back in the beach quarter is <strong>${BIZ.name}</strong> — ${km(d)} away at ${BIZ.street} in An Thuong, about ${g} minutes by Grab (≈${Math.max(1,Math.round(d*0.9))}0K). Salons sit closer to ${l.name} itself; this is the one this site belongs to.`}
- It is rated ★${BIZ.ratingText} from ${BIZ.ratingCount} Google reviews and specialises in gel nails, BIAB, spa pedicures, Vietnamese head-spa rituals and waxing.</div>
+ It is rated ★${BIZ.ratingText} from ${BIZ.ratingCount} Google reviews (as of ${BIZ.ratingDateHuman}) and specialises in gel nails, BIAB, spa pedicures, Vietnamese head-spa rituals and waxing.</div>
 <h2>Perfect after ${l.blurb||'a day at '+l.name}</h2>
 <p>${l.kind==='hotel'?`Treat yourself without leaving the neighbourhood: from ${l.name} it is ${near?`an easy ${w}-minute stroll`:`a quick ${g}-minute Grab ride`} to the salon · ideal before dinner in An Thuong or a sunset walk on My Khe Beach.`:l.kind==='transport'?`Landing or leaving via ${l.name}? A fresh set or a head-spa ritual fits neatly around your schedule · the salon is ${g} minutes away and no booking is needed.`:`After exploring ${l.name}, swap crowds for a cream-leather armchair, a herbal foot soak and the quiet of Reborn's An Thuong salon, ${near?`${w} minutes on foot`:`${g} minutes by Grab`} away.`}</p>
 <h2>Most-loved services (${new Intl.DateTimeFormat('en',{year:'numeric'}).format(NOW)} prices)</h2>
@@ -771,7 +770,12 @@ fs.mkdirSync(OUT+'/da-nang',{recursive:true});
 fs.writeFileSync(OUT+'/da-nang/index.html',hubHtml);
 
 /* ---------- language hubs ---------- */
-for(const h of HUBS){
+/* Hub intros carry {R} {V} {D}: the rating, review count and date come from BIZ,
+   so a new Google figure is changed in one place only. */
+const hubFill=(h,t)=>{let d=BIZ.ratingDate;try{d=new Date(BIZ.ratingDate+'T00:00:00Z').toLocaleDateString(h.code==='zh'?'zh-CN':h.code,{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});}catch(e){}
+  return String(t).replace(/\{R\}/g,BIZ.ratingText).replace(/\{V\}/g,BIZ.ratingCount).replace(/\{D\}/g,d);};
+for(const h0 of HUBS){
+ const h={...h0,intro:hubFill(h0,h0.intro)};
  const url=`${SITE}/${h.dir}/`;
  const html=head(h.title,h.intro.slice(0,158),url,
   `<link rel="alternate" hreflang="en" href="${SITE}/">`+HUBS.map(x=>`<link rel="alternate" hreflang="${x.code==='zh'?'zh-Hans':x.code}" href="${SITE}/${x.dir}/">`).join('')+`<link rel="alternate" hreflang="x-default" href="${SITE}/"><!--lang-override-->`).replace('<html lang="">',`<html lang="${h.code==='zh'?'zh-Hans':h.code}">`)
@@ -848,7 +852,7 @@ ${a.faq&&a.faq.length?`<h2>Frequently asked</h2>${a.faq.map(([q,ans])=>`<h3>${q}
 fs.writeFileSync(OUT+'/404.html',head('Page not found · '+BIZ.name,'This page is being polished. Meanwhile · our full menu awaits.',SITE+'/')+nav()+`<div class="hero"><div class="hwrap"><h1>This page is still being polished 💅</h1><p class="sub">Meanwhile, the whole menu is one tap away.</p><div class="btnrow"><a class="cta" href="${BASE}/">Back to the salon</a></div></div></div>`+footer());
 fs.writeFileSync(OUT+'/robots.txt',`User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 fs.writeFileSync(OUT+'/llms.txt',`# ${BIZ.name}
-> Premium nail salon, spa pedicure, Vietnamese head spa & waxing in Da Nang, Vietnam. ★${BIZ.ratingText} from ${BIZ.ratingCount} Google reviews. 880 m from My Khe Beach, a 10–12 minute walk.
+> Premium nail salon, spa pedicure, Vietnamese head spa & waxing in Da Nang, Vietnam. ★${BIZ.ratingText} from ${BIZ.ratingCount} Google reviews (as of ${BIZ.ratingDateHuman}). 880 m from My Khe Beach, a 10–12 minute walk.
 
 Address: ${BIZ.street}, ${BIZ.ward}, ${BIZ.city} ${BIZ.zip}, Vietnam
 Hours: daily 09:00–20:00 · Walk-ins welcome · Phone: ${BIZ.phone}

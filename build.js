@@ -174,6 +174,7 @@ const bizLd=(extra={})=>({"@context":"https://schema.org","@type":"NailSalon","n
  "address":{"@type":"PostalAddress","streetAddress":BIZ.street,"addressLocality":BIZ.city,"addressRegion":"Đà Nẵng","postalCode":BIZ.zip,"addressCountry":"VN"},
  "geo":{"@type":"GeoCoordinates","latitude":BIZ.lat,"longitude":BIZ.lng},
  "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"20:00"},
+ "aggregateRating":{"@type":"AggregateRating","ratingValue":BIZ.rating,"reviewCount":BIZ.ratingCount,"bestRating":5,"worstRating":1},
  "hasMap":BIZ.maps,"sameAs":[BIZ.instagram,BIZ.tiktok,BIZ.facebook,BIZ.tripadvisor,BIZ.maps],...extra});
 
 /* ---------- CSS ---------- */

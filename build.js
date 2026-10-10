@@ -896,3 +896,6 @@ fs.writeFileSync(OUT+'/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<ur
 fs.writeFileSync(OUT+'/.nojekyll','');
 fs.writeFileSync(OUT+'/CNAME',DOMAIN+'\n'); // custom domain — regenerated every build
 console.log(`Built ${urls.length} indexed pages (${publishedLocs.length}/${LOCATIONS.length} locations published, day ${daysSince}).`);
+
+// passe progressive anti-motifs IA (10/10/2026) : segments retouchés des pages listées dans sans-tirets.json
+require('./lib/sans-tirets.js')(typeof OUT === 'string' ? OUT : './docs');

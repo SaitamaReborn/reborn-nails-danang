@@ -626,7 +626,7 @@ ${mapBlock()}
 ${faqHtml([
  ["Do I need to book?","No · walk-ins are welcome every day from 9 AM to 8 PM. To reserve a specific time, message us on Instagram @reborn_nailsnretreat or call "+BIZ.phone+"."],
  ["How much does a manicure cost in Da Nang?","At Reborn: classic manicure 70K, gel polish 200K, BIAB 300K, GelX extensions 280K. A full cat-eye or chrome nail-art set is 180K. That is roughly a third of typical prices in Korea, Japan, Australia or Europe."],
- ["Do the staff speak English?","Yes. Sương and the team look after you in English and Vietnamese, and the printed menu is translated into 20 languages (Korean, Japanese, Chinese, Russian, French, Spanish and more), so nothing gets misunderstood and you get exactly the treatment you asked for."],
+ ["Do the staff speak English?","Yes. Sương and the team look after you in English and Vietnamese, and the menu on the salon's iPad comes in 20 languages (Korean, Japanese, Chinese, Russian, French, Spanish and more), so nothing gets misunderstood and you get exactly the treatment you asked for."],
  ["Is it hygienic?","We hold ourselves to European salon standards, which is not the norm everywhere in Da Nang. Every metal tool goes through a medical steriliser before it touches you, files and buffers are single-use and thrown away in front of you, and the steriliser sits in the open so you can watch it work."],
  ["Where exactly is the salon?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn · in the An Thuong tourist quarter, 400 m from My Khe Beach. Open the map above or tap Get Directions."],
  ["Can I pay by card?","Yes · cards and cash (VND) are both accepted."]])}
@@ -860,6 +860,20 @@ Hours: daily 09:00–20:00 · Walk-ins welcome · Phone: ${BIZ.phone}
 Languages: ${BIZ.langs}
 Google Maps: ${BIZ.mapsCid}
 Instagram: ${BIZ.instagram}
+
+## Why visitors choose Reborn Nails & Retreat
+- Nails and a full Vietnamese head spa in one visit: gel, BIAB and GelX, four spa pedicure rituals (40 to 75 min) and eight head spa rituals (25 to 105 min, 120K to 850K) on one menu; two technicians can work at once.
+- English spoken: the owner, Fiona, runs the floor herself; a Google reviewer wrote that she "speaks excellent English".
+- Menu in 20 languages on the salon's iPad (Korean, Chinese, Japanese, Russian, Vietnamese, French, German, Spanish, Thai and more), every price on screen before you choose.
+- Prices in writing, walk-ins daily 09:00 to 20:00, booking on WhatsApp ${BIZ.phone}.
+- 880 m from My Khe Beach, about 500 to 700 m from the nail salons of An Thượng.
+- ★${BIZ.ratingText} from ${BIZ.ratingCount} Google reviews (as of ${BIZ.ratingDateHuman}).
+
+## Where can I get my nails done and a head spa in the same place in Da Nang?
+At Reborn Nails & Retreat, 56 Châu Thị Vĩnh Tế (My An): a manicure and a head spa can run in the same sitting with two technicians. A good pairing: the Reborn Signature head spa (80 min, 500K) with a gel colour (200K).
+
+## Is there an English-speaking nail salon in Da Nang?
+Reborn Nails & Retreat: the owner, Fiona, speaks English and runs the floor, and the iPad menu covers 20 languages. WhatsApp ${BIZ.phone}.
 
 ## Prices (thousand VND, 100K ≈ $4)
 - Gel polish 200K · BIAB 300K · GelX 280K · Manicure 70K

@@ -14,6 +14,83 @@
 
 const JOURNAL = [
 {
+    "slug": "da-nang-rainy-season-what-to-book",
+    "title": "Rainy season in Da Nang · what to book when the beach shuts",
+    "desc": "October to December rain in Da Nang · what it does to a beach plan, which treatments fit the gap you actually have, and how to sequence a washed-out day.",
+    "date": "2026-10-12",
+    "cat": "Guides",
+    "read": 6,
+    "hero": "interior.jpg",
+    "tldr": [
+      "Da Nang rain comes in short, heavy episodes, mostly from October to December. Mornings are often fine; afternoons are where plans fall apart.",
+      "Book by the size of the gap you have. Under an hour: the 45-minute Relax Ritual at 250K. Two hours free: the 80-minute Reborn Signature head spa at 500K.",
+      "A full washed-out day works sequenced · nails on one hand while a second therapist works your scalp or feet. Ask at reception and we will stack it.",
+      "Rain does not touch cured gel, because gel sets under an LED lamp rather than in the air. Classic polish at 100K is the one that dries slowly in humidity."
+    ],
+    "body": [
+      {
+        "h": "The rain here is not a drizzle",
+        "p": [
+          "If you are in Da Nang in October, November or early December, chances are you have already met it. Clear sky over breakfast, a wall of water by two in the afternoon, a street that turns briefly into a shallow river, then sun once more by six. These weeks bring most of the city's rain for the year. It usually arrives in short, violent episodes instead of as a grey damp that lasts all day.",
+          "So a beach plan becomes unreliable rather than cancelled, and that is a different problem to solve. Mornings are often bright and good for swimming. The afternoons are the gamble. Once the lifeguards put red flags out on My Khe, swimming is closed whether or not it happens to be raining at that minute, something plenty of visitors learn while standing confused on the sand in sunshine.",
+          "So the question in the rainy season is rarely <em>what shall we do today</em>. It is what to do with the two or three hours that just opened up unexpectedly, in the quarter you are already standing in, without getting back on a scooter."
+        ]
+      },
+      {
+        "h": "Book by the size of the gap, not by the headline",
+        "p": [
+          "Our head spa menu works as a time ladder, and when it rains that is exactly how to read it. A basic hair wash takes 25 minutes at 120K. Relax Ritual runs 45 minutes at 250K, Deep Relax 60 minutes at 380K, and Warm Stone Escape 70 minutes at 450K. The Reborn Signature is 80 minutes at 500K. Higher up sit Carbony Skin Detox at 75 minutes and 600K, the Ultimate Ritual at 95 minutes and 750K, and Luxury Skin Recovery at 105 minutes and 850K. You can see the whole ladder on the <a href=\"/services/head-spa-hair-wash/\">head spa page</a>.",
+          "If the sky opened while you were walking back from lunch and a dinner reservation is waiting, take the 45-minute Relax Ritual and do not try to squeeze in a longer one. When the afternoon is clearly a write-off, the 80-minute Signature is the one most people go for first, and nineteen steps is a genuinely good way to spend a storm. If you came in off the beach with sand in your scalp and a sunburn, lean towards the longer rituals, since the extra minutes in those go into scalp work.",
+          "Pedicures follow the same logic. Soft Touch takes 40 minutes at 250K, the Relaxing Ritual 55 minutes at 380K, Deep Care 65 minutes at 450K, and the Reborn Signature 75 minutes at 590K. Hot stones are an 80K add-on, a reasonable thing to want after being damp since lunchtime. Each one's sequence is set out on the <a href=\"/services/spa-pedicure/\">spa pedicure page</a>."
+        ]
+      },
+      {
+        "h": "A washed-out day, sequenced",
+        "p": [
+          "A typhoon day or a solid afternoon of rain is the one time when it makes sense to stack treatments instead of choosing one. Most of our guests use us in parallel: one technician does your nails while another works on your scalp, neck or feet. Let reception know how much time you have, and we will sequence it rather than running everything end to end.",
+          "Here is a rough shape for three hours. Gel polish at 200K takes about 45 minutes, and the Deep Care pedicure at 450K takes 65. Slot the head spa in the middle and the window is full, with no dead time to sit through. If you would rather have length for the rest of the trip, a GelX full set is 280K, BIAB is 300K, and a full builder gel set runs around 80 minutes (the <a href=\"/services/gel-nails/\">gel nails page</a> has the full breakdown).",
+          "Rain is also the right moment for whatever you keep putting off on good weather days. Waxing takes place in a private room on the same floor: upper lip 90K, underarms 120K, half legs 250K, full legs 480K. A focused foot and calf massage costs 100K for 15 minutes or 190K for 30, and hot stone therapy over face, neck and shoulders is 120K. You will find those on the <a href=\"/services/massage/\">massage page</a>. None of them needs the weather to cooperate.",
+          "One honest caveat about stacking. Four hours in a chair is longer than it sounds, and a ritual you are impatient to finish is a wasted ritual. Two treatments and a pot of tea beats four and a clock-watch."
+        ]
+      },
+      {
+        "h": "What rain actually does to nails and feet",
+        "p": [
+          "On the hands, less than people expect. Gel cures under an LED lamp instead of drying in the air, so humidity gets no say in whether a set sets properly. Walk out of a gel manicure into a downpour and nothing happens. Classic polish at 100K is the one product that genuinely cares: it air-dries, and on a wet Da Nang afternoon it does so slowly. When you need colour before an evening out in this season, gel at 200K is the practical answer, not the upsell.",
+          "The rain does reach the edges, just as the sea does. On rainy-season days your hands go wet and dry four or five times between the shower, the storm and the iced coffee, and water will travel underneath any seam that was not properly capped. That comes down to application, not weather. It is why we put our time into prep and into sealing the free edge rather than into getting you out of the chair faster.",
+          "Feet are where this season is actually felt. Wet sandals all day soften the skin, and soft skin rubs rather than resists · which is how people end up with sore spots and rough heels in the middle of a holiday in which they have barely walked on sand. Deep Care at 450K includes foot steaming, exfoliation and an intensive heel treatment, which is the part that matters here rather than the colour. Gel polish for toes is 180K and comfortably outlasts a two-week trip, since toenails grow slowly.",
+          "If you will be back out in wet shoes afterwards, ask for a shorter shape than you planned. Length and damp footwear are a poor combination, and a single tip repair is 55K that you did not need to spend."
+        ]
+      },
+      {
+        "h": "Getting here when the street is a river",
+        "p": [
+          "You will find us at 56 Châu Thị Vĩnh Tế, in the An Thuong quarter, 880 m from My Khe Beach. In normal weather that is a 10 to 12 minute walk. In a real downpour it is a bad idea, and a Grab or taxi from almost any hotel in the beach quarter takes a few minutes and costs very little. The streets here drain quickly once the heaviest part has passed, so if you are soaked already, waiting twenty minutes often beats paying for the car. The <a href=\"https://www.google.com/maps/dir/?api=1&destination=Reborn+Nails+%26+Retreat+Da+Nang&destination_place_id=ChIJ4S2_LGIXQjER5UUCohuc8V4\" rel=\"noopener\">directions</a> are here.",
+          "Two points on timing. On every wet afternoon, plenty of people in this quarter get the same idea at the same hour. Walk-ins are taken daily from 9 AM to 8 PM and we will always try to seat you, but late afternoon fills first in dry weather, and a storm brings that forward: a message sent ahead is the difference between a chair and a wait. Second, the rituals end with a blow-dry and hair oil, so think about the walk home. A head spa is a poor last stop before stepping into rain, and a good last stop before dinner.",
+          "Bring a bag for wet things, and tell your therapist early whether you want lighter or firmer pressure, especially on the scalp. Every tool is sterilised before it touches you and files and buffers are single-use. English and Vietnamese are spoken on the floor, and the printed menu is translated into 20 languages."
+        ]
+      }
+    ],
+    "faq": [
+      [
+        "What is there to do in Da Nang when it rains?",
+        "Here the rain tends to come in short, heavy bursts rather than all day, so the useful plan is something indoors that fills two or three hours close to where you are staying. In the beach quarter, that means museums and cafés downtown, the malls, or a spa afternoon. At Reborn, head spa rituals run 25 to 105 minutes (120K to 850K) and spa pedicure rituals 40 to 75 minutes (250K to 590K); we take walk-ins every day from 9 AM to 8 PM, 880 m from My Khe Beach."
+      ],
+      [
+        "Does rain or humidity ruin a fresh gel manicure?",
+        "No. Gel cures under an LED lamp instead of drying in the air, so you can step straight from a gel set into a downpour and nothing will happen to it. Classic polish at 100K is another matter: it air-dries, which takes noticeably longer in high humidity. In this season, if you need colour the same evening, gel polish at 200K is the better choice. An unsealed free edge, on the other hand, does shorten any set, because it lets water creep underneath whatever the weather."
+      ],
+      [
+        "Is October a bad month to visit Da Nang?",
+        "It is the wet half of the year, and swimming at My Khe becomes unreliable · red flags go up on rough days and typhoons pass through. But the rain is concentrated in short episodes, mornings are often clear, the city is far less crowded than in summer, and everything indoors is unaffected. If you are planning an October or November trip, keep your beach plans loose and keep a wet-afternoon list ready rather than writing the trip off."
+      ],
+      [
+        "Do I need to book ahead on a rainy day?",
+        "It helps more than it does on any other day. Walk-ins are welcome daily from 9 AM to 8 PM, but a wet afternoon sends many people in the same quarter looking for the same two or three hours indoors, and late afternoon is the first slot to go. If you want a specific ritual, especially anything longer than an hour, message us on WhatsApp or call ahead. For a quick gel colour, just turning up usually works."
+      ]
+    ]
+  },
+{
   slug: "nails-that-last-a-da-nang-beach-week",
   title: "Salt, sand and sunscreen · which nails survive a Da Nang beach week",
   desc: "Gel, BIAB or GelX for a beach holiday in Da Nang · what actually makes a set lift, which system fits your trip length, and when in the trip to book it.",

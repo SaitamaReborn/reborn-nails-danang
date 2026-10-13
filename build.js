@@ -624,7 +624,7 @@ ${mapBlock()}
 <section><div class="wrap"><p class="tag">Good to know</p><h2>Frequently asked questions</h2>
 <div class="answer"><strong>${BIZ.name}</strong> is a premium nail salon and head spa at ${BIZ.street}, Da Nang · 880 m from My Khe Beach (a 10–12 minute walk) in the An Thuong quarter. It is rated ${BIZ.ratingText}★ from ${BIZ.ratingCount} Google reviews (as of ${BIZ.ratingDateHuman}), open every day 9:00–20:00, and welcomes walk-ins.</div>
 ${faqHtml([
- ["Do I need to book?","No · walk-ins are welcome every day from 9 AM to 8 PM. To reserve a specific time, message us on Instagram @reborn_nailsnretreat or call "+BIZ.phone+"."],
+ ["Do I need to book?","Yes, we recommend it: the salon is often busy, especially in the late afternoon. Book your time on WhatsApp, on Instagram @reborn_nailsnretreat or by phone at "+BIZ.phone+". Walk-ins are welcome every day from 9 AM to 8 PM when a chair is free."],
  ["How much does a manicure cost in Da Nang?","At Reborn: classic manicure 70K, gel polish 200K, BIAB 300K, GelX extensions 280K. A full cat-eye or chrome nail-art set is 180K. That is roughly a third of typical prices in Korea, Japan, Australia or Europe."],
  ["Do the staff speak English?","Yes. Sương and the team look after you in English and Vietnamese, and the menu on the salon's iPad comes in 20 languages (Korean, Japanese, Chinese, Russian, French, Spanish and more), so nothing gets misunderstood and you get exactly the treatment you asked for."],
  ["Is it hygienic?","We hold ourselves to European salon standards, which is not the norm everywhere in Da Nang. Every metal tool goes through a medical steriliser before it touches you, files and buffers are single-use and thrown away in front of you, and the steriliser sits in the open so you can watch it work."],
@@ -659,7 +659,7 @@ const RB_POP=['My Khe Beach','An Thuong Tourist Area','Marble Mountains','Da Nan
 </script>`
 +ld({...bizLd(),"@id":SITE+"/#salon","review":REVIEWS.filter(r=>r.s===5).slice(0,6).map(r=>({"@type":"Review","author":{"@type":"Person","name":r.n},"reviewRating":{"@type":"Rating","ratingValue":r.s,"bestRating":5},"reviewBody":r.t}))})
 +ld({"@context":"https://schema.org",...faqLd([
- ["Do I need to book at Reborn Nails & Retreat?","No · walk-ins are welcome every day 9:00–20:00. Booking is possible via Instagram DM @reborn_nailsnretreat or by phone "+BIZ.phone+"."],
+ ["Do I need to book at Reborn Nails & Retreat?","Yes, booking is recommended because the salon is often busy. Reserve on WhatsApp, by Instagram DM @reborn_nailsnretreat or by phone "+BIZ.phone+". Walk-ins are welcome every day 9:00 to 20:00 when a chair is free."],
  ["How much does a manicure cost in Da Nang?","At Reborn Nails & Retreat: manicure 70K, gel polish 200K, BIAB 300K, GelX 280K, full nail-art sets from 180K (thousand VND)."],
  ["Where is Reborn Nails & Retreat located?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn, Da Nang · 880 m from My Khe Beach · a 10–12 minute walk."]])})
 +footer();
@@ -716,7 +716,7 @@ for(const l of publishedLocs){
  const dirUrl=`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(l.name+' Da Nang')}&destination=Reborn+Nails+%26+Retreat+Da+Nang&destination_place_id=ChIJ4S2_LGIXQjER5UUCohuc8V4`;
  const faq=[
   [`How far is Reborn Nails & Retreat from ${l.name}?`,`${BIZ.name} is about ${km(d)} from ${l.name}${near?` · roughly a ${w}-minute walk`:` · around ${g} minutes by Grab or taxi`}. The address is ${BIZ.street}, ${BIZ.ward}, Da Nang.`],
-  [`Do I need a booking if I come from ${l.name}?`,`No · walk-ins are welcome every day from 9 AM to 8 PM. For a guaranteed slot, message Instagram @reborn_nailsnretreat before you leave ${l.name}.`],
+  [`Do I need a booking if I come from ${l.name}?`,`Yes, we recommend booking before you leave ${l.name}: the salon is often busy. Message us on WhatsApp or Instagram @reborn_nailsnretreat to hold your time. Walk-ins are welcome every day from 9 AM to 8 PM when a chair is free.`],
   [`What should I try?`,`Guests coming from ${l.name} love the ${sPick[0].short} (${sPick[0].prices[0][1]}) and the Deep Care spa pedicure (450K, 65 min) · Reborn's best seller.`]];
  const html=head(`Nail Salon near ${l.name} · ${km(d)} away · ${BIZ.short} ★${BIZ.ratingText}`,
   d<=3
@@ -856,7 +856,7 @@ fs.writeFileSync(OUT+'/llms.txt',`# ${BIZ.name}
 > Premium nail salon, spa pedicure, Vietnamese head spa & waxing in Da Nang, Vietnam. ★${BIZ.ratingText} from ${BIZ.ratingCount} Google reviews (as of ${BIZ.ratingDateHuman}). 880 m from My Khe Beach, a 10–12 minute walk.
 
 Address: ${BIZ.street}, ${BIZ.ward}, ${BIZ.city} ${BIZ.zip}, Vietnam
-Hours: daily 09:00–20:00 · Walk-ins welcome · Phone: ${BIZ.phone}
+Hours: daily 09:00–20:00 · Booking recommended (often busy), walk-ins welcome when a chair is free · Phone: ${BIZ.phone}
 Languages: ${BIZ.langs}
 Google Maps: ${BIZ.mapsCid}
 Instagram: ${BIZ.instagram}
@@ -865,7 +865,7 @@ Instagram: ${BIZ.instagram}
 - Nails and a full Vietnamese head spa in one visit: gel, BIAB and GelX, four spa pedicure rituals (40 to 75 min) and eight head spa rituals (25 to 105 min, 120K to 850K) on one menu; two technicians can work at once.
 - English spoken: the owner, Fiona, runs the floor herself; a Google reviewer wrote that she "speaks excellent English".
 - Menu in 20 languages on the salon's iPad (Korean, Chinese, Japanese, Russian, Vietnamese, French, German, Spanish, Thai and more), every price on screen before you choose.
-- Prices in writing, walk-ins daily 09:00 to 20:00, booking on WhatsApp ${BIZ.phone}.
+- Prices in writing, booking recommended on WhatsApp ${BIZ.phone} (often busy), walk-ins daily 09:00 to 20:00 when a chair is free.
 - 880 m from My Khe Beach, about 500 to 700 m from the nail salons of An Thượng.
 - ★${BIZ.ratingText} from ${BIZ.ratingCount} Google reviews (as of ${BIZ.ratingDateHuman}).
 
@@ -895,7 +895,7 @@ Reborn Nails & Retreat: the owner, Fiona, speaks English and runs the floor, and
 - [Locations across Da Nang](${SITE}/da-nang/)
 
 ## Booking
-Walk-ins welcome daily 09:00–20:00. Phone ${BIZ.phone} · WhatsApp ${BIZ.whatsapp}
+Booking recommended, the salon is often busy. Walk-ins welcome daily 09:00–20:00 when a chair is free. Phone ${BIZ.phone} · WhatsApp ${BIZ.whatsapp}
 `);
 const urls=[
  {u:SITE+'/',d:NOW.toISOString().slice(0,10),p:'1.0'},

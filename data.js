@@ -39,7 +39,7 @@ const SERVICES=[
   prices:[["Gel polish (full colour)","200K"],["Base + top coat only","100K"],["Classic polish","100K"],["Skittle nails (multi-colour)","250K"],["Hard gel strengthening layer","from 60K"],["Gel colour removal","60K"]],
   faq:[["How long does gel polish last at Reborn?","Our gel polish keeps its mirror shine for 2–3 weeks. We use professional Korean and Japanese gel systems and finish every set with cuticle care."],
       ["Do you remove my old gel first?","Yes. Gentle gel removal is 60K and protects your natural nail · we never rip or force the old layer off."],
-      ["Do I need to book ahead for a gel manicure?","Walk-ins are welcome every day from 9 AM to 8 PM. Most gel manicures take about 45 minutes."]]},
+      ["Do I need to book ahead for a gel manicure?","Yes, we recommend booking: the salon is often busy. Message us on WhatsApp or Instagram to reserve. Walk-ins are welcome every day from 9 AM to 8 PM when a chair is free. Most gel manicures take about 45 minutes."]]},
  {slug:"biab-builder-gel",vsrc:"reel_brand",name:"BIAB & Builder Gel",short:"BIAB / Builder",img:"nails.jpg",vid:true,
   desc:"Builder-in-a-bottle and sculpted builder gel for strong, natural-looking nails · fills, overlays and short or long extensions.",
   prices:[["BIAB (builder in a bottle)","300K"],["Builder gel on natural nails","400K"],["Builder gel fill (refill)","380K"],["Short extension","500K"],["Long extension","550K"],["Single tip repair","55K"],["Builder gel removal","90K"]],

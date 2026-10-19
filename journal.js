@@ -14,6 +14,91 @@
 
 const JOURNAL = [
 {
+    "slug": "which-head-spa-for-your-scalp",
+    "title": "Oily, flaky or just tired · which head spa your scalp actually needs",
+    "desc": "Oily, flaky or just tense · how to pick a head spa ritual in Da Nang by what your scalp is doing, where the minutes go in each, and what one visit cannot fix.",
+    "date": "2026-10-19",
+    "cat": "Rituals",
+    "read": 6,
+    "hero": "room.jpg",
+    "tldr": [
+      "Match the ritual to what your scalp is doing. Heavy and oily: buy exfoliation and steam. Tight and flaky: buy moisture and lighter hands. Fine, while you are exhausted: buy massage minutes.",
+      "Oily or product-heavy after beach days: the 80-minute Reborn Signature at 500K, or the 75-minute Carbony Skin Detox at 600K, which is the cleansing-weighted one.",
+      "Flaky from sun, salt and air conditioning: Warm Stone Escape, 70 minutes, 450K, and ask for the exfoliation step to be lightened.",
+      "A head spa clears build-up and loosens your neck. It does not treat dandruff, a sore scalp or hair loss. That is a doctor, not a salon."
+    ],
+    "body": [
+      {
+        "h": "Three different scalps walk through the door",
+        "p": [
+          "Nearly everyone who books a head spa with us describes what they want in the same way, which means they do not describe it at all. They ask for the eighty-minute one, or for whatever their friend had. Most of the time that is fine, since the rituals overlap a lot. Things go less well when a person with a sun-tight, flaking scalp books the deep cleanse, or when someone carrying a week of sunscreen and sea salt picks the shortest wash and walks out wondering why their roots still feel coated.",
+          "So before the menu, a question. What is your scalp doing right now? In Da Nang the answers cluster into three. It is heavy and oily, usually after beach days, humidity and whatever you have been spraying on your hair. It is tight and flaky, from sun, salt water and nights under air conditioning. Or it is perfectly fine and you are the one who is wrecked, in which case the scalp is simply the most comfortable place to be worked on for an hour.",
+          "All the rituals on our ladder include washing and massage. As the minutes climb, what changes is where they land: on the scalp, on the face, on your neck and shoulders, or on steam and masks. Once you read the menu like that, choosing is easy. You'll find the full ladder, with times and prices, on the <a href=\"/services/head-spa-hair-wash/\">head spa page</a>."
+        ]
+      },
+      {
+        "h": "Heavy and oily · buy cleansing time",
+        "p": [
+          "One pass will not lift sebum, and product is harder still. Sunscreen creeps into the hairline, dry shampoo builds up, salt water dries into the whole mix, and a quick hotel wash usually shifts it all around instead of removing it. From roughly day three of a beach holiday on, it is the scalp we see most often in this quarter.",
+          "The 25-minute basic hair wash at 120K is a good wash with a good massage, and that is the whole of it. There is no exfoliation and no steam, so if your roots feel coated you will walk out feeling pleasant and still coated. The cleansing sequence proper lives in the 80-minute Reborn Signature at 500K. Minutes 35 to 60 of that ritual are scalp exfoliation, a double herbal wash, herbal steam and a nourishing hair mask, in that order, because each step is what lets the next one reach anything.",
+          "Above it sits the Carbony Skin Detox at 75 minutes and 600K. Carbonated water has been used for scalp cleansing in Korean and Japanese salons for years, and on our menu this is the cleansing-weighted ritual rather than the relaxation-weighted one. It is also the one where asking beats guessing. Tell reception what your scalp is doing and have someone walk you through what those 75 minutes contain before you commit to them.",
+          "One practical note. Do not wash your hair before you come. People do it out of politeness, and it costs them the first fifteen minutes of their own treatment."
+        ]
+      },
+      {
+        "h": "Tight and flaky · buy moisture, not friction",
+        "p": [
+          "The instinct when skin flakes is to scrub it off, and after four days of sun and sea that instinct is wrong. What you usually have is a barrier that has dried out and started shedding. Exfoliate it harder and you get a cleaner, angrier scalp.",
+          "Weight the choice towards warmth and moisture instead. Warm Stone Escape runs 70 minutes at 450K and the Deep Relax Ritual 60 minutes at 380K. At the top of the ladder, the Reborn Ultimate Ritual is 95 minutes at 750K and Luxury Skin Recovery 105 minutes at 850K; in both, the extra time goes into masks, steam and hands rather than into anything abrasive.",
+          "Then say it out loud when you lie down. Pressure preference on a scalp varies more than anywhere else on the body and nobody can read yours from the outside. If you want the exfoliation lightened or skipped, that is a normal request and the start of the ritual is the moment to make it.",
+          "A line worth drawing clearly, though. If the flaking is persistent, if your scalp itches constantly, or if there are sore or weeping patches, that belongs to a dermatologist. A head spa is hygiene and comfort. It is not a treatment for a skin condition, and any salon telling you otherwise is selling."
+        ]
+      },
+      {
+        "h": "Scalp fine, you are not · buy massage minutes",
+        "p": [
+          "A fair share of head spa bookings have nothing to do with hair. Night flights, scooter traffic, a laptop at a cafe table, three weeks of unfamiliar pillows. The scalp is fine. The jaw, neck and shoulders are the problem, and a head spa is simply the pleasantest way to get at them.",
+          "For that, the 45-minute Relax Ritual at 250K is the efficient pick. It keeps the washing and the massage and leaves out the facial work, which is where the longer rituals spend most of their extra time. Neck and shoulder massage is included in every head spa ritual on the menu, so there is nothing to add on.",
+          "When the tension sits lower down, put the money somewhere else. Hot stone therapy across face, neck and shoulders costs 120K. There is a facial massage add-on at 90K for 15 minutes. A focused foot and calf massage is 100K for 15 minutes or 190K for 30, and every spa pedicure ritual from 250K up already includes it. You'll find these on the <a href=\"/services/massage/\">massage page</a> and the <a href=\"/services/spa-pedicure/\">spa pedicure page</a>; on a really tired day, one of them may do more for you than any hair wash."
+        ]
+      },
+      {
+        "h": "What one visit changes, and for how long",
+        "p": [
+          "This is worth being clear-eyed about, since it decides whether you book once or twice. Once a proper cleansing ritual is done, the build-up is gone and for a few days your hair sits differently: lighter at the root, faster to dry, slower to turn greasy by evening. Most people sleep unusually well that night too, probably more because of eighty minutes of lying still than because of anything we put on their head.",
+          "What one visit will not do is change your hair type, thicken it, or make a scalp condition disappear. We make no claim that a ritual regrows hair. If you live here and come monthly, what you are buying is consistent cleanliness and an hour in which nobody can reach you, and that is a sensible thing to buy on purpose.",
+          "Two visits inside one trip is common, and the usual pattern is worth copying: a longer ritual early, when you have just come off a flight with everything from home still in your hair, then a shorter wash near the end once the beach days have happened. Remember that the longer rituals open with facial cleansing, so your makeup is coming off. Bring what you need to put it back."
+        ]
+      },
+      {
+        "h": "Booking it, and getting here",
+        "p": [
+          "You'll find us at 56 Châu Thị Vĩnh Tế in the An Thuong quarter, 880 m from My Khe Beach, so roughly ten to twelve minutes on foot from the sand. <a href=\"https://www.google.com/maps/dir/?api=1&destination=Reborn+Nails+%26+Retreat+Da+Nang&destination_place_id=ChIJ4S2_LGIXQjER5UUCohuc8V4\" rel=\"noopener\">Directions are here</a>. The salon is open daily from 9 AM to 8 PM.",
+          "The 25-minute wash takes walk-ins comfortably. For anything over an hour we recommend reserving, because the salon is often full and late afternoon is the first part of the day to go. Message us on WhatsApp or call, and say which ritual you are after and roughly what your scalp is doing. It means we can put the right therapist in the chair instead of the next free one.",
+          "Every tool is sterilised before it touches you, and files and buffers are single-use. English and Vietnamese are spoken on the floor and the iPad menu runs in 20 languages, which matters more than it sounds when you are trying to describe a scalp. Every full ritual finishes with a blow-dry and hair oil, so put the head spa before dinner rather than after it."
+        ]
+      }
+    ],
+    "faq": [
+      [
+        "Which head spa should I choose if my scalp is oily?",
+        "Pick a ritual with a cleansing sequence in it rather than the shortest wash. At Reborn the 80-minute Reborn Signature at 500K includes scalp exfoliation, a double herbal wash, herbal steam and a hair mask between minutes 35 and 60, and the Carbony Skin Detox at 75 minutes and 600K is the most cleansing-weighted ritual on the menu. The 25-minute basic wash at 120K is a good wash and a good massage, but it has no exfoliation or steam step, so roots that feel coated after beach days will still feel coated. Come with your hair unwashed."
+      ],
+      [
+        "Does a head spa help with dandruff or hair loss?",
+        "It helps with build-up, not with conditions. Sebum, sunscreen and product come off in a cleansing ritual, and for a while a clean scalp usually flakes and itches less. None of that is a treatment for seborrhoeic dermatitis, psoriasis or hair loss, and we will not pretend otherwise. See a doctor if the flaking persists, if your scalp itches all the time or has sore patches, or if you are suddenly shedding hair. A head spa is for cleanliness, comfort and the neck and shoulder release that comes with it."
+      ],
+      [
+        "What is a carbonated or CO₂ head spa?",
+        "A head spa that uses carbonated water during the washing stage. Korean and Japanese salons have used it for years as the deep-cleansing option, and the reason to choose it is a scalp heavy with sebum or product rather than one that feels dry and tight. At Reborn it is on the menu as Carbony Skin Detox, 75 minutes, 600K. Ask reception to take you through what those 75 minutes contain before booking, rather than choosing on the name alone."
+      ],
+      [
+        "How often should you get a head spa?",
+        "You don't need to keep to a schedule. Visitors often do two in one trip: a longer ritual when they arrive, then a shorter wash towards the end, once sunscreen and sea salt have built up. People living in Da Nang tend to settle at about once a month. After a cleansing ritual, the change in how your hair sits lasts a few days, so coming regularly buys consistency, not anything cumulative. From 120K for 25 minutes up to 850K for 105, the frequency here usually comes down to your time rather than your budget."
+      ]
+    ]
+  },
+{
     "slug": "da-nang-rainy-season-what-to-book",
     "title": "Rainy season in Da Nang · what to book when the beach shuts",
     "desc": "October to December rain in Da Nang · what it does to a beach plan, which treatments fit the gap you actually have, and how to sequence a washed-out day.",

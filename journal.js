@@ -14,6 +14,88 @@
 
 const JOURNAL = [
 {
+    "slug": "is-it-safe-nail-salon-hygiene-da-nang",
+    "title": "Is it safe? · how to read a Da Nang nail salon's hygiene before you sit down",
+    "desc": "Nail and pedicure hygiene in Da Nang · which tools must be single-use, why a UV box is not a steriliser, and the two questions to ask before you sit down.",
+    "date": "2026-10-26",
+    "cat": "Guides",
+    "read": 6,
+    "hero": "tray.jpg",
+    "tldr": [
+      "Two checks settle most of it, and both happen while you are still standing. Files, buffers and wooden sticks should come out of a sealed packet in front of you. Metal tools should arrive in a pouch, sterilised by heat.",
+      "A UV cabinet is a storage box with a lamp in it. If that is the answer you get to how the metal is sterilised, it is not an answer.",
+      "Feet carry more risk than hands. Prefer a basin that gets emptied and wiped between guests over a jetted whirlpool tub, and do not shave your legs on the day of a pedicure.",
+      "At Reborn, files and buffers are single-use and every tool is sterilised in a medical steriliser before it touches you. Ask to see it. Nobody minds."
+    ],
+    "body": [
+      {
+        "h": "The question people ask sideways",
+        "p": [
+          "The question usually comes softened. Guests ask if we are busy, or which products we use, when what they really want to know is whether they will catch something off a pedicure bowl. Ask it flat. It is a fair question, and this city gives you cause to ask it: nail salons here range from a plastic stool on a pavement to a resort spa charging four times the going rate, and the price on the menu tells you very little about the hygiene. We have covered <a href=\"/journal/nail-salon-prices-da-nang-2026/\">what things actually cost here</a> before. The cheapest set and the most expensive room can fail the same checks.",
+          "The checks are short. Three things settle it, and you can see all of them before committing to anything: whether the porous tools get opened in front of you, how the metal ones are sterilised, and what happens to the water between one pair of feet and the next. The chairs, the flowers and the welcome tea are all comfort, a real thing to pay for but a separate purchase from safety."
+        ]
+      },
+      {
+        "h": "Porous or metal · the only distinction that matters",
+        "p": [
+          "Split the tray into two piles, because the halves obey completely different rules. The porous pile is files, buffers, wooden cuticle sticks, pumice, sponges, toe separators. These materials absorb. You cannot clean them, because whatever you want gone has sunk into the material rather than sitting on top of it. There is one acceptable handling of this pile, single-use, and one way to verify it, which is seeing the packet opened. At Reborn files and buffers are single-use, opened at the table.",
+          "The metal pile holds cuticle nippers, pushers, clippers, scissors and tweezers. They are non-porous, so they really can be cleaned and reused for years. Sterilising means a scrub first and then heat, usually under pressure. At Reborn every tool is sterilised in a medical steriliser before it touches you, and what a guest can check at any salon is a sealed pouch opened at the table.",
+          "That brings us to the blue-lit glass box sitting on so many counters in this city. A UV cabinet is no steriliser: it is a storage container with a lamp inside. Ultraviolet light does not get inside the hinge of a cuticle nipper, which is exactly where anything that survives does its surviving, and actual exposure times fall nowhere near what disinfection requires. Tidy and sterile are different words."
+        ]
+      },
+      {
+        "h": "Feet carry more risk than hands",
+        "p": [
+          "Risk does not fall evenly across the two halves of the menu. The infection outbreaks actually documented in nail salons came from pedicures, not manicures, and they usually followed the same route: water left standing in the pipework of a jetted whirlpool footbath. A pipe is not a surface. Nobody wipes its inside between guests, and that is how the more impressive-looking tub turns out to be the less careful choice.",
+          "So in a pedicure room, look at the bowl rather than at the chair. A basin emptied, wiped and refilled while you watch beats an elaborate jetted tub. Our rituals run 40 to 75 minutes and open with a warm herbal foot bath: Soft Touch at 250K, the Relaxing Ritual 55 minutes at 380K, Deep Care 65 minutes at 450K, the Reborn Signature 75 minutes at 590K. Deep Care is the one most people book, and the one with foot steaming, exfoliation and intensive heel work in it. The ladder sits on the <a href=\"/services/spa-pedicure/\">spa pedicure page</a>.",
+          "One rule here is yours rather than ours. Do not shave your legs on the day of a pedicure. Shaving leaves micro-abrasions you cannot see, and a long warm soak is the one moment you would rather have unbroken skin. Give it a day either side, and do not stack waxing and a pedicure on the same legs in the same hour. Our <a href=\"/services/waxing/\">waxing</a> runs 90K to 480K in a private room, and the preparation is the reverse of what people assume: hair grown to about 5 mm, razor left alone."
+        ]
+      },
+      {
+        "h": "What a careful technician will refuse to do",
+        "p": [
+          "Being told no is the signal most guests misread as bad service, and it is usually the clearest evidence you are in the right place. A technician should decline to cut your cuticles. The eponychium, the band of living skin at the base of the nail, is a seal. Cut it away and you have opened the gap it existed to close, and the swollen, tender sides a week later get blamed on the gel rather than on the scissors. Pushing it back gently and lifting off dead tissue is the job.",
+          "They should also refuse to paint over a nail that looks infected. A nail that is thickened, yellowing, crumbling at the edge or lifting off its bed needs a doctor, and three weeks of colour on top only hides it while whatever is underneath keeps going. The answer is the same for an angry ingrown toenail, broken skin or a wart. None of it is salon work. A salon willing to take it on has shown you what it will do to the person after you.",
+          "The last one to watch is the drill. An electric file has a proper place in removal and in work on builder gel. Run across the surface of your own nail by somebody in a hurry, it thins the plate and leaves faint pale rings you can see through. If you are in builder gel or BIAB, removal should be a soak and a light file rather than a grind: builder gel removal is 90K, gel colour removal 60K, press-on removal 70K, and the whole reason to pay for it is the nail plate underneath. That menu is on the <a href=\"/services/biab-builder-gel/\">BIAB and builder gel page</a>."
+        ]
+      },
+      {
+        "h": "The hygiene step almost everybody skips",
+        "p": [
+          "There is a pattern specific to long trips, and it produces more nail trouble here than any dirty tool does. Someone arrives having worn the same set for five weeks, because they were travelling, and somewhere in week three a corner lifted. That gap is the whole problem: a lifted edge over a warm, slightly damp nail is the one genuinely common complaint we see, and it starts as a green or grey patch rather than as anything that hurts.",
+          "That has two consequences. First, do not pick or peel a set off, however satisfying the first corner feels. Peeling pulls away layers of your own nail plate and leaves you thin and tender for a couple of months. Proper removal costs 60K for gel colour plus ten minutes of someone else's time, and we do not rip or force an old layer off.",
+          "The second is that a lift mid-trip wants dealing with now rather than at the airport. A single tip repair is 55K and about ten minutes, and you do not need to have had the original set done with us. And if your nails are soft to begin with, a hard gel strengthening layer from 60K under gel polish at 200K does more across a three-week trip than anything stronger laid on top. The <a href=\"/services/gel-nails/\">gel nails page</a> has the list."
+        ]
+      },
+      {
+        "h": "Two questions, and how to find us",
+        "p": [
+          "Anywhere in this city, two questions at the desk will settle it. Are the files new, and how do you sterilise the metal tools. You are listening for specifics rather than reassurance: a packet opened, a pouch, heat. Vague and cheerful is a no. A salon doing this properly tends to be pleased you asked.",
+          "For the record, here are our answers: files and buffers are single-use, every tool goes through a medical steriliser before it touches you, and reception will show you the machine. Staff on the floor speak English and Vietnamese, and the iPad menu comes in 20 languages, which helps when you are trying to describe a nail that is doing something strange.",
+          "You will find us at 56 Châu Thị Vĩnh Tế in the An Thuong quarter, 880 m from My Khe Beach, open every day from 9 AM to 8 PM, and the <a href=\"https://www.google.com/maps/dir/?api=1&destination=Reborn+Nails+%26+Retreat+Da+Nang&destination_place_id=ChIJ4S2_LGIXQjER5UUCohuc8V4\" rel=\"noopener\">directions are here</a>. Walk-ins are fine if a chair is free. Longer rituals are better booked ahead, since late afternoon slots go first. If you are unsure whether something on a nail or a foot is for a salon or a doctor, send a photo on WhatsApp first. We will give you an honest answer, even when that answer is that we should not touch it."
+        ]
+      }
+    ],
+    "faq": [
+      [
+        "Is it safe to get your nails done in Vietnam?",
+        "Yes, with the caveat that applies in every country: it depends on the salon rather than on the border. Two checks cover most of the risk. Porous tools · files, buffers, wooden sticks, pumice · must come out of a sealed packet in front of you, because porous materials absorb and cannot be cleaned afterwards. Metal tools · nippers, pushers, clippers · must be scrubbed and then sterilised with heat, not simply parked in a UV cabinet, which is a storage box with a lamp in it. At Reborn, files and buffers are single-use and every tool is sterilised in a medical steriliser before it touches you. Ask the same two questions at any salon in Da Nang; one that is doing it properly will answer specifically rather than generally."
+      ],
+      [
+        "Can you get a fungal or bacterial infection from a pedicure?",
+        "It can happen, though not often, and the risk sits in two places you can identify rather than everywhere at once. Standing water is the first: the infection outbreaks documented in nail salons trace back to jetted whirlpool footbaths, where water stays inside pipework nobody can wipe between guests. Whichever looks more expensive, a plain basin emptied and wiped in front of you is the safer setup. Broken skin is the second, which is why you should not shave your legs on the day of a pedicure. A nail that is already thickened, yellow or crumbling is a job for a doctor, and a salon should refuse to polish over it instead of hiding it for three weeks."
+      ],
+      [
+        "Does a UV sterilising box actually sterilise nail tools?",
+        "No. That glass-fronted, blue-lit cabinet on many salon counters is a storage container with an ultraviolet lamp in it. Its light does not get into the hinges and joints of a cuticle nipper, exactly where contamination survives, and real-world exposure times come nowhere close to what disinfection would need even on a flat, exposed surface. Sterilising metal tools takes a scrub and then heat, usually under pressure; what a guest can verify is a sealed pouch opened at the table. When a salon answers the sterilisation question by pointing at the blue box, you have your answer."
+      ],
+      [
+        "Should I bring my own tools to a nail salon?",
+        "You can, and a few regulars here do keep a personal kit, though it solves a smaller problem than people expect. The porous items are where the real risk lives, and any salon worth sitting down in already opens those fresh for every guest, so your own file changes nothing. The metal tools are the ones worth a question, and the answer you want names heat rather than a cabinet. If you do bring your own, hand them over at the start rather than halfway through, and expect them to be wiped before use. Otherwise, two questions asked at the desk will do more for you than anything you can pack."
+      ]
+    ]
+  },
+{
     "slug": "which-head-spa-for-your-scalp",
     "title": "Oily, flaky or just tired · which head spa your scalp actually needs",
     "desc": "Oily, flaky or just tense · how to pick a head spa ritual in Da Nang by what your scalp is doing, where the minutes go in each, and what one visit cannot fix.",

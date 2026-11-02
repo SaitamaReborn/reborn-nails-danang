@@ -14,6 +14,93 @@
 
 const JOURNAL = [
 {
+    "slug": "nail-art-da-nang-bringing-a-photo",
+    "title": "Bringing a photo · how nail art is priced and briefed in Da Nang",
+    "desc": "Nail art in Da Nang · how full-set and per-nail prices add up, how to brief a design from a saved photo, and what the artwork adds to your appointment time.",
+    "date": "2026-11-02",
+    "cat": "Guides",
+    "read": 6,
+    "hero": "polish.jpg",
+    "tldr": [
+      "Two pricing logics sit on the same list. Full-set finishes cover all ten nails for one price, cat eye or chrome at 180K, ombré or French at 220K. Anything hand-made is per nail, from 15K for a line to 100K for a miniature.",
+      "Bring the photo, then say which part of it made you save it: the colour, the finish or the painted detail. That sentence shapes the set more than the picture does.",
+      "A realistic holiday total: gel polish at 200K with painted accents on two nails works out between 230K and 400K, totalled at the table before anything is painted.",
+      "Art does not make a set chip sooner. Length and anything sculpted do the catching, so keep 3D work to one or two nails if you are on a scooter all week."
+    ],
+    "body": [
+      {
+        "h": "Everybody arrives with a screenshot",
+        "p": [
+          "Most nail art appointments here begin with a phone flipped around on the desk. That is the right approach. Our artists work from references every day, so bring any photo or Pinterest save and we will recreate or adapt it. Whether you leave with the thing in the picture comes down to the half-minute of talking after the phone comes out.",
+          "A saved photo is several decisions bundled into one image. There is a colour, a length, a shape, a finish, and some amount of painted detail, and each of those is priced and timed separately. A few of them belong to the hands in the photo rather than to yours. Long square tips look different on narrow nail beds, fine detail needs surface area to sit on, and a chrome that reads silver in one photo reads grey on another hand. An artist can tell you which parts will travel across, but only once they know which part you came for.",
+          "So say it plainly. I want that colour. I want the little flowers. I want it to look like that chrome. If the answer is the chrome, you are in full-set territory and you have nearly finished choosing. If it is the flowers, the real question is how many nails get them, and that is where the money goes."
+        ]
+      },
+      {
+        "h": "Two prices on the same menu",
+        "p": [
+          "The art list reads as confusing the first time because two different pricing logics sit on it together. Knowing which one your design falls into makes the whole thing legible.",
+          "The full-set lines cover all ten nails for a single price. A cat eye or chrome set is 180K. Ombré or a French tip is 220K. These are finishes rather than drawings: the effect comes out of the product and the way it is laid down, so there is no reason to charge by the nail.",
+          "All hand-made work is priced per nail, and the ranges are wide because the work is. Stickers cost 10K to 40K, hand-painted designs 15K to 100K, pearls, charms and glitter 20K to 80K, 3D gel flowers 40K to 70K and 3D chrome art 40K to 80K. Fifteen thousand gets you a line or a dot. A hundred thousand pays for a small painting that keeps an artist busy for a while.",
+          "Those per-nail prices sit on top of a base set, and the base is where you pick structure instead of decoration. Gel polish in a full colour is 200K. Skittle nails, a different colour on every finger, are 250K and need no painting at all. GelX extensions are 280K, BIAB 300K, classic polish 100K. The full list is on the <a href=\"/services/nail-art/\">nail art page</a>, and your technician totals your particular set on the iPad menu before anything is painted. That is the moment to change your mind, rather than at the till."
+        ]
+      },
+      {
+        "h": "Where to put the money",
+        "p": [
+          "If you already have a number in your head, here is roughly what it buys in this salon.",
+          "Under 300K: gel polish at 200K with stickers or a fine painted line on two nails, which lands between 220K and 280K. It is the most common holiday set we do, and it photographs better than people expect it to.",
+          "Between 300K and 400K: a chrome or cat-eye set at 180K with hand-painted accents on two nails, so 210K to 380K depending on what those accents are. Or ombré across all ten at 220K, which involves no painting and still looks like a decision was made.",
+          "Above 500K: extensions carrying real artwork. GelX at 280K or sculpted builder gel at 400K, plus per-nail work on three or four fingers. This is the set people book for a wedding in Hoi An or for photographs, and it is the one to arrange several days ahead rather than on the morning.",
+          "Here is one piece of steering that will save you money. Ten busy nails rarely look better than two. Most sets on our own card are a clean base with one or two worked nails: hand-painted florals with charms on a couple of fingers, a soft French with painted flowers, a milky white almond set with the detail kept to the accent. Put the spending into two nails and do it properly there."
+        ]
+      },
+      {
+        "h": "What a design does to the clock",
+        "p": [
+          "A gel manicure takes about 45 minutes. A full builder gel set is around 80. Hand-painted work is added on top of that, and the arithmetic is the obvious kind: three painted nails take three times as long as one.",
+          "That has consequences for how you book. A plain colour can walk in on most days. A design wants a message first, with the photo attached, so we can put enough time in the diary and the right artist in the chair. Late afternoon is the first part of the day to go.",
+          "Then there is the set you are already wearing. If you arrive in something that needs taking off, that is time and money before your appointment has started: gel colour removal is 60K, press-on removal 70K, builder gel removal 90K. Mention it when you message and we will build it into the slot.",
+          "Keep heavy art off the last evening of a trip. Detailed work is a long sitting, and the night before an early taxi is the worst hour of a holiday to spend in a chair."
+        ]
+      },
+      {
+        "h": "What a design has to survive here",
+        "p": [
+          "Art itself does not shorten a manicure. Paint, chrome, foils and stickers all sit under the top coat, so they go when the set goes and not before. What catches on things is length, and anything that stands proud of the nail surface.",
+          "That deserves a minute of thought in this city, since a week in Da Nang means scooter handlebars, a suitcase, sand and a cold beach shower. Charms, pearls and 3D flowers sit above the surface, and sooner or later they will find the inside of a pocket. Most guests limit them to one or two nails and leave the rest flat, which also happens to be how they look best. Keep the length sensible as well: an almond or a short oval takes a beach week here far better than a long square does.",
+          "Should something break, a single tip repair is 55K and takes roughly ten minutes, and the set need not have been done with us. On a long trip toes are the quiet value, because toenails grow slowly and gel polish on them is 180K. The structure options behind all this are on the <a href=\"/services/gelx-extensions/\">GelX page</a> and the <a href=\"/services/biab-builder-gel/\">BIAB and builder gel page</a>."
+        ]
+      },
+      {
+        "h": "Booking a design, and finding us",
+        "p": [
+          "Send the reference when you message rather than saving it for the day itself. A photo in advance lets us set aside the time the design actually needs and check that the charms or the chrome you are after are in the drawer. WhatsApp and Instagram both work, and so does the telephone.",
+          "We are at 56 Châu Thị Vĩnh Tế in the An Thuong quarter, 880 m from My Khe Beach, which is a walk of ten to twelve minutes. <a href=\"https://www.google.com/maps/dir/?api=1&destination=Reborn+Nails+%26+Retreat+Da+Nang&destination_place_id=ChIJ4S2_LGIXQjER5UUCohuc8V4\" rel=\"noopener\">Directions are here</a>. Opening hours are 9 AM to 8 PM every day, and walk-ins are welcome any time a chair is free.",
+          "English and Vietnamese are spoken on the floor and the iPad menu runs in 20 languages, which matters when a design is far easier to point at than to describe. Every tool is sterilised before it touches you and files and buffers are single-use. If you are unsure whether your own nails can carry what is in the photo, send it over and ask. We would rather tell you a week early than at the table."
+        ]
+      }
+    ],
+    "faq": [
+      [
+        "How much does a full set with nail art cost in Da Nang?",
+        "That depends on which of the two pricing logics your design falls under. At Reborn, a full-set finish covers all ten nails at one price: cat eye or chrome is 180K, ombré or French 220K. Hand-made work is charged per nail over a base set, with stickers at 10K-40K, hand-painted designs 15K-100K, pearls, charms and glitter 20K-80K, 3D gel flowers 40K-70K and 3D chrome art 40K-80K. A typical holiday set, gel polish at 200K with painted accents on two nails, comes to between 230K and 400K. Your technician totals it before starting and never afterwards."
+      ],
+      [
+        "Can a nail salon copy a design from a photo?",
+        "Yes. Bring any photo or Pinterest reference, and our artists will recreate or adapt it. Adapt is usually the honest word, as a saved image carries the length, the shape and the nail beds of whoever was in it. Let your technician know which part of the picture you actually want, whether that is the colour, the finish or the painted detail. They will build the set around that part and tell you beforehand which elements will not translate onto your hands."
+      ],
+      [
+        "How long does a nail art appointment take?",
+        "A gel manicure takes about 45 minutes and a full builder gel set around 80. Hand-painted work is added on top, roughly in proportion to how many nails are involved. Two accent nails add a little, while artwork across eight nails is a long sitting. If you come in wearing an old set, allow for removal too, at 60K for gel colour, 70K for press-ons and 90K for builder gel. For anything detailed, send the photo ahead, since late afternoon slots fill first."
+      ],
+      [
+        "Does nail art make a manicure chip sooner?",
+        "No. Paint, chrome, foils and stickers sit under the top coat and come off when the set does rather than before it. What shortens a set is a free edge that was never sealed properly. What catches on clothes and bags is length, and sculpted work that stands above the nail surface. If you are riding a scooter, handling luggage or spending the week in the sea, keep the length short and the 3D elements to one or two nails. A single tip repair is 55K if one does break."
+      ]
+    ]
+  },
+{
     "slug": "is-it-safe-nail-salon-hygiene-da-nang",
     "title": "Is it safe? · how to read a Da Nang nail salon's hygiene before you sit down",
     "desc": "Nail and pedicure hygiene in Da Nang · which tools must be single-use, why a UV box is not a steriliser, and the two questions to ask before you sit down.",

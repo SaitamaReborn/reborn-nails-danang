@@ -14,6 +14,90 @@
 
 const JOURNAL = [
 {
+    "slug": "two-treatments-one-visit-da-nang",
+    "title": "Two treatments, one visit · how to time nails, pedicure and head spa together",
+    "desc": "Stacking treatments in one Da Nang salon visit · real chair times for gel, pedicure rituals and head spa, what can run in parallel, and what the pairs cost.",
+    "date": "2026-11-09",
+    "cat": "Guides",
+    "read": 7,
+    "hero": "footbath.jpg",
+    "tldr": [
+      "Chair time is longer than people plan for. A gel manicure is about 45 minutes, pedicure rituals run 40 to 75, head spa rituals 25 to 105. Nails plus the 65-minute Deep Care is close to two hours.",
+      "Two technicians can work on you at once, so the clock is often shorter than the sum. The bill is not: working in parallel buys time, never a discount.",
+      "The pairing we do most is gel polish at 200K with the Deep Care pedicure at 450K, so 650K. Swap in the 80-minute Signature head spa at 500K and it is 700K for roughly the same stretch of afternoon.",
+      "Message ahead with two numbers, how many people and how many hours you have. Late afternoon fills first, and a stacked visit needs more than one free chair."
+    ],
+    "body": [
+      {
+        "h": "Nobody budgets enough minutes",
+        "p": [
+          "The plan usually arrives at the desk already half-formed. Nails and a hair wash, and we have to be at dinner in An Thuong by seven. That instinct is right: keeping nails, feet and a head spa room on one floor exists so that a single stop can do two jobs. Where it goes wrong is the arithmetic.",
+          "This is the clock before anything gets combined. A gel manicure takes about 45 minutes, and a full builder gel set around 80. Pedicures are sold by length: 40 minutes for Soft Touch, 55 for the Relaxing Ritual, 65 for Deep Care, 75 for the Reborn Signature. Head spa runs from a 25-minute basic wash up to 105 minutes for Luxury Skin Recovery, and the 80-minute Signature sits in the middle of that ladder. Foot and calf massage is 15 or 30 minutes. The facial massage add-on is 15.",
+          "Combine two of those and the total runs longer than the sentence that described it. Nails and a hair wash sound like an hour. But if the wash you pictured was the 80-minute Signature and the nails meant a builder gel set, you have just described two hours and forty minutes in a chair. Guests who walk out of a salon frustrated nearly always booked by name rather than by minutes."
+        ]
+      },
+      {
+        "h": "What can run at the same time",
+        "p": [
+          "Two technicians can work on you at the same time. Before you plan an afternoon here, that is the most useful thing to know, since it changes the shape of what fits. One takes your nails while another handles the head, neck or feet, and reception sets the order when you arrive. Plenty of our regulars use the salon no other way. Add-ons that slot in beside something longer are listed on the <a href=\"/services/massage/\">massage page</a>.",
+          "The clock shrinks. The bill does not. Parallel work is two pairs of hands for the same money as one pair twice over, so nothing comes off the total, and that is worth saying plainly before anyone hopes otherwise.",
+          "Your hands set the limit on what can overlap. Anything that needs them free has to take its turn, including steps buried inside treatments you would not file under hand care. The 80-minute Signature head spa puts a hand massage and a warm compress between minutes 60 and 72, and that stretch cannot happen while somebody is painting your nails. Feet are far more cooperative. A pedicure ritual and a manicure sit together without argument, and the herbal soak that opens Deep Care is ten minutes in which nothing at all is being asked of your fingers."
+        ]
+      },
+      {
+        "h": "Three timetables that work",
+        "p": [
+          "<strong>About an hour.</strong> A single treatment with a short add-on beats two half-measures. Pair the 45-minute Relax Ritual at 250K with a 15-minute foot and calf massage at 100K: that comes to 350K and lands inside the hour. A gel manicure at 200K fits with time to spare. What does not fit is a pedicure ritual plus anything else, so do not try to buy one.",
+          "<strong>Two hours.</strong> The sweet spot, and the combination we run most often: gel polish at 200K with the 65-minute Deep Care pedicure at 450K, 650K for the two. One after the other that is 110 minutes. With two technicians free it comes closer to the length of the pedicure on its own. Trade the pedicure for the 80-minute Signature head spa at 500K and you are at 700K across much the same slice of the day. Both are on the <a href=\"/services/spa-pedicure/\">spa pedicure menu</a> and the <a href=\"/services/head-spa-hair-wash/\">head spa page</a>.",
+          "<strong>A half day.</strong> Head spa, feet and hands together, which is what gets booked before a wedding in Hoi An or on the one slow day of a trip. The Signature head spa at 500K, Deep Care at 450K and gel polish at 200K is 1,150K and 190 minutes added end to end. Give it three and a half hours and treat the finish as the end of the plan rather than the start of the next one. Waxing can ride along in the same visit, in the private treatment room: underarms 120K, half legs 250K, full legs 480K.",
+          "Nail art is the line that stretches every timetable. A full cat eye or chrome set is 180K and ombré or a French tip is 220K, and because those are finishes rather than drawings they add no painted minutes per nail. Hand-painted work is 15K to 100K a nail, where per-nail pricing means per-nail time: three painted fingers take three times as long as one. If the design matters more than the schedule, send the reference before the day so the diary can hold it. The full list sits on the <a href=\"/services/nail-art/\">nail art page</a>."
+        ]
+      },
+      {
+        "h": "The order to ask for",
+        "p": [
+          "Even when the minutes are identical, order changes how a stacked visit feels. Ask for the wet, oiled and reclining parts first, and save your hands for last. The longer head spa rituals open with facial cleansing and close with hair oil and a blow-dry. None of that is improved by nails finished twenty minutes earlier.",
+          "Feet before hands, on the same logic. Working sandals back on over fresh gel toes is a small feat of contortion, and it is a great deal easier when your fingers are not also freshly done. Gel polish for toes is 180K if you want colour down there that outlasts the trip, and hot stones are an 80K add-on to any pedicure.",
+          "What quietly eats an afternoon is whatever you walked in wearing. A set that must come off first costs time and money before your appointment starts: gel colour removal is 60K, press-on removal 70K, builder gel removal 90K. Mention it at booking and it fits into the slot instead of into your dinner reservation. A single broken tip is a lighter matter, 55K and about ten minutes, and the original set does not need to have been ours. The structure options behind all of this are on the <a href=\"/services/gel-nails/\">gel nails page</a>."
+        ]
+      },
+      {
+        "h": "Two people, one appointment",
+        "p": [
+          "Most stacked visits are two people rather than one. Couples and friends are seated side by side, and groups are welcome: message us on Instagram or walk in and ask what is free.",
+          "The pattern that works best is a swap. One of you starts in the head spa room while the other is at the nail table, then you change over, and you both finish close to together instead of one of you waiting an hour with a phone. It takes one message to arrange and it is the difference between a shared afternoon and a queue.",
+          "Head spa is unisex. It is popular with male travellers after a beach day or a round of golf, which tends to surprise anyone who had written the whole place off as not for them. The menu is never the limit. What matters is how many technicians are free in the hour you picked. If four people want pedicures at five in the afternoon, that is a message for the day before, not a question for the door."
+        ]
+      },
+      {
+        "h": "Booking a stacked visit, and finding us",
+        "p": [
+          "Tell us three things and the sequencing sorts itself out: how many of you there are, how long you have, and what you want done. WhatsApp, Instagram and the telephone all reach the same floor, and a message the day before is enough for almost anything on the menu.",
+          "Walk-ins are welcome every day from 9 AM to 8 PM whenever a chair is free, and a single gel colour rarely waits. Two or three treatments back to back is a bigger ask, especially later on, because late afternoon is the first part of the day to fill. Every price is on the iPad menu in 20 languages, and your technician totals the whole visit before anything starts. That is the moment to drop an add-on, rather than meeting it at the till.",
+          "Each tool is sterilised before it touches you, and files and buffers are single-use. Staff on the floor speak English and Vietnamese. You'll find us at 56 Châu Thị Vĩnh Tế in the An Thuong quarter, 880 m from My Khe Beach (a ten to twelve minute walk), and <a href=\"https://www.google.com/maps/dir/?api=1&destination=Reborn+Nails+%26+Retreat+Da+Nang&destination_place_id=ChIJ4S2_LGIXQjER5UUCohuc8V4\" rel=\"noopener\">directions are here</a>."
+        ]
+      }
+    ],
+    "faq": [
+      [
+        "Can I get my nails and my feet done at the same time?",
+        "Yes. Two technicians can work on you at the same time, one at your hands and the other at your feet, head or neck, and reception sets the order when you arrive. A manicure and a pedicure ritual overlap easily: gel polish is 200K and the 65-minute Deep Care pedicure is 450K, so the pair costs 650K whether they run together or one after another. Parallel work saves time. It does not save money. What cannot overlap is any treatment step that needs your hands free, like the hand massage inside the 80-minute Signature head spa."
+      ],
+      [
+        "How long should I set aside for a manicure and a head spa in one visit?",
+        "The safe figure is around two hours. A gel manicure takes roughly 45 minutes, while the head spa rituals range from 25 minutes for a basic wash at 120K to 105 minutes for Luxury Skin Recovery at 850K. Most guests book the 80-minute Reborn Signature at 500K first. Nails plus the Signature come to 125 minutes end to end, less when two technicians are free. With only an hour, take the 45-minute Relax Ritual at 250K and save the nails for another day."
+      ],
+      [
+        "Can two of us book treatments side by side in Da Nang?",
+        "Yes. Couples and friends sit side by side, and groups are welcome if they message ahead on WhatsApp or Instagram. Most pairs prefer a swap: one starts in the head spa room while the other has nails, then you trade places and finish at about the same time. What limits it is how many technicians are free. For three or more people, or for anything in the late afternoon, send a message the day before instead of walking in."
+      ],
+      [
+        "What order should I do my treatments in?",
+        "Wet and reclining first, hands last. The longer head spa rituals begin with facial cleansing and end with hair oil and a blow-dry, so they are better done before your nails are finished rather than after. Feet before hands too, because getting sandals back on over fresh gel toes is easier when your fingers are dry. If you are wearing a set that has to come off, say so when you book: gel colour removal is 60K, press-on removal 70K and builder gel removal 90K, and that time belongs in the appointment rather than on top of it."
+      ]
+    ]
+  },
+{
     "slug": "nail-art-da-nang-bringing-a-photo",
     "title": "Bringing a photo · how nail art is priced and briefed in Da Nang",
     "desc": "Nail art in Da Nang · how full-set and per-nail prices add up, how to brief a design from a saved photo, and what the artwork adds to your appointment time.",

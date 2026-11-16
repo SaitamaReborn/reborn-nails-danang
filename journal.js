@@ -14,6 +14,93 @@
 
 const JOURNAL = [
 {
+    "slug": "nail-upkeep-cycle-living-in-da-nang",
+    "title": "Living in Da Nang · the upkeep cycle for nails, feet and scalp",
+    "desc": "Nail and spa upkeep when you live in Da Nang · how often gel, builder gel, pedicures and head spa need redoing, what each visit costs and where money leaks.",
+    "date": "2026-11-16",
+    "cat": "Guides",
+    "read": 7,
+    "hero": "refined.jpg",
+    "tldr": [
+      "Hands run on a three to four week clock, and it is regrowth at the cuticle that sets it rather than wear. Gel polish at 200K plus removal at 60K is 260K a visit.",
+      "Builder gel is the system built for repeat visits: a fill is 380K against 400K for starting again from nothing, and BIAB at 300K is the lighter version of the same idea.",
+      "Feet run slower. Gel on toes at 180K is the longest-lived colour in the salon, so pedicures get booked for the heels · 250K for a tidy-up, 450K for the Deep Care ritual.",
+      "The cheap lines keep the expensive ones away: one tip repair is 55K, a hard gel strengthening layer is from 60K, and the 25-minute hair wash at 120K is an errand rather than an event."
+    ],
+    "body": [
+      {
+        "h": "The visitor question and the resident question",
+        "p": [
+          "Nearly everything written about nail salons in Da Nang is written for somebody who is here for nine days. Will it survive the sea, can I get it done before the flight, how long will it last. We answer those at the desk all week and they are fair questions. They stop being useful the moment there is no flight.",
+          "If you live here you are not buying a set, you are buying an interval. The number that matters is not the price on the menu, it is that price multiplied by however many times a year you sit down, plus the small decisions in between that quietly make the whole thing cost more. The menu is the same one the tourists read. What comes off it looks different.",
+          "So this is how our regulars actually use the salon, with the real numbers attached."
+        ]
+      },
+      {
+        "h": "Three weeks is the clock, and regrowth sets it",
+        "p": [
+          "Gel polish holds its mirror shine for two to three weeks. What residents work out fast is that the shine is rarely what ends a set. The line of bare nail at the cuticle is, and that line arrives on your nail's schedule, which pays no attention to how careful you have been.",
+          "For hands, then, plan on three to four weeks. A gel manicure takes about 45 minutes. Gel polish is 200K and gel colour removal is 60K, so the usual visit, where one set comes off and the next goes on, comes to 260K. Before you default to plain colour, note that a full cat eye or chrome set is 180K and an ombré or French set is 220K, which puts most of the finishes people actually want in the same bracket.",
+          "Builder gel moves the arithmetic in your favour, and that is the only honest reason to accept the longer first appointment. A builder gel set on natural nails is 400K and takes around 80 minutes. After that you refill instead of rebuilding: a fill is 380K, and the structure on your nail is the thing you keep paying to maintain rather than to recreate. BIAB at 300K is the lighter version of the same principle, soakable, and it comes off without wrecking the nail plate underneath. It is all set out on the <a href=\"/services/biab-builder-gel/\">BIAB and builder gel page</a>.",
+          "GelX at 280K sits apart from this. It lasts three to four weeks and gives instant length, which makes it the one to book for a particular month rather than as a standing arrangement. Press-on removal is 70K when you want your own nails back."
+        ]
+      },
+      {
+        "h": "Feet run on a slower clock",
+        "p": [
+          "Toenails grow slowly. That single fact makes gel on toes at 180K the longest-lived colour in the building and the best value on any resident's bill, because you are buying months out of a product priced for weeks.",
+          "So here, pedicures get booked for the feet more than for the colour. A year in Da Nang shows up on the heels: sandals daily, a scooter footrest, sand through the dry months and wet streets in the rainy ones. Think of the menu as a ladder of time. Soft Touch, 40 minutes at 250K, works as the tidy-up between longer visits. The Relaxing Ritual runs 55 minutes at 380K. Deep Care is 65 minutes at 450K, and it is the one that carries foot steaming, exfoliation and the intensive heel treatment. The Reborn Signature is 75 minutes at 590K, and hot stones add 80K on top of any of them. All twelve steps are listed on the <a href=\"/services/spa-pedicure/\">spa pedicure page</a>.",
+          "For most people living here, the rhythm that works is one long ritual as the season turns, with short ones in between. In the wet months your feet are damp for more of the day than they are dry, and heels show it, which makes that the stretch to spend 450K instead of 250K. The dry season flips it, and Soft Touch is usually plenty.",
+          "Some weeks nothing needs filing and you have simply walked too far. A foot and calf massage on its own is 100K for 15 minutes or 190K for 30, in the same armchairs, with the herbal soak first. Waxing runs on a cycle of its own in the private room, from 120K for underarms to 250K for half legs and 480K for full."
+        ]
+      },
+      {
+        "h": "The scalp cycle, and the cheapest standing habit here",
+        "p": [
+          "In Vietnam a hair wash is an errand. Residents are the people best placed to use it that way, and the basic wash at 25 minutes and 120K is the line most visitors never even read, because they came in for the long ritual. As a fortnightly or weekly habit it costs less than the coffee you would buy on the walk over.",
+          "The long ritual keeps its place on a resident's calendar at something closer to monthly. The Reborn Signature is 80 minutes at 500K: facial cleansing, a quartz-stone massage, scalp exfoliation, herbal steam, a neck and shoulder release, then a blow-dry and hair oil. Below it sit the Relax Ritual at 45 minutes and 250K, Deep Relax at 60 and 380K, Warm Stone Escape at 70 and 450K. Above it, Carbony Skin Detox at 75 and 600K, the Ultimate Ritual at 95 and 750K, Luxury Skin Recovery at 105 and 850K. The ladder is on the <a href=\"/services/head-spa-hair-wash/\">head spa page</a>.",
+          "What a scalp needs in March and what it needs in November are not the same thing, and the useful rule is a dull one: the longer rituals contain more scalp work, so weight your choice up the ladder in the months when your scalp is the part complaining and keep the short wash for the rest of the year."
+        ]
+      },
+      {
+        "h": "Where the money actually leaks",
+        "p": [
+          "<strong>Taking it off yourself.</strong> Removal is 60K for gel colour, 70K for press-ons and 90K for builder gel. Peel a set off at the kitchen table and you save that, then pay more twice over: layers of nail plate come away with it, and the next set has a thinner, softer surface to hold on to.",
+          "<strong>Redoing ten nails because one broke.</strong> A single tip repair or extension is 55K and takes about ten minutes, and the original set does not need to have been ours. There is no reason to carry a broken nail for two weeks until the whole set is due.",
+          "<strong>Skipping the layer underneath.</strong> A hard gel strengthening layer starts from 60K. For anyone who breaks nails routinely, that line is what stops you buying repairs, so ask about it first rather than last.",
+          "<strong>Treating colour as the only option.</strong> Classic polish is 100K, the same as base and top coat on their own. A month of nails that are clean, protected and unpainted makes a perfectly good booking. It costs half what a colour set does, and the <a href=\"/services/gel-nails/\">gel nails page</a> lists it with everything else instead of hiding it."
+        ]
+      },
+      {
+        "h": "Booking like a regular",
+        "p": [
+          "Ask for your technician by name. People who always sit with the same person get a quiet advantage that no menu advertises: somebody who already knows your nail shape, which thumb runs thin, and that last time you wanted them shorter.",
+          "Before you leave one visit, book the next. Because the diary fills backwards from late afternoon, weekday mornings are the easy slot if your hours are your own. Walk-ins are welcome every day from 9 AM to 8 PM, and a single gel colour rarely waits. A 65-minute ritual at six in the evening is a different request.",
+          "Two technicians can work on you at the same time, which matters more when the visit is routine than when it is a treat. Nails and a head spa in one sitting is one trip across town instead of two, and it is the way most of our regulars use the floor.",
+          "Each tool is sterilised before it touches you. Files and buffers are single-use. On the floor staff speak English and Vietnamese, the iPad menu comes in 20 languages, and your technician adds up the visit before anything starts: that is when to drop something, rather than meeting it at the till. We're at 56 Châu Thị Vĩnh Tế in An Thuong, 880 m from My Khe Beach, and the <a href=\"https://www.google.com/maps/dir/?api=1&destination=Reborn+Nails+%26+Retreat+Da+Nang&destination_place_id=ChIJ4S2_LGIXQjER5UUCohuc8V4\" rel=\"noopener\">directions are here</a>."
+        ]
+      }
+    ],
+    "faq": [
+      [
+        "How often should I get my nails done if I live in Da Nang?",
+        "Every three to four weeks for hands. It is regrowth at the cuticle that ends a set rather than wear, so the interval is set by your own nails. A gel polish visit with removal is 260K (200K plus 60K) and takes about 45 minutes. On builder gel you refill at 380K instead of rebuilding at 400K. Toes are much slower: gel polish for toes is 180K and comfortably outlasts anything on your hands."
+      ],
+      [
+        "Is a builder gel refill cheaper than starting a new set?",
+        "Yes. A builder gel fill costs 380K, compared with 400K for a fresh set on natural nails, and you keep the structure already on the nail instead of paying to build it again. BIAB, the lighter builder-in-a-bottle version, is 300K. If you want to stop, builder gel removal is 90K and it comes off without damaging the nail plate. On a long cycle, that is the main reason to pick these systems over acrylic."
+      ],
+      [
+        "How often do people who live here book a head spa or a pedicure?",
+        "The 25-minute basic hair wash at 120K is treated as an errand in Vietnam, so weekly or fortnightly is normal. The longer rituals suit something closer to monthly: the 80-minute Reborn Signature is 500K with facial care, scalp exfoliation and herbal steam. For feet, most residents alternate the 40-minute Soft Touch at 250K as a tidy-up with the 65-minute Deep Care at 450K when heels need the steaming and the intensive heel treatment."
+      ],
+      [
+        "Do I need to book, or can I just walk in?",
+        "Walk-ins are welcome every day from 9 AM to 8 PM, and a single gel colour rarely waits. Anything over an hour is worth a booking, particularly late in the afternoon, which is the first part of the day to fill. For a particular technician, ask for them by name when you message. WhatsApp, Instagram and the phone all reach the same floor. Sent the day before, a message covers almost anything on the menu."
+      ]
+    ]
+  },
+{
     "slug": "two-treatments-one-visit-da-nang",
     "title": "Two treatments, one visit · how to time nails, pedicure and head spa together",
     "desc": "Stacking treatments in one Da Nang salon visit · real chair times for gel, pedicure rituals and head spa, what can run in parallel, and what the pairs cost.",

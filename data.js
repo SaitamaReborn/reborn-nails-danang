@@ -11,7 +11,7 @@ const BIZ={
     l'aggregateRating du JSON-LD (gardé sur décision de Lucas, 02/10) et la note
     affichée, toujours avec sa date : à mettre à jour à chaque relevé.
     ratingText existe parce que `${5.0}` rend « 5 » en JavaScript. */
- rating:4.9,ratingText:"4.9",ratingCount:306,ratingDate:"2026-10-02",ratingDateHuman:"2 October 2026",
+ rating:4.9,ratingText:"4.9",ratingCount:363,ratingDate:"2026-11-17",ratingDateHuman:"17 November 2026",
  maps:"https://www.google.com/maps/place/Reborn+Nails+%26+Retreat/@16.0519643,108.2372274,17z/data=!3m1!4b1!4m6!3m5!1s0x314217622cbf2de1:0x5ef19c1ba20245e5!8m2!3d16.0519643!4d108.2398023!16s%2Fg%2F11srbjbcxk",
  mapsCid:"https://maps.google.com/?cid=6841420951448602085",
  review:"https://search.google.com/local/writereview?placeid=ChIJ4S2_LGIXQjER5UUCohuc8V4",

@@ -166,7 +166,9 @@ const marketBlock=slug=>{const m=MARKET[slug];if(!m)return '';
  <div class="tblwrap"><table class="mkt"><thead><tr><th>What you get</th><th>Price</th><th>Included</th></tr></thead><tbody>
  ${m.rows.map(r=>`<tr class="${r[0].includes('<b>')?'us':''}"><td>${r[0]}</td><td class="p">${r[1]}</td><td class="inc">${r[2]}</td></tr>`).join('')}
  </tbody></table></div><p class="mktnote">${m.note}</p></div></section>`;};
-const faqHtml=faq=>`<div class="faq">${faq.map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div>`;
+/* Each answer has its own address (#faq-is-it-hygienic…) so that it can be linked to as a source. */
+const faqId=q=>'faq-'+String(q).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const faqHtml=faq=>`<div class="faq">${faq.map(([q,a])=>`<details id="${faqId(q)}"><summary>${q}</summary><p>${a}</p></details>`).join('')}</div>`;
 const faqLd=faq=>({"@type":"FAQPage","mainEntity":faq.map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))});
 const ld=o=>`<script type="application/ld+json">${JSON.stringify(o)}</script>`;
 const bizLd=(extra={})=>({"@context":"https://schema.org","@type":"NailSalon","name":BIZ.name,
@@ -570,7 +572,7 @@ const homeHtml=head(
 </div></section>
 <section class="gallerysec"><div class="wrap"><p class="tag">The salon</p><h2>Step inside Reborn</h2>
 <div class="gal">${['salon','arch','interior','refined','chand','tray'].map((g,i)=>`<img src="${BASE}/assets/${g}.jpg" alt="${BIZ.name} salon Da Nang · ${['reception','foot therapy lounge','interior','refined touch room','cherry blossom chandelier','spa ingredients'][i]}" loading="lazy">`).join('')}</div></div></section>
-<section class="story"><div class="wrap">
+<section class="story" id="story"><div class="wrap">
 <div class="stgrid">
  <div class="stimg"><img src="${BASE}/assets/founder.jpg" alt="${BIZ.owner}, founder of ${BIZ.name}, on opening day" loading="lazy">
   <figcaption>${BIZ.owner}, on opening day</figcaption></div>

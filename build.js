@@ -630,7 +630,7 @@ ${faqHtml([
  ["How much does a manicure cost in Da Nang?","At Reborn: classic manicure 70K, gel polish 200K, BIAB 300K, GelX extensions 280K. A full cat-eye or chrome nail-art set is 180K. That is roughly a third of typical prices in Korea, Japan, Australia or Europe."],
  ["Do the staff speak English?","Yes. Sương and the team look after you in English and Vietnamese, and the menu on the salon's iPad comes in 20 languages (Korean, Japanese, Chinese, Russian, French, Spanish and more), so nothing gets misunderstood and you get exactly the treatment you asked for."],
  ["Is it hygienic?","We hold ourselves to European salon standards, which is not the norm everywhere in Da Nang. Every metal tool goes through a medical steriliser before it touches you, files and buffers are single-use and thrown away in front of you, and the steriliser sits in the open so you can watch it work."],
- ["Where exactly is the salon?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn · in the An Thuong tourist quarter, 400 m from My Khe Beach. Open the map above or tap Get Directions."],
+ ["Where exactly is the salon?","56 Châu Thị Vĩnh Tế, Ngũ Hành Sơn · in the An Thuong tourist quarter, 880 m from My Khe Beach (a 10 to 12 minute walk). Open the map above or tap Get Directions."],
  ["Can I pay by card?","Yes · cards and cash (VND) are both accepted."]])}
 </div></section>`
 +`<script>

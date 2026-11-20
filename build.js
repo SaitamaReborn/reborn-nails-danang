@@ -671,10 +671,10 @@ fs.writeFileSync(OUT+'/index.html',homeHtml);
 for(const s of SERVICES){
  const url=`${SITE}/services/${s.slug}/`;
  const others=SERVICES.filter(x=>x.slug!==s.slug).slice(0,3);
- const TITLES={'head-spa-hair-wash':['Hair Wash & Head Spa in Da Nang · 120K–850K · '+BIZ.short+' ★${BIZ.ratingText}','Vietnamese hair wash & Korean head spa near My Khe Beach: 25 to 105 minutes, 120K–850K. Signature ritual 500K, 19 steps. ★${BIZ.ratingText} Google, walk-ins daily 9–20.'],
- 'foot-massage':['Foot Massage in Da Nang · from 100K · Foot Therapy at '+BIZ.short,'Foot & calf massage from 100K in our Foot Therapy lounge near My Khe Beach, or a full spa pedicure ritual from 250K. ★${BIZ.ratingText} Google, walk-ins daily 9–20.'],
- 'massage':['Massage in Da Nang · hot stone, foot & shoulder · '+BIZ.short,'Massage at a ★${BIZ.ratingText} nail & head-spa retreat near My Khe Beach: foot & calf from 100K, hot stones 80K, neck and shoulder in every ritual. Walk-ins daily 9–20.'],
- 'spa-pedicure':['Spa Pedicure in Da Nang · rituals 250K–590K · '+BIZ.short+' ★${BIZ.ratingText}','Herbal foot soak, heel therapy, hot stones and warm towels on cream leather armchairs. Deep Care 450K (65 min). ★${BIZ.ratingText} Google, walk-ins daily 9–20.']};
+ const TITLES={'head-spa-hair-wash':['Hair Wash & Head Spa in Da Nang · 120K–850K · '+BIZ.short+' ★'+BIZ.ratingText+'','Vietnamese hair wash & Korean head spa near My Khe Beach: 25 to 105 minutes, 120K–850K. Signature ritual 500K, 19 steps. ★'+BIZ.ratingText+' Google, walk-ins daily 9–20.'],
+ 'foot-massage':['Foot Massage in Da Nang · from 100K · Foot Therapy at '+BIZ.short,'Foot & calf massage from 100K in our Foot Therapy lounge near My Khe Beach, or a full spa pedicure ritual from 250K. ★'+BIZ.ratingText+' Google, walk-ins daily 9–20.'],
+ 'massage':['Massage in Da Nang · hot stone, foot & shoulder · '+BIZ.short,'Massage at a ★'+BIZ.ratingText+' nail & head-spa retreat near My Khe Beach: foot & calf from 100K, hot stones 80K, neck and shoulder in every ritual. Walk-ins daily 9–20.'],
+ 'spa-pedicure':['Spa Pedicure in Da Nang · rituals 250K–590K · '+BIZ.short+' ★'+BIZ.ratingText+'','Herbal foot soak, heel therapy, hot stones and warm towels on cream leather armchairs. Deep Care 450K (65 min). ★'+BIZ.ratingText+' Google, walk-ins daily 9–20.']};
  const T=TITLES[s.slug];
  const html=head(T?T[0]:`${s.name} in Da Nang · prices & menu · ${BIZ.short} ★${BIZ.ratingText}`,
   T?T[1]:`${s.desc} Full ${s.short.toLowerCase()} price list at ${BIZ.name}, 5 min from My Khe Beach. ★${BIZ.ratingText} Google rating, walk-ins daily 9–20.`,url)
